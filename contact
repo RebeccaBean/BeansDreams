@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Bean's Dreams</title>
+
+  <!-- AOS Animation CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+
+  <!-- Site CSS -->
+  <link rel="stylesheet" href="css/contact.css">
+  <link rel="stylesheet" href="css/cart.css">
+  <link rel="stylesheet" href="css/nav.css">
+</head>
+<body>
+
+  <!-- Navigation placeholder -->
+  <header class="navbar" data-aos="fade-right">
+    <img src="imagelogo/beansbutterfly.png" alt="Bean's Butterfly" class="logo-bounce-in">      
+    <div id="nav-placeholder"></div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="contact-hero" data-aos="fade-up">
+      <h1>Get In Touch</h1>
+      <p>We'd love to hear from you! Whether you have a question, want to collaborate, or just want to say hello — reach out below.</p>
+      <p class="about-subtitle">Dance • Heal • Rise</p>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="contact-section" data-aos="fade-up">
+      <form class="contact-form" action="https://formspree.io/f/movlbjeg" method="POST">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="_replyto" required>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+
+        <button type="submit" class="btn">Send Message</button>
+        <input type="hidden" name="_next" value="https://www.beansdreams.com/thank-you.html">
+      </form>
+
+      <!-- Updated Contact Info -->
+      <div class="contact-info" data-aos="fade-up">
+        <h3>Contact Information</h3>
+        <p>We value your privacy. Any information you provide through this form will be used solely to respond to your inquiry and will never be shared with third parties.</p>
+        <p>All communications are handled securely and confidentially. You can reach us through this form, and we’ll respond as soon as possible.</p>
+        <p class="location-note">Serving clients online & in-person (by appointment)</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- CART SIDEBAR -->
+  <div id="cart" class="cart-sidebar" aria-label="Shopping cart" aria-hidden="true">
+    <h3>Your Cart</h3>
+    <ul id="cart-items"></ul>
+    <div class="cart-total">Total: $<span id="cart-total">0.00</span></div>
+    <button id="checkout-btn" class="btn checkout-btn">Checkout</button>
+    <button id="close-cart" class="btn close-cart-btn">Close</button>
+  </div>
+
+  <!-- Cart Toggle Button -->
+  <button id="cart-toggle" class="btn cart-toggle-btn">🛒 Cart (<span id="cart-count">0</span>)</button>
+
+  <!-- Footer -->
+  <footer class="site-footer" data-aos="fade-up">
+    <p>© Bean's Dreams — Dance • Heal • Rise</p>
+    <p>&copy; <span id="year"></span></p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="js/nav.js" defer></script>
+  <script src="js/cart.js" defer></script>
+<!-- PayPal SDK -->
+<script src="https://www.paypal.com/sdk/js?client-id=AVhdcxMFlhEnAaJN0_ju-Kjgxo5djvN3Q5VMCVtxrc2fZknJjXNTiLQzWmNel_qUZAjuSOhML2hiU9ct"></script>
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Initialize AOS
+      if (window.AOS) AOS.init({ duration: 700, easing: 'ease-out-quart', once: true });
+
+      // Footer year
+      const yearEl = document.getElementById('year');
+      if (yearEl) yearEl.textContent = new Date().getFullYear();
+    });
+  </script>
+</body>
+</html>

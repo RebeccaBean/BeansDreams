@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Classes | Bean's Dreams</title>
+
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Open+Sans&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
+
+  <!-- Page Styles -->
+  <link rel="stylesheet" href="css/classes.css">
+  <link rel="stylesheet" href="css/cart.css">
+  <link rel="stylesheet" href="css/nav.css">
+
+  <!-- PayPal SDK -->
+  <script src="https://www.paypal.com/sdk/js?client-id=AVhdcxMFlhEnAaJN0_ju-Kjgxo5djvN3Q5VMCVtxrc2fZknJjXNTiLQzWmNel_qUZAjuSOhML2hiU9ct"></script>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="classes-header" data-aos="fade-down">
+    <div class="logo-container">
+      <img src="imageslogo/beansbutterfly.png" alt="Beans Butterfly" class="logo-bounce-in">
+    </div>
+    <h1>Explore Our Classes</h1>
+    <p>Choose your path to dance, music, or healing ✨</p>
+    <p class="about-subtitle" data-aos="fade-right" data-aos-delay="300" style="color:#FEB803;">
+      <strong>Dance • Heal • Rise</strong>
+    </p>
+    
+  </header>
+
+  <!-- Navigation placeholder -->
+<div id="nav-placeholder"></div>
+
+  <!-- MAIN PAGE CONTENT -->
+  <section class="classes-page">
+
+    <!-- Tabs -->
+    <div class="tabs">
+      <button class="tab-button active" data-tab="dance">Dance Classes</button>
+      <button class="tab-button" data-tab="music">Music Classes</button>
+      <button class="tab-button" data-tab="healing">Healing Classes</button>
+    </div>
+
+      <!-- DANCE SECTION -->
+  <section id="dance" class="tab-content active" data-aos="fade-up">
+    <h2 class="section-title">Dance Classes</h2>
+    <div class="class-grid">
+      <!-- Sample Class Card -->
+     <div class="class-card"
+     data-id="dance_rhythms_emerald"
+     data-price="30"
+     data-duration="30"
+     data-type="Dance"
+     data-aos="zoom-in">
+
+  <!-- Icon -->
+  <div class="class-icon">🍀</div>
+
+  <!-- Title -->
+  <h3>Rhythms of the Emerald Isle</h3>
+
+  <!-- Description -->
+  <p>Step into the lively spirit of Irish dance! (Riverdance Style) This class celebrates the rich rhythms and traditions of the Emerald Isle with foundational soft shoe steps, energetic footwork, light leaps, and joyful movement set to upbeat jigs and reels. Perfect for beginners and experienced dancers alike. Build coordination, musicality, cultural appreciation, and Celtic magic—all while having fun.</p>
+
+  <!-- Price -->
+  <p class="price">$30 – 🕒30 minutes</p>
+
+  <!-- Add to Cart Button -->
+  <button class="add-cart-btn"
+          data-id="dance_rhythms_emerald"
+          data-name="Rhythms of the Emerald Isle"
+          data-price="30"
+          data-type="Dance">
+    Add to Cart
+  </button>
+
+</div>
+
+       <div class="class-card"
+     data-id="jazz_joy"
+     data-price="30"
+     data-duration="30"
+     data-type="Dance"
+     data-aos="zoom-in">
+
+  <!-- Icon -->
+  <div class="class-icon">🎭</div>
+
+  <!-- Title -->
+  <h3>Jazz & Joy</h3>
+
+  <!-- Description -->
+  <p>Feel the Rhythm. Embrace the Joy. Let loose and light up the floor in this high-energy jazz dance class designed to lift your spirit and sharpen your skills. This class focuses on musicality, coordination, strength, and style—while encouraging personal expression and joy in every step. Whether you're reigniting your love for dance or just starting out, Jazz and Joy offers an empowering space to dance your heart out.🎵</p>
+
+  <!-- Price -->
+  <p class="price">$30 – 🕒30 minutes</p>
+
+  <!-- Add to Cart Button -->
+  <button class="add-cart-btn"
+          data-id="jazz_joy"
+          data-name="Jazz & Joy"
+          data-price="30"
+          data-type="Dance">
+    Add to Cart
+  </button>
+
+</div>
+<div class="class-card"
+     data-id="foundations_grace"
+     data-price="30"
+     data-duration="30"
+     data-type="Dance"
+     data-aos="zoom-in">
+
+  <!-- Icon -->
+  <div class="class-icon">🩰</div>
+
+  <!-- Title -->
+  <h3>Foundations in Grace</h3>
+
+  <!-- Description -->
+  <p>Rooted in tradition and refined through discipline, Foundations in Grace offers dancers a space to build strong technique, body awareness, and expressive control. Designed for youth through adults, this class honors the art of classical ballet while welcoming dancers at every stage of their journey. With focus on alignment, form, and musicality, students gain strength, confidence, and a deeper connection to the craft.</p>
+
+  <!-- Price -->
+  <p class="price">$30 – 🕒30 minutes</p>
+
+  <!-- Add to Cart Button -->
+  <button class="add-cart-btn"
+          data-id="foundations_grace"
+          data-name="Foundations in Grace"
+          data-price="30"
+          data-type="Dance">
+    Add to Cart
+  </button>
+
+</div>
+
+   <div class="class-card"
+     data-id="rythmic_steps"
+     data-price="30"
+     data-duration="30"
+     data-type="Dance"
+     data-aos="zoom-in">
+
+  <!-- Icon -->
+  <div class="class-icon">👞</div>
+         <!-- Title -->
+  <h3>Rhythmic Steps</h3>
+
+  <!-- Description -->
+  <p>Discover the timeless rhythm of tap in a class designed to engage, challenge, and inspire. Rhythmic Steps introduces dancers of all backgrounds to the foundations of tap technique, musical phrasing, and dynamic footwork. Whether you're new to the style or returning with experience, this class offers a welcoming space to grow in precision, timing, and self-expression.</p>
+
+  <!-- Price -->
+  <p class="price">$30 – 🕒30 minutes</p>
+
+  <!-- Add to Cart Button -->
+  <button class="add-cart-btn"
+          data-id="rythmic_steps"
+          data-name="Rhythmic Steps"
+          data-price="30"
+          data-type="Dance">
+    Add to Cart
+  </button>
+      </div> 
+      <div class="class-card"
+     data-id="dance_sprouts"
+     data-price="30"
+     data-duration="30"
+     data-type="Dance"
+     data-aos="zoom-in">
+
+  <!-- Icon -->
+  <div class="class-icon">🐣</div>
+
+  <!-- Title -->
+  <h3>Dance Sprouts</h3>
+
+  <!-- Description -->
+  <p>Tap + Ballet for Ages 3–6. A joyful introduction to dance for little ones. Dance Sprouts is a lively combo class that introduces young dancers to the magic of ballet and the bounce of tap. With twirls, toe taps, and lots of smiles, kids build rhythm, coordination, and creativity—all in a nurturing, energetic space made just for them. Each class blends playful storytelling with movement to spark imagination and joy.🌈</p>
+
+  <!-- Price -->
+  <p class="price">$30 – 🕒30 minutes</p>
+
+  <!-- Add to Cart Button -->
+  <button class="add-cart-btn"
+          data-id="dance_sprouts"
+          data-name="Dance Sprouts"
+          data-price="30"
+          data-type="Dance">
+    Add to Cart
+  </button>
+
+</div>
+<div class="class-card"
+     data-id="step_sizzle"
+     data-price="30"
+     data-duration="30"
+     data-type="Dance"
+     data-aos="zoom-in">
+
+  <!-- Icon -->
+  <div class="class-icon">🔥</div>
+
+  <!-- Title -->
+  <h3>Step & Sizzle</h3>
+
+  <!-- Description -->
+  <p>High-Energy Adult Dance Fitness. Turn up the music and torch some calories with Step & Sizzle! This upbeat class blends cardio with your choice of jazz or salsa-inspired dance moves—perfect for getting your steps in while having a blast. Track your progress, feel the burn, and leave every session feeling strong, sassy, and energized! No dance experience needed—just bring your energy and let the rhythm move you!</p>
+
+  <!-- Price -->
+  <p class="price">$30 – 🕒30 minutes</p>
+
+  <!-- Add to Cart Button -->
+  <button class="add-cart-btn"
+          data-id="step_sizzle"
+          data-name="Step & Sizzle"
+          data-price="30"
+          data-type="Dance">
+    Add to Cart
+  </button>
+
+</div>
+      </div>
+    
+  </section>
+<!-- MUSIC SECTION -->
+<section id="music" class="tab-content" data-aos="fade-up">
+  <h2 class="section-title">Music Classes</h2>
+  <div class="class-grid">
+
+   <div class="class-card"
+     data-id="strum_shine"
+     data-price="30"
+     data-duration="30"
+     data-type="Guitar"
+     data-aos="zoom-in">
+
+  <!-- Icon -->
+  <div class="class-icon">🎸☀️</div>
+
+  <!-- Title -->
+  <h3>Strum & Shine</h3>
+
+  <!-- Description -->
+  <p>Let your inner light shine through each strum! This uplifting beginner guitar class helps students build confidence while learning essential chords, smooth transitions, and fun strumming patterns. With a focus on expressive playing, this class is perfect for creative souls looking to bring joy through music.</p>
+
+  <!-- Price -->
+  <p class="price">$30 – 🕒30 minutes</p>
+
+  <!-- Add to Cart Button -->
+  <button class="add-cart-btn"
+          data-id="strum_shine"
+          data-name="Strum & Shine"
+          data-price="30"
+          data-type="Guitar">
+    Add to Cart
+  </button>
+
+</div>
+
+   <div class="class-card"
+     data-id="campfire_chords"
+     data-price="30"
+     data-duration="30"
+     data-type="Guitar"
+     data-aos="zoom-in">
+
+  <!-- Icon -->
+  <div class="class-icon">🔥🎵</div>
+
+  <!-- Title -->
+  <h3>Campfire Chords</h3>
+
+  <!-- Description -->
+  <p>Whether you're just picking up the guitar or rekindling your love for it, Campfire Chords is your cozy all-levels class focused on timeless songs, smooth chord transitions, and relaxed rhythm patterns. Beginners learn the basics, while experienced players explore creative strumming, progressions, and arranging.</p>
+
+  <!-- Price -->
+  <p class="price">$30 – 🕒30 minutes</p>
+
+  <!-- Add to Cart Button -->
+  <button class="add-cart-btn"
+          data-id="campfire_chords"
+          data-name="Campfire Chords"
+          data-price="30"
+          data-type="Guitar">
+    Add to Cart
+  </button>
+
+</div>
+<div class="class-card"
+     data-id="blue_mood"
+     data-price="30"
+     data-duration="30"
+     data-type="Guitar"
+     data-aos="zoom-in">
+
+  <!-- Icon -->
+  <div class="class-icon">💙🎼</div>
+
+  <!-- Title -->
+  <h3>Blue Mood Grooves</h3>
+
+  <!-- Description -->
+  <p>Plug in, turn up, and tap into your soul. Perfect for anyone craving a deeper connection with their instrument. This gritty, blues-infused guitar class is built for players who want to growl through minor chords, rip through pentatonic scales, and master that slow, smoky groove that hits you in the chest.</p>
+
+  <!-- Price -->
+  <p class="price">$30 – 🕒30 minutes</p>
+
+  <!-- Add to Cart Button -->
+  <button class="add-cart-btn"
+          data-id="blue_mood"
+          data-name="Blue Mood Grooves"
+          data-price="30"
+          data-type="Guitar">
+    Add to Cart
+  </button>
+
+</div>
+
+<div class="class-card"
+     data-id="jellybean_jams"
+     data-price="30"
+     data-duration="30"
+     data-type="Vocal"
+     data-aos="zoom-in">
+
+  <!-- Icon -->
+  <div class="class-icon">🍬</div>
+
+  <!-- Title -->
+  <h3>Jellybean Jams</h3>
+
+  <!-- Description -->
+  <p>Let your little one’s voice shine in this sweet and silly singing class! Jellybean Jams is full of fun warmups, catchy tunes, and confidence-boosting activities designed for young singers. We explore melody, rhythm, and playful vocal expression in a nurturing space that encourages every child to sing loud and proud. Come sing, laugh, and grow with us!</p>
+
+  <!-- Price -->
+  <p class="price">$30 – 🕒30 minutes</p>
+
+  <!-- Add to Cart Button -->
+  <button class="add-cart-btn"
+          data-id="jellybean_jams"
+          data-name="Jellybean Jams"
+          data-price="30"
+          data-type="Vocal">
+    Add to Cart
+  </button>
+
+</div>
+
+ <div class="class-card"
+     data-id="vocal_groove"
+     data-price="30"
+     data-duration="30"
+     data-type="Vocal"
+     data-aos="zoom-in">
+
+  <!-- Icon -->
+  <div class="class-icon">🎧</div>
+
+  <!-- Title -->
+  <h3>Vocal Groove Studio</h3>
+
+  <!-- Description -->
+  <p>Find your unique sound and build vocal power in Vocal Groove Studio! This upbeat class blends vocal technique, pitch control, and rhythm training with your favorite styles—from pop and soul to rock and jazz. Whether you’re prepping for the stage or just singing for joy, we’ll help you groove with confidence and expression.</p>
+
+  <!-- Price -->
+  <p class="price">$30 – 🕒30 minutes</p>
+
+  <!-- Add to Cart Button -->
+  <button class="add-cart-btn"
+          data-id="vocal_groove"
+          data-name="Vocal Groove Studio"
+          data-price="30"
+          data-type="Vocal">
+    Add to Cart
+  </button>
+
+</div>
+
+ <div class="class-card"
+     data-id="strings_songbirds"
+     data-price="30"
+     data-duration="30"
+     data-type="Guitar"
+     data-aos="zoom-in">
+
+  <!-- Icon -->
+  <div class="class-icon">🐦🎸</div>
+
+  <!-- Title -->
+  <h3>Strings & Songbirds</h3>
+
+  <!-- Description -->
+  <p>Blend rhythm and melody in this joyful class where you'll learn to play guitar and sing at the same time! Perfect for budding singer-songwriters or anyone ready to jam with heart. Explore chord progressions, vocal timing, and stage presence in a confidence-building space. Make music that moves you. Join Strings & Songbirds today!</p>
+
+  <!-- Price -->
+  <p class="price">$30 – 🕒30 minutes</p>
+
+  <!-- Add to Cart Button -->
+  <button class="add-cart-btn"
+          data-id="strings_songbirds"
+          data-name="Strings & Songbirds"
+          data-price="30"
+          data-type="Guitar">
+    Add to Cart
+  </button>
+
+</div>
+ </div>
+</section>
+
+   
+<!-- HEALING SECTION -->
+<section id="healing" class="tab-content" data-aos="fade-up">
+  <h2 class="section-title">Healing Classes</h2>
+  <div class="class-grid">
+
+   <div class="class-card"
+     data-id="heartbeat_harmony"
+     data-price="80"
+     data-duration="50"
+     data-type="Healing"
+     data-aos="zoom-in">
+
+  <!-- Icon -->
+  <div class="class-icon">💓</div>
+
+  <!-- Title -->
+  <h3>Heartbeat Harmony</h3>
+
+  <!-- Description -->
+  <p>Feel your own cadence, regulate your breath, and connect to the pulse of peace. Tune into your body’s rhythm with mindful tapping and deep diaphragmatic breathing. This calming class uses gentle rhythmic movement, breath cues, and mindful tapping to restore emotional balance and nervous system regulation.</p>
+
+  <!-- Price -->
+  <p class="price">$80 – 🕒50 minutes</p>
+
+  <!-- Add to Cart Button -->
+  <button class="add-cart-btn"
+          data-id="heartbeat_harmony"
+          data-name="Heartbeat Harmony"
+          data-price="80"
+          data-type="Healing">
+    Add to Cart
+  </button>
+
+</div>
+
+<div class="class-card"
+     data-id="tranquility_tones"
+     data-price="80"
+     data-duration="50"
+     data-type="Healing"
+     data-aos="zoom-in">
+
+  <!-- Icon -->
+  <div class="class-icon">🔔</div>
+
+  <!-- Title -->
+  <h3>Tones of Tranquility</h3>
+
+  <!-- Description -->
+  <p>Let sound guide you into deep rest and nervous system healing. Use vocal toning, humming, and sound vibrations to calm your nervous system and re-center your emotions. Enjoy an immersive experience of soft bells, vocal toning, and body scanning that clears stress and brings your body into alignment.</p>
+
+  <!-- Price -->
+  <p class="price">$80 – 🕒50 minutes</p>
+
+  <!-- Add to Cart Button -->
+  <button class="add-cart-btn"
+          data-id="tranquility_tones"
+          data-name="Tones of Tranquility"
+          data-price="80"
+          data-type="Healing">
+    Add to Cart
+  </button>
+
+</div>
+<div class="class-card"
+     data-id="centered_radience"
+     data-price="80"
+     data-duration="50"
+     data-type="Healing"
+     data-aos="zoom-in">
+
+  <!-- Icon -->
+  <div class="class-icon">🌞</div>
+
+  <!-- Title -->
+  <h3>Centered Radiance</h3>
+
+  <!-- Description -->
+  <p>A barefoot movement and breath practice that teaches grounding techniques for emotional overwhelm. A calm, centering class focused on body alignment and energetic glow, guiding you through body-based meditations, grounding postures, and intentional stillness to reconnect with your strength and glow.</p>
+
+  <!-- Price -->
+  <p class="price">$80 – 🕒50 minutes</p>
+
+  <!-- Add to Cart Button -->
+  <button class="add-cart-btn"
+          data-id="centered_radience"
+          data-name="Centered Radiance"
+          data-price="80"
+          data-type="Healing">
+    Add to Cart
+  </button>
+
+</div>
+ 
+ <div class="class-card"
+     data-id="Sacred_breath"
+     data-price="80"
+     data-duration="50"
+     data-type="Healing"
+     data-aos="zoom-in">
+
+  <!-- Icon -->
+  <div class="class-icon">🌕</div>
+
+  <!-- Title -->
+  <h3>Sacred Breath, Sacred Space</h3>
+
+  <!-- Description -->
+  <p>Through gentle breathwork and intentional movement, you’ll learn to regulate your nervous system while exploring your internal landscape. We’ll build a safe energetic space using soothing techniques like mindful stretching, protective visualization, and conscious breathing rituals.</p>
+
+  <!-- Price -->
+  <p class="price">$80 – 🕒50 minutes</p>
+
+  <!-- Add to Cart Button -->
+  <button class="add-cart-btn"
+          data-id="Sacred_breath"
+          data-name="Sacred Breath, Sacred Space"
+          data-price="80"
+          data-type="Healing">
+    Add to Cart
+  </button>
+
+</div>
+
+  <div class="class-card"
+     data-id="rest_reset_rise"
+     data-price="80"
+     data-duration="50"
+     data-type="Healing"
+     data-aos="zoom-in">
+
+  <!-- Icon -->
+  <div class="class-icon">🕊️</div>
+
+  <!-- Title -->
+  <h3>Rest, Reset, Rise</h3>
+
+  <!-- Description -->
+  <p>A full-body invitation to release and renew. Micro-movements, body scanning, and physical gestures that calm the vagus nerve and help rewire the stress response. Start with grounding, move through breath and somatic soothing, and finish with uplifting techniques to leave you calm and energized.</p>
+
+  <!-- Price -->
+  <p class="price">$80 – 🕒50 minutes</p>
+
+  <!-- Add to Cart Button -->
+  <button class="add-cart-btn"
+          data-id="rest_reset_rise"
+          data-name="Rest, Reset, Rise"
+          data-price="80"
+          data-type="Healing">
+    Add to Cart
+  </button>
+
+</div>
+<div class="class-card"
+     data-id="hands_heart"
+     data-price="80"
+     data-duration="50"
+     data-type="Healing"
+     data-aos="zoom-in">
+
+  <!-- Icon -->
+  <div class="class-icon">🤲</div>
+
+  <!-- Title -->
+  <h3>Hands to Heart</h3>
+
+  <!-- Description -->
+  <p>Learn hand placements, touch-based energy exercises, and simple self-reiki flows to soothe anxiety. This class explores calming hand placements, energy clearing motions, and soothing breath to support emotional release and heart-centered presence. Place your hands, feel your heart, begin healing.</p>
+
+  <!-- Price -->
+  <p class="price">$80 – 🕒50 minutes</p>
+
+  <!-- Add to Cart Button -->
+  <button class="add-cart-btn"
+          data-id="hands_heart"
+          data-name="Hands to Heart"
+          data-price="80"
+          data-type="Healing">
+    Add to Cart
+  </button>
+    </div>
+  </div>
+</section>
+
+<!-- BUNDLES SECTION -->
+  <section class="bundle-section" data-aos="fade-up">
+    <h2 class="section-title">Class Bundles</h2>
+             <div class="class-grid">
+      <!-- Melody Makers Jam -->
+<div class="class-card bundle-card"
+     data-aos="zoom-in"
+     data-id="bundle_melody_makers"
+     data-price="280"
+     data-credits="12"
+     data-type='["Voice","Guitar"]'>
+
+  <!-- Icon -->
+  <div class="class-icon">🎤🎸</div>
+
+  <!-- Title -->
+  <h3>Melody Makers Jam</h3>
+
+  <!-- Description -->
+  <p>This comprehensive bundle combines vocal training with guitar instruction to help you develop both your voice and instrumental skills in perfect harmony. Whether your goal is to perform live, enhance your creative expression, or simply enjoy making music, this bundle offers a well-rounded path to success. Strike a chord and sing your heart out!</p>
+
+  <!-- Price -->
+  <p class="price">$280 – 📦 6 Vocal Classes + 6 Guitar Classes</p>
+
+  <!-- PayPal Target -->
+  <div id="paypal-melody_makers"></div>
+
+  <!-- Add to Cart Button -->
+  <button class="add-cart-btn"
+          data-id="bundle_melody_makers"
+          data-name="Melody Makers Jam"
+          data-price="280"
+          data-type='["Voice","Guitar"]'
+          data-credits="12">
+    Add to Cart
+  </button>
+
+</div>
+
+  <!-- Dance & Music Fusion -->
+<div class="class-card bundle-card"
+     data-aos="zoom-in"
+     data-id="bundle_dance_music"
+     data-price="190"
+     data-credits="8"
+     data-type='["Dance","Any"]'>
+
+  <!-- Icon -->
+  <div class="class-icon">🎶💃</div>
+
+  <!-- Title -->
+  <h3>Dance & Music Fusion</h3>
+
+  <!-- Description -->
+  <p>Move to the rhythm, play to the beat. This energizing bundle blends the joy of dance with the magic of music. You’ll groove through fun, upbeat dance sessions and explore your musical side with guitar, voice, or rhythm-based classes. Perfect for building coordination, confidence, and creative expression—all while having a blast.</p>
+
+  <!-- Price -->
+  <p class="price">$190 – 📦 4 Dance Classes + 4 Music Classes</p>
+
+  <!-- PayPal Target -->
+  <div id="paypal-dance-music"></div>
+
+  <!-- Add to Cart Button -->
+  <button class="add-cart-btn"
+          data-id="bundle_dance_music"
+          data-name="Dance & Music Fusion"
+          data-price="190"
+          data-type='["Dance","Any"]'
+          data-credits="8">
+    Add to Cart
+  </button>
+
+</div>
+
+<!-- Dreamer’s Dozen -->
+<div class="class-card bundle-card"
+     data-aos="zoom-in"
+     data-id="bundle_dreamers_dozen"
+     data-price="280"
+     data-credits="12"
+     data-type="Any">
+
+  <!-- Icon -->
+  <div class="class-icon">🌟</div>
+
+  <!-- Title -->
+  <h3>Dreamer’s Dozen</h3>
+
+  <!-- Description -->
+  <p>12 classes. Limitless possibilities. Choose any combination of guitar, vocal, or dance sessions from the Bean’s Dreams lineup. Whether you’re exploring new skills, deepening your practice, or mixing creativity with calm, this flexible pack lets you follow your inspiration—one class at a time.</p>
+
+  <!-- Price -->
+  <p class="price">$280 – 📦 any 12 classes of your choice</p>
+
+  <!-- PayPal Target -->
+  <div id="paypal-dreamers-dozen"></div>
+
+  <!-- Add to Cart Button -->
+  <button class="add-cart-btn"
+          data-id="bundle_dreamers_dozen"
+          data-name="Dreamer’s Dozen"
+          data-price="280"
+          data-type="Any"
+          data-credits="12">
+    Add to Cart
+  </button>
+
+</div>
+
+<!-- Treble Treat -->
+<div class="class-card bundle-card"
+     data-aos="zoom-in"
+     data-id="bundle_treble_treat"
+     data-price="70"
+     data-credits="3"
+     data-type='["Vocal","Guitar","Dance"]'>
+
+  <!-- Icon -->
+  <div class="class-icon">🎤🎸🥁</div>
+
+  <!-- Title -->
+  <h3>Treble Treat</h3>
+
+  <!-- Description -->
+  <p>Whether you’re strumming a new chord, perfecting your pitch, or grooving to the beat, each class builds your confidence and keeps your musical journey exciting. Perfect for learners who love variety and want a taste of different styles in one sweet package.</p>
+
+  <!-- Price -->
+  <p class="price">$70 – 📦 1 Vocal, 1 Guitar, + 1 Dance class</p>
+
+  <!-- PayPal SDK Target -->
+  <div id="paypal-treble-treat"></div>
+
+  <!-- Add to Cart Button -->
+  <button class="add-cart-btn"
+          data-id="bundle_treble_treat"
+          data-name="Treble Treat"
+          data-price="70"
+          data-type='["Vocal","Guitar","Dance"]'
+          data-credits="3">
+    Add to Cart
+  </button>
+
+</div>
+
+<!-- Encore Elite -->
+<div class="class-card bundle-card"
+     data-aos="zoom-in"
+     data-id="bundle_encore_elite"
+     data-price="190"
+     data-credits="8"
+     data-type='["Any"]'>
+
+  <!-- Icon -->
+  <div class="class-icon">🌟</div>
+
+  <!-- Title -->
+  <h3>Encore Elite</h3>
+
+  <!-- Description -->
+  <p>Elevate your skills with this premium collection of eight expertly crafted classes. Blending technique, creativity, and performance, this bundle offers a curated path to help you grow as a musician, dancer, or performer.</p>
+
+  <!-- Price -->
+  <p class="price">$190 – 📦 8 Classes</p>
+
+  <!-- PayPal SDK Target -->
+  <div id="paypal-encore-elite"></div>
+
+  <!-- Add to Cart Button -->
+  <button class="add-cart-btn"
+          data-id="bundle_encore_elite"
+          data-name="Encore Elite"
+          data-price="190"
+          data-type='["Any"]'
+          data-credits="8">
+    Add to Cart
+  </button>
+
+</div>
+
+<!-- Serenity Series -->
+<div class="class-card bundle-card"
+     data-aos="zoom-in"
+     data-id="bundle_serenity"
+     data-price="450"
+     data-credits="6"
+     data-type='["Healing"]'>
+
+  <!-- Icon -->
+  <div class="class-icon">🪷</div>
+
+  <!-- Title -->
+  <h3>The Serenity Series</h3>
+
+  <!-- Description -->
+  <p>A soothing collection of classes designed to restore your mind, body, and spirit. Includes all six healing classes. Perfect for deep emotional reset and gentle holistic renewal.</p>
+
+  <!-- Price -->
+  <p class="price">$450 – 📦 6 Healing Classes</p>
+
+  <!-- PayPal SDK Target -->
+  <div id="paypal-serenity-series"></div>
+
+  <!-- Add to Cart Button -->
+  <button class="add-cart-btn"
+          data-id="bundle_serenity"
+          data-name="Serenity Series"
+          data-price="450"
+          data-type='["Healing"]'
+          data-credits="6">
+    Add to Cart
+  </button>
+</div>
+               
+<!-- Harmony Healers Pack -->
+<div class="class-card bundle-card"
+     data-aos="zoom-in"
+     data-id="bundle_harmony_healers"
+     data-price="350"
+     data-credits="6"
+     data-type='["Healing","Any"]'>
+
+  <!-- Icon -->
+  <div class="class-icon">🪷🎶</div>
+
+  <!-- Title -->
+  <h3>Harmony Healers Pack</h3>
+
+  <!-- Description -->
+  <p>Restore balance and creativity with this soothing bundle. Includes four healing classes plus two music classes.</p>
+
+  <!-- Price -->
+  <p class="price">$350 – 📦 4 Healing Classes + 2 Music Classes</p>
+
+  <!-- PayPal SDK Target -->
+  <div id="paypal-harmony-healers"></div>
+
+  <!-- Add to Cart Button -->
+  <button class="add-cart-btn"
+          data-id="bundle_harmony_healers"
+          data-name="Harmony Healers Pack"
+          data-price="350"
+          data-type='["Healing","Any"]'
+          data-credits="6">
+    Add to Cart
+  </button>
+  
+</div>
+
+<!-- Creative Expression Pack -->
+<div class="class-card bundle-card" 
+     data-aos="zoom-in"
+     data-product-id="bundle_creative_expression"
+     data-price="140"
+     data-credits="6"
+     data-type='["Dance","Vocal"]'>
+
+  <!-- Icon -->
+  <div class="class-icon">🎨💃🎤</div>
+
+  <!-- Title -->
+  <h3>Creative Expression Pack</h3>
+
+  <!-- Description -->
+  <p>Unleash your creativity with this energizing bundle of three dance classes and three vocal classes.</p>
+
+  <!-- Price -->
+  <p class="price">$140 – 📦 3 Dance Classes + 3 Vocal Classes</p>
+
+  <!-- Add to Cart Button -->
+  <button 
+    class="add-cart-btn"
+    data-name="Creative Expression Pack"
+    data-price="140"
+    data-product-id="bundle_creative_expression"
+    data-type='["Dance","Vocal"]'
+    data-credits="6">
+    Add to Cart
+  </button>
+</div>
+</div>
+      <!-- Add more bundles as needed -->
+  </section> <!-- END classes-page -->
+
+ <!-- LEAD GENERATOR -->
+  <section class="lead-banner" data-aos="fade-up">
+    <h2>✨ Join the Dream Circle ✨</h2>
+    <p>Get exclusive discounts, free resources, and early access to new products.</p>
+    <form action="https://formspree.io/f/mgvzboqw" method="POST" class="lead-form">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <button type="submit" class="join-btn">Join the Dream Circle</button>
+      <input type="hidden" name="_redirect" value="https://yourwebsite.com/thankyou.html">
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" data-aos="fade-up">
+    <p>© Bean's Dreams — Dance • Heal • Rise</p>
+    <p>&copy; <span id="year"></span></p>
+  </footer>
+
+  <!-- CART SIDEBAR -->
+  <div id="cart" class="cart-sidebar" aria-label="Shopping cart" aria-hidden="true">
+    <h3>Your Cart</h3>
+    <ul id="cart-items"></ul>
+    <div class="cart-total">Total: $<span id="cart-total">0.00</span></div>
+    <button id="checkout-btn" class="btn checkout-btn">Checkout</button>
+    <button id="close-cart" class="btn close-cart-btn">Close</button>
+  </div>
+
+  <!-- Floating Cart Button -->
+  <button id="cart-toggle" class="btn cart-toggle-btn">
+    🛒 Cart (<span id="cart-count">0</span>)
+  </button>
+
+  <!-- PayPal Buttons -->
+  <div id="paypal-button-container"></div>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="js/nav.js" defer></script>
+  <script src="js/cart.js" defer>
+    <script src="js/classes.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      AOS.init({ duration: 700, easing: 'ease-out-quart', once: true });
+      document.getElementById('year').textContent = new Date().getFullYear();
+        // Load navigation (if you use an HTML partial)
+      fetch("navigation.html")
+        .then(r => r.text())
+        .then(html => {
+          const el = document.getElementById("nav-placeholder");
+          if (el) el.innerHTML = html;
+        })
+        .catch(() => { /* silently fail if not present */ });
+
+      // Tabs
+      const tabButtons = document.querySelectorAll(".tab-button");
+      const tabContents = document.querySelectorAll(".tab-content");
+      tabButtons.forEach(button => {
+        button.addEventListener("click", () => {
+          tabButtons.forEach(btn => btn.classList.remove("active"));
+          button.classList.add("active");
+          tabContents.forEach(content => {
+            content.classList.remove("active");
+            if (content.id === button.dataset.tab) {
+              content.classList.add("active");
+            }
+          });
+        });
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About | Bean's Dreams</title>
+
+  <!-- Fonts & Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap" rel="stylesheet">
+
+  <!-- AOS CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <!-- Site CSS -->
+  <link rel="stylesheet" href="css/nav.css">
+  <link rel="stylesheet" href="css/cart.css"> 
+  <link rel="stylesheet" href="css/about.css"> <!-- your about-specific styles -->
+</head>
+<body>
+
+  <!-- Hero -->
+  <section class="about-hero" data-aos="fade-down">
+    <div class="hero-text">
+      <h1 class="alex-brush">About Us</h1>
+      <header class="classes-header" data-aos="fade-down">
+        <!-- Logo container -->
+        <div class="logo-container">
+          <img src="imageslogo/beansbutterfly.png" alt="Bean's Butterfly" class="logo-bounce-in">
+        </div>
+        <p>Meet the hearts behind Bean’s Dreams</p>
+        <p class="about-subtitle" data-aos="fade-right" data-aos-delay="300" style="color:#b50202;">
+          <strong>Dance • Heal • Rise</strong>
+        </p>
+      </header>
+    </div>
+  </section>
+
+  <!-- Navigation placeholder -->
+  <div id="nav-placeholder"></div>
+
+  <main>
+    <!-- Your about content -->
+    <section class="about-content" data-aos="fade-up">
+      <div class="profile-container">
+        <img src="https://via.placeholder.com/400x300" alt="Nick Bean" class="about-photo">
+        <img src="https://via.placeholder.com/400x300" alt="Rebecca Bean" class="about-photo">
+        <div class="bio-text">
+          <h2 class="alex-brush">Nick & Rebecca Bean</h2>
+          <p style="color:#030998;"><strong><u>Founders of Bean’s Dreams</u></strong></p>
+
+          <p><strong>Nick and Rebecca</strong> are a husband-and-wife duo dedicated to helping others rise through movement, music, and emotional recovery...</p>
+          <!-- (rest of your bio text unchanged) -->
+        </div>
+      </div>
+    </section>
+
+    <section class="mission" data-aos="fade-up">
+      <h1 class="alex-brush">Our Mission</h1>
+      <p>
+        To help people heal, express, and rise through soulful movement, creative education, and personal empowerment...
+      </p>
+      <div class="about-cta" data-aos="zoom-in" data-aos-delay="800">
+        <a href="classes.html" class="cta-button">🎵 Explore Our Classes 🎵</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" data-aos="fade-up">
+    <p>© Bean's Dreams — Dance • Heal • Rise</p>
+    <p>&copy; <span id="year"></span></p>
+  </footer>
+
+  <!-- CART SIDEBAR -->
+  <div id="cart" class="cart-sidebar" aria-label="Shopping cart" aria-hidden="true" role="complementary">
+    <h3>Your Cart</h3>
+    <ul id="cart-items"></ul>
+    <div class="cart-total">Total: $<span id="cart-total">0.00</span></div>
+    <button id="checkout-btn" class="btn checkout-btn">Checkout</button>
+    <button id="close-cart" class="btn close-cart-btn" aria-label="Close cart">Close</button>
+  </div>
+
+  <!-- Cart Toggle Button -->
+  <button id="cart-toggle" class="btn cart-toggle-btn" aria-label="Toggle cart">
+    🛒 Cart (<span id="cart-count">0</span>)
+  </button>
+
+  <!-- PayPal Button Container -->
+  <div id="paypal-button-container"></div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="js/nav.js" defer></script>
+  <script src="js/cart.js" defer></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // AOS animations
+      AOS.init({ duration: 700, easing: 'ease-out-quart', once: true });
+
+      // Year in footer
+      const yearEl = document.getElementById('year');
+      if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+      // Load navigation from partial
+      fetch("navigation.html")
+        .then(r => r.text())
+        .then(html => {
+          const el = document.getElementById("nav-placeholder");
+          if (el) el.innerHTML = html;
+        })
+        .catch(() => {});
+    });
+  </script>
+
+  <!-- PayPal SDK -->
+  <script src="https://www.paypal.com/sdk/js?client-id=AVhdcxMFlhEnAaJN0_ju-Kjgxo5djvN3Q5VMCVtxrc2fZknJjXNTiLQzWmNel_qUZAjuSOhML2hiU9ct"></script>
+  <script>
+    const cart = JSON.parse(localStorage.getItem("beansDreamsCart")) || [];
+
+    function calculateCartTotal() {
+      return cart.reduce((total, item) => total + item.price * item.quantity, 0).toFixed(2);
+    }
+
+    paypal.Buttons({
+      createOrder: (data, actions) => {
+        return actions.order.create({
+          purchase_units: [{
+            amount: { value: calculateCartTotal() }
+          }]
+        });
+      },
+      onApprove: async (data, actions) => {
+        const order = await actions.order.capture();
+        await fetch("/api/save-order", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ cart, paypalOrder: order })
+        });
+        alert("Thank you! Your order has been received.");
+        localStorage.removeItem("beansDreamsCart");
+        window.location.href = "/thank-you.html";
+      }
+    }).render("#paypal-button-container");
+  </script>
+</body>
+</html>

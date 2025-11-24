@@ -1,0 +1,157 @@
+/* Brand Variables */
+:root {
+  --peach: #FFEBD2;
+  --navy: #004AAP;
+  --orange: #FF940E;
+  --deep-orange: #FD8100;
+  --gold: #FEB803;
+  --accent-red: #b50202;
+  --font-accent: 'Alex Brush', cursive;
+  --font-main: 'Segoe UI', sans-serif;
+}
+
+/* Reset & Base */
+body {
+  margin: 0;
+  font-family: var(--font-main);
+  background-color: var(--peach);
+  color: var(--navy);
+  line-height: 1.6;
+}
+
+/* Container */
+.thank-you-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem;
+  text-align: center;
+}
+
+/* Logo & Heading */
+.logo-section {
+  max-width: 600px;
+  width: 100%;
+  background: #FFF5EA;
+  border: 2px solid var(--gold);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  animation: fadeInUp 1s ease-out;
+}
+
+.logo-section img {
+  width: 120px;
+  margin-bottom: 1rem;
+  animation: bounceIn 1.2s ease;
+}
+
+h1 {
+  font-family: var(--font-accent);
+  font-size: 3rem;
+  color: var(--orange);
+  margin-bottom: 1rem;
+  animation: thankYouFadeSlide 1.2s ease-out;
+}
+
+/* Text */
+.message {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.follow-up {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
+.follow-up a {
+  color: var(--deep-orange);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.follow-up a:hover {
+  text-decoration: underline;
+}
+
+/* Button */
+.btn-home {
+  background-color: var(--gold);
+  color: var(--navy);
+  padding: 0.8rem 2rem;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  display: inline-block;
+}
+
+.btn-home:hover {
+  background-color: var(--orange);
+  color: #fff;
+}
+
+/* Animations */
+@keyframes thankYouFadeSlide {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  .logo-section {
+    padding: 1.5rem;
+  }
+
+  .btn-home {
+    width: 100%;
+    font-size: 1rem;
+  }
+}
+h1::after {
+  content: "";
+  display: block;
+  margin: 10px auto 0;
+  width: 160px;
+  height: 3px;
+  border-radius: 50px;
+  background: linear-gradient(to right, #030998, #B3C9F5);
+}

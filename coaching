@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Coaching | Bean's Dreams</title>
+
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Open+Sans&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
+
+  <!-- Page Styles -->
+  <link rel="stylesheet" href="css/coaching.css">
+  <link rel="stylesheet" href="css/cart.css">
+  <link rel="stylesheet" href="css/nav.css">
+
+  <!-- PayPal SDK -->
+  <script src="https://www.paypal.com/sdk/js?client-id=AVhdcxMFlhEnAaJN0_ju-Kjgxo5djvN3Q5VMCVtxrc2fZknJjXNTiLQzWmNel_qUZAjuSOhML2hiU9ct"></script>
+</head>
+
+<body>
+  <!-- HEADER -->
+  <!-- HERO -->
+  <header class="hero" role="banner" data-aos="fade-up">
+    <div class="logo-container">
+      <img src="imageslogo/beansbutterfly.png" alt="Bean's Butterfly" class="logo-bounce-in">
+    </div>
+    <div class="eyebrow">Bean’s Dreams Coaching</div>
+    <h1>Coaching for Healing & Creative Growth</h1>
+    <p class="lead">
+      A gentle, practical approach to emotional healing, creative confidence, and sustainable change. 
+      Sessions blend somatic tools, movement, and coaching to help you reclaim your voice and your life.
+    </p>
+ <!-- Add to Cart Button -->
+  <div class="cta-group">
+  <button class="add-cart-btn"
+    data-id="coach_single"
+    data-name="Single Coaching Session"
+    data-price="120"
+    data-type="coaching"
+    data-credits="1">
+    
+    Book a 50-Minute Session
+  </button>
+
+  <button class="btn btn-outline" id="leadOpenBtn">
+    Claim a Free Intro
+  </button>
+</div>
+
+    </div>
+  </header>
+
+  <!-- NAV placeholder -->
+  <div id="nav-placeholder"></div>
+<!-- Lead Magnet Modal -->
+<div class="lead-modal" id="leadModal" aria-hidden="true">
+  <div class="lead-card" data-aos="zoom-in">
+    <button class="lead-close" id="leadClose" aria-label="Close">&times;</button>
+    
+    <!-- Butterfly SVG -->
+    <div class="modal-butterfly">
+      <div class="modal-butterfly">
+  <svg width="100" height="100" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+    <!-- Left wing -->
+    <path d="M32 32 C12 12, 8 52, 32 32" fill="#FF940E"/>
+    <!-- Right wing -->
+    <path d="M32 32 C52 12, 56 52, 32 32" fill="#FF940E"/>
+    <!-- Body -->
+    <rect x="30" y="24" width="4" height="16" fill="#b50202" rx="2"/>
+  </svg>
+</div>
+
+    </div>
+
+    <h4>✨ Claim Your Free Intro Session </h4>
+    <p>Enter your email and we'll send a free 20-minute intro session and our welcome guide.</p>
+
+    <form id="leadForm" class="lead-form" action="https://formspree.io/f/mkgzebjn" method="POST">
+      <input type="text" id="name" name="name" placeholder="Full Name" required>
+      <input type="email" name="email" placeholder="your@email.com" required>
+      <input type="hidden" name="_redirect" value="thankyou.html">
+      <button class="btn btn-primary lead-submit-btn" type="submit">Claim Your Free Intro</button>
+    </form>
+  </div>
+</div>
+
+  <!-- ABOUT -->
+  <section class="about" aria-labelledby="about-heading">
+    <div class="story" data-aos="fade-right">
+      <h2 id="about-heading">Meet Rebecca</h2>
+      <p>
+        Hi — I’m Rebecca Bean. I combine coaching, movement, and creative practices to help people heal from emotional harm 
+        and reclaim their sense of self. My work is trauma-informed, compassionate, and practical. Together we create a plan you can actually use.
+      </p>
+
+      <h3>How a session works</h3>
+      <ol>
+        <li>We begin with a quick check-in and intention-setting.</li>
+        <li>I guide you through somatic or reflective practices tailored to your needs.</li>
+        <li>We co-create a short, actionable plan to practice between sessions.</li>
+      </ol>
+
+  <!-- Add to Cart Button -->
+  <div class="cta-group">
+  <button class="btn add-cart-btn"
+    data-id="coach_single"
+    data-name="Single Coaching Session"
+    data-price="120"
+    data-type="coaching"
+    data-credits="1">
+    Book A 50-Minute Session
+  </button>
+</div>
+
+       
+    </div>
+
+    <aside class="photo" data-aos="fade-left">
+      <img src="images/Rebecca-port" alt="Rebecca Bean portrait">
+    </aside>
+  </section>
+
+<!-- COACHING PACKAGES SECTION -->
+<section class="packages" aria-labelledby="packages-heading" data-aos="fade-up">
+  <h2 id="packages-heading">Coaching Packages</h2>
+  <p>Choose a pathway that fits your needs. Purchase first, then schedule — clients pay before booking.</p>
+
+  <div class="product-grid"> 
+    <!-- Single Session -->
+    <div class="class-card bundle-card"
+     data-aos="zoom-in"
+     data-id="coach_single"
+     data-price="120"
+     data-credits="1"
+     data-type="coaching">
+
+  <!-- Icon -->
+  <div class="class-icon">🌿💫</div>
+
+  <!-- Title -->
+  <h3>Single Coaching Session</h3>
+
+  <!-- Description -->
+  <p>One 50-minute session designed to help you reset, reflect, and take practical next steps toward emotional clarity and healing.</p>
+
+  <!-- Price -->
+  <p class="price">$120 –📦 1 session</p>
+
+  <!-- PayPal Container (keep for PayPal SDK) -->
+  <div id="paypal-coach-single"></div>
+
+  <!-- Add to Cart Button -->
+  <button class="add-cart-btn"
+          data-name="Single Coaching Session"
+          data-price="120"
+          data-credits="1"
+          data-type="coaching"
+          data-id="coach_single">
+    Add to Cart
+  </button>
+
+</div>
+
+    <!-- 4-Session Coaching Package -->
+  <div class="class-card bundle-card"
+     data-aos="zoom-in"
+     data-aos-delay="100"
+     data-id="coach_4session"
+     data-price="420"
+     data-credits="4"
+     data-type="coaching">
+
+  <!-- Icon -->
+  <div class="class-icon">❤️📘</div>
+
+  <!-- Title -->
+  <h3>4-Session Package</h3>
+
+  <!-- Description -->
+  <p>Four 50-minute sessions for deeper recovery work and ongoing support. Includes email check-ins and a personalized progress roadmap.</p>
+
+  <!-- Price -->
+  <p class="price">$420 –📦 4 sessions</p>
+
+  <!-- PayPal Container -->
+  <div id="paypal-coach-4session"></div>
+
+  <!-- Add to Cart Button -->
+  <button class="add-cart-btn"
+          data-name="4-Session Coaching Package"
+          data-price="420"
+          data-credits="4"
+          data-type="coaching"
+          data-id="coach_4session">
+    Add to Cart
+  </button>
+
+</div>
+
+    <!-- Monthly Coaching -->
+   <div class="class-card bundle-card"
+     data-aos="zoom-in"
+     data-aos-delay="200"
+     data-id="coach_monthly"
+     data-price="750"
+     data-credits="8"
+     data-type="coaching">
+
+  <!-- Icon -->
+  <div class="class-icon">🕊️🌸</div>
+
+  <!-- Title -->
+  <h3>Monthly Coaching</h3>
+
+  <!-- Description -->
+  <p>Ongoing support with one 50-minute session per week for 2 months. Priority messaging, short practices, and progress check-ins included.</p>
+
+  <!-- Price -->
+  <p class="price">$750 –📦 8 sessions</p>
+
+  <!-- PayPal Container -->
+  <div id="paypal-coach-monthly"></div>
+
+  <!-- Add to Cart Button -->
+  <button class="add-cart-btn"
+          data-name="Monthly Coaching"
+          data-price="750"
+          data-credits="8"
+          data-type="coaching"
+          data-id="coach_monthly">
+    Add to Cart
+  </button>
+
+</div>
+    <!-- Deep Healing Intensive -->
+   <div class="class-card bundle-card"
+     data-aos="zoom-in"
+     data-aos-delay="300"
+     data-id="coach_deep"
+     data-price="950"
+     data-credits="10"
+     data-type="coaching">
+
+  <!-- Icon -->
+  <div class="class-icon">🌙✨</div>
+
+  <!-- Title -->
+  <h3>Deep Healing Intensive</h3>
+
+  <!-- Description -->
+  <p>A transformative 6-week coaching journey for those seeking lasting recovery and inner peace. Includes reflection work and bonus resources.</p>
+
+  <!-- Price -->
+  <p class="price">$950 –📦 10 sessions</p>
+
+  <!-- PayPal Container -->
+  <div id="paypal-coach-deep"></div>
+
+  <!-- Add to Cart Button -->
+  <button class="add-cart-btn"
+          data-name="Deep Healing Intensive"
+          data-price="950"
+          data-credits="10"
+          data-type="coaching"
+          data-id="coach_deep">
+    Add to Cart
+  </button>
+
+</div>
+ <!-- Dream Series Bundle Card -->
+ <div class="class-card bundle-card"
+     data-aos="zoom-in"
+     data-aos-delay="400"
+     data-id="coach_dreamseries"
+     data-price="650"
+     data-credits="6"
+     data-type="group">
+
+  <!-- Icon -->
+  <div class="class-icon">🌟🌠</div>
+
+  <!-- Title -->
+  <h3>Dream Series</h3>
+
+  <!-- Description -->
+  <p>Step into your vision with the Dream Series — a coaching experience focused on creative goals, personal expansion, and emotional alignment. Perfect for dreamers ready to bring ideas to life with confidence and clarity.</p>
+
+  <!-- Price -->
+  <p class="price">$650 –📦 6-week customized program</p>
+
+  <!-- PayPal Container -->
+  <div id="paypal-coach-dreamseries"></div>
+
+  <!-- Add to Cart Button -->
+  <button class="add-cart-btn"
+          data-name="Dream Series Coaching"
+          data-price="650"
+          data-credits="6"
+          data-type="coaching"
+          data-id="coach_dreamseries">
+    Add to Cart
+  </button>
+
+</div>
+    <!-- Mindful Momentum Coaching -->
+<div class="class-card bundle-card"
+     data-aos="zoom-in"
+     data-aos-delay="500"
+     data-id="coach_mindful_momentum"
+     data-price="520"
+     data-credits="5"
+     data-type="coaching">
+
+  <!-- Icon -->
+  <div class="class-icon">🧘‍♂️💡</div>
+
+  <!-- Title -->
+  <h3>Mindful Momentum Coaching</h3>
+
+  <!-- Description -->
+  <p>Build steady progress and clarity with five focused 50-minute coaching sessions. Includes practical exercises, reflection prompts, and personalized strategies to keep you moving forward with confidence.</p>
+
+  <!-- Price -->
+  <p class="price">$520 –📦 5 sessions</p>
+
+  <!-- PayPal Container -->
+  <div id="paypal-coach-mindful-momentum"></div>
+
+  <!-- Add to Cart Button -->
+  <button class="add-cart-btn"
+          data-name="Mindful Momentum Coaching"
+          data-price="520"
+          data-credits="5"
+          data-type="coaching"
+          data-id="coach_mindful_momentum">
+    Add to Cart
+  </button>
+
+</div>
+
+  </div>
+</section>
+
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials" data-aos="fade-up">
+    <h2>What Clients Say</h2>
+    <blockquote>“Rebecca helped me feel safe in my body again. Her sessions are gentle, practical, and deeply healing.” — A.L.</blockquote>
+    <blockquote>“I reconnected with myself. I left each session with real steps I could use.” — N.S.</blockquote>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section" data-aos="fade-up">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq">
+      <button class="faq-question">What happens in a coaching session?</button>
+      <div class="faq-answer"><p>Each session is tailored to your needs with a safe, supportive, and healing space.</p></div>
+    </div>
+    <div class="faq">
+      <button class="faq-question">How do I book a session?</button>
+      <div class="faq-answer"><p>Click The Book a Session button. After payment, you will be redirected to Calendly</p></div>
+    </div>
+    <div class="faq">
+      <button class="faq-question">Is my information confidential?</button>
+      <div class="faq-answer"><p>Yes, all sessions are confidential and protected.</p></div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section" data-aos="fade-up">
+    <h3>Questions?</h3>
+    <p>Have a question or need a custom package? <a href="contact.html" class="btn-email">Contact Me</a> — we’ll respond within 48 hours.</p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; <span id="year"></span> Bean’s Dreams • Coaching & Creative Healing</p>
+  </footer>
+
+  <!-- Lead Magnet Modal -->
+  <div class="lead-modal" id="leadModal" aria-hidden="true">
+    <div class="lead-card" data-aos="zoom-in">
+      <button class="lead-close" id="leadClose" aria-label="Close">&times;</button>
+      <h4>Claim Your Free Intro Session</h4>
+      <p>Enter your email and we'll send a free 20-minute intro session and our welcome guide.</p>
+
+      <form id="leadForm" class="lead-form" action="https://formspree.io/f/mkgzebjn" method="POST">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" required>
+        <input type="email" name="email" placeholder="your@email.com" required>
+        <input type="hidden" name="_redirect" value="thankyou.html">
+        <button class="btn btn-primary" type="submit">Claim your Free Intro</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration:700, easing:'ease-out-quart', once:true });
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // FAQ toggle
+    document.querySelectorAll('.faq-question').forEach(btn=>{
+      btn.addEventListener('click',()=>{
+        btn.classList.toggle('active');
+        const answer = btn.nextElementSibling;
+        answer.style.display = answer.style.display === 'block' ? 'none':'block';
+      });
+    });
+
+    // Lead modal
+    const leadOpenBtn=document.getElementById('leadOpenBtn');
+    const leadModal=document.getElementById('leadModal');
+    const leadClose=document.getElementById('leadClose');
+    const leadForm=document.getElementById('leadForm');
+
+    leadOpenBtn.addEventListener('click',()=>{ leadModal.classList.add('show'); });
+    leadClose.addEventListener('click',()=>{ leadModal.classList.remove('show'); });
+    leadModal.addEventListener('click',e=>{ if(e.target===leadModal) leadModal.classList.remove('show'); });
+    leadForm.addEventListener('submit',()=>{ leadModal.classList.remove('show'); });
+  </script>
+</body>
+</html>
+
+ <!-- CART SIDEBAR (fixed, slides from right) -->
+  <div id="cart" class="cart-sidebar" aria-label="Shopping cart" aria-hidden="true">
+    <h3>Your Cart</h3>
+    <ul id="cart-items"></ul>
+    <div class="cart-total">Total: $<span id="cart-total">0.00</span></div>
+    <button id="checkout-btn" class="btn checkout-btn">Checkout</button>
+    <button id="close-cart" class="btn close-cart-btn">Close</button>
+  </div>
+
+  <!-- Floating Cart Button -->
+  <button id="cart-toggle" class="btn cart-toggle-btn">
+    🛒 Cart (<span id="cart-count">0</span>)
+  </button>
+
+   <!-- PayPal Buttons -->
+  <div id="paypal-button-container"></div>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="js/nav.js" defer></script>
+  <script src="js/cart.js" defer></script>
+  <script src="js/coaching.js" defer></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      AOS.init({ duration: 700, easing: 'ease-out-quart', once: true });
+      document.getElementById('year').textContent = new Date().getFullYear();
+        // Load navigation (if you use an HTML partial)
+      fetch("navigation.html")
+        .then(r => r.text())
+        .then(html => {
+          const el = document.getElementById("nav-placeholder");
+          if (el) el.innerHTML = html;
+        })
+        .catch(() => { /* silently fail if not present */ });
+
+      // Lead magnet modal logic
+      const leadOpenBtn = document.getElementById('leadOpenBtn');
+      const leadModal = document.getElementById('leadModal');
+      const leadClose = document.getElementById('leadClose');
+      if (leadOpenBtn && leadModal && leadClose) {
+        leadOpenBtn.addEventListener('click', () => {
+          leadModal.classList.add('show');
+          leadModal.setAttribute('aria-hidden', 'false');
+        });
+        leadClose.addEventListener('click', () => {
+          leadModal.classList.remove('show');
+          leadModal.setAttribute('aria-hidden', 'true');
+        });
+        leadModal.addEventListener('click', e => {
+          if (e.target === leadModal) {
+            leadModal.classList.remove('show');
+            leadModal.setAttribute('aria-hidden', 'true');
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>

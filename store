@@ -1,0 +1,1108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bean's Dreams | Store</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <!-- Page Styles -->
+  <link rel="stylesheet" href="css/store.css"><link rel="stylesheet" href="css/nav.css">
+  <link rel="stylesheet" href="css/index.css"> <!-- optional if you want shared styles -->
+  <link rel="stylesheet" href="store.css">     <!-- your store-specific styles -->
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="store-header">
+    <div class="logo-container">
+      <img src="images/Bean's Butterfly" alt="Bean's Butterfly" class="logo-bounce-in">
+    </div>
+    <h1 data-aos="fade-down">Welcome to the Bean's Dreams Store</h1>
+    <p data-aos="fade-up">Your one-stop shop for creativity, inspiration, and joy.</p>
+    <p class="about-subtitle" data-aos="fade-right" data-aos-delay="300" style="color:#FEB803;">
+      <strong>Dance • Heal • Rise</strong>
+    </p>
+  </header>
+
+  <!-- NAV placeholder -->
+  <div id="nav-placeholder"></div>
+  
+   <!-- Main Tabs -->
+  <div class="store-tabs" data-aos="fade-up">
+    
+    <button class="tab-btn active" data-target="digital">💻 Digital Products</button>
+    <button class="tab-btn" data-target="merch">🛍 Merchandise</button>
+    <button class="tab-btn" data-target="courses">🎓 Courses</button>
+  </div>
+  <div class="store-tabs">
+
+</div>
+
+<!-- Subcategory Dropdowns -->
+<div class="subcategories" id="digital-sub">
+  <select class="subcategory-select" data-section="digital">
+    <option value="all">All Digital</option>
+    <option value="healing">Healing</option>
+    <option value="music">Music</option>
+    <option value="movement">Movement</option>
+  </select>
+</div>
+
+<div class="subcategories hidden" id="merch-sub">
+  <select class="subcategory-select" data-section="merch">
+    <option value="all">All Merchandise</option>
+    <option value="apparel">Apparel</option>
+    <option value="drinkware">Drinkware</option>
+    <option value="accessories">Accessories</option>
+  </select>
+</div>
+
+<div class="subcategories hidden" id="courses-sub">
+  <select class="subcategory-select" data-section="courses">
+    <option value="all">All Courses</option>
+    <option value="healing">Healing</option>
+    <option value="music">Music</option>
+    <option value="movement">Movement</option>
+  </select>
+</div>
+
+  
+  <!-- Tab Content -->
+  
+<section id="digital" class="store-section active">
+  <div class="product-grid">
+
+   <!-- 30-Day Guided Healing Journal -->
+<div class="product-card" data-category="healing" data-aos="fade-up" data-aos-delay="100">
+  <img src="images/logo30-Day Guided Healing Journal cover.png" alt="30-Day Guided Healing Journal cover" class="center-logo">
+
+  <h3>30-Day Guided Healing Journal</h3>
+
+  <ul>
+    <li>📝 30 days of guided prompts & affirmations</li>
+    <li>🎯 Daily intention setting</li>
+    <li>💬 Space for personal reflections</li>
+    <li>🌙 Evening gratitude check-in</li>
+    <li>🖨️ Printable & fillable PDF format</li>
+  </ul>
+
+  <p class="price">💲 Price: $14.00</p>
+
+  <!-- Add to Cart Button -->
+  <button class="add-cart-btn"
+          data-name="30-Day Guided Healing Journal"
+          data-price="14.00"
+          data-type="digital"
+          data-download-url="/downloads/30-Day-Guided-Healing-Journal"
+          data-product-id="30-Day Guided Healing Journal">
+    Add to Cart
+  </button>
+</div>
+
+    <!-- Weekly Wellness Words MP3 -->
+<div class="product-card" data-category="healing" data-aos="fade-up" data-aos-delay="200">
+  <img src="images/logoWeekly Wellness Words cover.png" alt="Weekly Wellness Words cover" class="center-logo">
+
+  <h3>Weekly Wellness Words MP3</h3>
+
+  <ul>
+    <li>🗓️ 5 unique daily affirmations</li>
+    <li>🎵 Gentle, royalty-free background music</li>
+    <li>🕒 3–5 minutes per track</li>
+    <li>🖨️ Printable PDF to follow along</li>
+    <li>📲 MP3 format – listen anywhere</li>
+    <li>🎯 Encourages focus, self-love, and emotional balance</li>
+  </ul>
+
+  <p class="price">💲 Price: $9.00</p>
+
+  <!-- Add to Cart Button -->
+  <button class="add-cart-btn"
+          data-name="Weekly Wellness Words MP3"
+          data-price="9.00"
+          data-type="digital"
+          data-download-url="/downloads/Weekly-Wellness-Words.mp3"
+          data-product-id="Weekly Wellness Words MP3">
+    Add to Cart
+  </button>
+</div>
+
+   <!-- Daily Energy Reset Toolkit -->
+<div class="product-card" data-category="healing" data-aos="fade-up" data-aos-delay="300">
+  <img src="images/logoDaily Energy Reset Toolkit cover.png" alt="Daily Energy Reset Toolkit cover" class="center-logo">
+
+  <h3>Daily Energy Reset Toolkit</h3>
+
+  <ul>
+    <li>🧘‍♀️ 5-minute breathing and grounding exercises</li>
+    <li>📝 Fillable daily reset prompts</li>
+    <li>🎯 Quick focus & motivation boosters</li>
+    <li>🌙 Morning, mid-day, and evening versions</li>
+    <li>🖨️ Printable & fillable PDF format</li>
+  </ul>
+
+  <p class="price">💲 Price: $12.00</p>
+
+  <!-- Add to Cart Button -->
+  <button class="add-cart-btn"
+          data-name="Daily Energy Reset Toolkit"
+          data-price="12.00"
+          data-type="digital"
+          data-download-url="/downloads/Daily-Energy-Reset-Toolkit"
+          data-product-id="Daily Energy Reset Toolkit">
+    Add to Cart
+  </button>
+</div>
+
+    <!-- Healing Through Movement (eBook) -->
+<div class="product-card" data-category="healing" data-aos="fade-up" data-aos-delay="400">
+  <img src="images/logoHealing Through Movement cover.png" alt="Healing Through Movement cover" class="center-logo">
+
+  <h3>Healing Through Movement (eBook)</h3>
+
+  <ul>
+    <li>🕊️ Gentle movement sequences for stress relief</li>
+    <li>🧠 Mind-body connection techniques</li>
+    <li>🎯 Goal-setting for your movement journey</li>
+    <li>🌙 Morning & evening movement rituals</li>
+    <li>🖥️ PDF format — read on any device or print</li>
+  </ul>
+
+  <p class="price">💲 Price: $15.00</p>
+
+  <!-- Add to Cart Button -->
+  <button class="add-cart-btn"
+          data-name="Healing Through Movement"
+          data-price="15.00"
+          data-type="digital"
+          data-download-url="/downloads/Healing-Through-Movement"
+          data-product-id="Healing Through Movement">
+    Add to Cart
+  </button>
+</div>
+
+<!-- Blue Mood Guitar Kit -->
+<div class="product-card" data-category="music" data-aos="fade-up" data-aos-delay="100">
+  <img src="images/logoBlue Mood Guitar Kit cover.png" alt="Blue Mood Guitar Kit cover" class="center-logo">
+
+  <h3>Blue Mood Guitar Kit</h3>
+
+  <ul>
+    <li>🎼 Blues chord variations & progressions</li>
+    <li>🥁 Strumming & rhythm patterns for blues feel</li>
+    <li>🎯 Improvisation tips & licks</li>
+    <li>📄 Printable practice sheets</li>
+    <li>🖨️ Easy-to-read, musician-friendly design</li>
+  </ul>
+
+  <p class="price">💲 Price: $10.00</p>
+
+  <button class="add-cart-btn"
+          data-name="Blue Mood Guitar Kit"
+          data-price="10.00"
+          data-type="digital"
+          data-download-url="/downloads/Blue-Mood-Guitar-Kit.zip"
+          data-product-id="Blue Mood Guitar Kit">
+    Add to Cart
+  </button>
+</div>
+
+<!-- Healing Strings Pack -->
+<div class="product-card" data-category="music" data-aos="fade-up" data-aos-delay="200">
+  <img src="images/logoHealing strings pack cover.png" alt="Healing Strings Pack cover" class="center-logo">
+
+  <h3>Healing Strings Pack</h3>
+
+  <ul>
+    <li>🎼 Easy chord progressions for a peaceful mood</li>
+    <li>🧘 Gentle picking & strumming patterns</li>
+    <li>🎯 Mindful practice prompts</li>
+    <li>📄 Printable sheet music & chord charts</li>
+    <li>🖨️ Beautiful, calming design for home or studio use</li>
+  </ul>
+
+  <p class="price">💲 Price: $10.00</p>
+
+  <button class="add-cart-btn"
+          data-name="Healing Strings Pack"
+          data-price="10.00"
+          data-type="digital"
+          data-download-url="/downloads/Healing-strings-pack"
+          data-product-id="Healing Strings Pack">
+    Add to Cart
+  </button>
+</div>
+
+    <!-- Campfire Chords Pack -->
+<div class="product-card" data-category="music" data-aos="fade-up" data-aos-delay="300">
+  <img src="images/logoCampfire Chords.png" alt="Campfire Chords Pack cover" class="center-logo">
+
+  <h3>Campfire Chords Pack</h3>
+
+  <ul>
+    <li>🎼 Chord charts for popular campfire songs</li>
+    <li>🥁 Strumming guides for laid-back rhythm</li>
+    <li>🎯 Quick-reference song sheets</li>
+    <li>📄 Printable & easy-to-read format</li>
+    <li>🖨️ Lightweight design—perfect for outdoor use</li>
+  </ul>
+
+  <p class="price">💲 Price: $10.00</p>
+
+  <button class="add-cart-btn"
+          data-name="Campfire Chords Pack"
+          data-price="10.00"
+          data-type="digital"
+          data-download-url="/downloads/Campfire-chords-pack"
+          data-product-id="Campfire Chords Pack">
+    Add to Cart
+  </button>
+</div>
+
+  </div>
+</section>
+
+    
+  <section id="merch" class="store-section">
+    <div class="product-grid">
+     
+      <div class="product-card" data-category="drinkware" data-aos="fade-up">
+  <div class="product-carousel">
+    <div class="product-carousel-track">
+      <img src="images/Mug For Dreamers1.png" alt="Mug For Dreamers1" class="product-slide" />
+      <img src="images/Mug For Dreamers2.png" alt="Mug For Dreamers2" class="product-slide" />
+      <img src="images/Mug For Dreamers3.png" alt="Mug For Dreamers3" class="product-slide" />
+      <img src="images/Mug For Dreamers4.png" alt="Mug For Dreamers4" class="product-slide" />
+    </div>
+    <div class="product-carousel-dots"></div>
+  </div>
+
+  <h3>🧋 Insulated Travel Mug For Dreamers – 40oz</h3>
+
+  <p>✨ The perfect companion for your adventures: a spacious insulated travel mug designed with dreamers in mind. With a stunning hummingbird design, powder-coated finish, and ergonomic handle, this 40oz mug blends style with function. Keep your favorite beverages hot or cold for hours—perfect for road trips, outdoor activities, or a cozy day at home.</p>
+
+  <ul>
+    <li>🛡️ Durable stainless steel construction resists rust and corrosion</li>
+    <li>❄️ Double-wall insulation</li>
+    <li>🥤 Generous 40oz capacity</li>
+    <li>✋ Ergonomic handle for a comfortable grip</li>
+    <li>🚫 Leak-proof lid</li>
+    <li>🧽 Dishwasher safe (top rack) or hand wash with warm water and mild soap</li>
+  </ul>
+
+  <p class="price">💲 Price: $74.00</p>
+
+  <button class="add-cart-btn" 
+          data-name="Mug For Dreamers" 
+          data-price="74.00" 
+          data-type="physical" 
+          data-product-id="68b7936505b883ea280cb270" 
+          data-variant-id="107785">
+    Add to Cart
+  </button>
+</div>
+
+<!-- Music Lovers Gator Tumbler -->
+<div class="product-card" data-category="drinkware" data-aos="fade-up">
+  <div class="product-carousel">
+    <div class="product-carousel-track">
+      <img src="images/Gator Tumbler1.png" alt="Gator Tumbler1" class="product-slide" />
+      <img src="images/Gator Tumbler2.png" alt="Gator Tumbler2" class="product-slide" />
+      <img src="images/Gator Tumbler3.png" alt="Gator Tumbler3" class="product-slide" />
+      <img src="images/Gator Tumbler.png" alt="Gator Tumbler4" class="product-slide" />
+    </div>
+    <div class="product-carousel-dots"></div>
+  </div>
+
+  <h3>Music Lovers Gator Tumbler – 32oz</h3>
+
+  <p>🎶 Hydrate in harmony with the Music Lovers Gator Tumbler featuring a striking blue guitar design. Perfect for musicians, dreamers, and anyone who wants their daily sips to match their passion for music. With durable construction and vibrant artistry, this tumbler is ready to keep you refreshed wherever life takes you.</p>
+
+  <ul>
+    <li>🎨 Vibrant colors utilizing advanced printing techniques</li>
+    <li>🥤 Convenient flip-top spout with included straw for easy sipping</li>
+    <li>🛡️ Durable stainless steel construction resistant to rust and stains</li>
+    <li>🌡️ Double insulation keeps drinks at the right temperature</li>
+    <li>💧 32oz size perfect for hydration on-the-go</li>
+    <li>🧽 Hand wash only</li>
+  </ul>
+
+  <p class="price">💲 Price: $36.00</p>
+
+  <button class="add-cart-btn" 
+          data-name="Music Lovers Gator Tumbler" 
+          data-price="36.00" 
+          data-type="physical" 
+          data-product-id="68b7a3bbd7eba1338103d579" 
+          data-variant-id="93815">
+    Add to Cart
+  </button>
+</div>
+
+<!-- Butterfly Tee Shirt -->
+<div class="product-card" data-category="apparel" data-aos="fade-up">
+  <div class="product-carousel">
+    <div class="product-carousel-track">
+      <img src="images/Butterfly Tee Shirt1.png" alt="Butterfly Tee Shirt1" class="product-slide" />
+      <img src="images/Butterfly Tee Shirt2.png" alt="Butterfly Tee Shirt2" class="product-slide" />
+      <img src="images/Butterfly Tee Shirt3.png" alt="Butterfly Tee Shirt3" class="product-slide" />
+      <img src="images/Butterfly Tee Shirt4.png" alt="Butterfly Tee Shirt4" class="product-slide" />
+    </div>
+    <div class="product-carousel-dots"></div>
+  </div>
+
+  <h3>Butterfly Tee Shirt with Bean's Dreams Logo</h3>
+
+  <p>Stay stylish and comfortable with the Butterfly Tee—a slim-fit design that pairs perfectly with jeans, leggings, or your favorite hoodie. Lightweight, breathable, and built to last, this tee brings both durability and everyday elegance.</p>
+
+  <ul>
+    <li>🧵 Side seams for lasting shape & durability</li>
+    <li>👕 Ribbed knit collar with stretch</li>
+    <li>📏 Shoulder tape for stability</li>
+    <li>🌬️ Lightweight & breathable fabric</li>
+    <li>💃 Slim fit with longer body for a modern look</li>
+    <li>🌀 Machine wash warm</li>
+    <li>✨ Non-chlorine bleach as needed</li>
+    <li>🌬️ Tumble dry low</li>
+    <li>🔥 Iron/steam medium heat</li>
+  </ul>
+
+  <p class="price">💲 Price: $19.00</p>
+
+  <label for="size-butterfly">Choose Size:</label>
+  <select name="size" class="size-select">
+    <option value="S" data-variant-id="17731">Small</option>
+    <option value="M" data-variant-id="17732">Medium</option>
+    <option value="L" data-variant-id="17733">Large</option>
+    <option value="XL" data-variant-id="17734">XL</option>
+  </select>
+
+  <button class="add-cart-btn" 
+          data-name="Butterfly Tee Shirt" 
+          data-price="19.00" 
+          data-type="physical" 
+          data-product-id="68b9096991ccadd32e08c9f3">
+    Add to Cart
+  </button>
+</div>
+
+     <!-- Butterfly Dream Insulated Water Bottle -->
+<div class="product-card" data-category="drinkware" data-aos="fade-up">
+  <div class="product-carousel">
+    <div class="product-carousel-track">
+      <img src="images/Insulated Water Bottle1.png" alt="Insulated Water Bottle1" class="product-slide" />
+      <img src="images/Insulated Water Bottle2.png" alt="Insulated Water Bottle2" class="product-slide" />
+      <img src="images/Insulated Water Bottle3.png" alt="Insulated Water Bottle3" class="product-slide" />
+      <img src="images/Insulated Water Bottle4.png" alt="Insulated Water Bottle4" class="product-slide" />
+    </div>
+    <div class="product-carousel-dots"></div>
+  </div>
+
+  <h3>Butterfly Dream Insulated Water Bottle – 22oz | Reusable</h3>
+
+  <p>🦋💧 Stay hydrated in style with the blue Butterfly Dream insulated bottle. Featuring a graceful butterfly design, this bottle keeps drinks at the perfect temperature while adding a touch of beauty to your everyday adventures. Ideal for workouts, travel, or daily use, it’s both functional and inspiring.</p>
+
+  <ul>
+    <li>🛡️ Durable double-wall construction for hot & cold retention</li>
+    <li>💦 Condensation-free exterior for a dry, comfortable grip</li>
+    <li>🔒 Spill-resistant lid with sturdy hand loop</li>
+    <li>🧊 Wide opening for easy filling & adding ice</li>
+    <li>🎨 Scratch & fade-resistant powder-coat finish</li>
+    <li>🧽 Hand wash only</li>
+  </ul>
+
+  <p class="price">💲 Price: $42.50</p>
+
+  <button class="add-cart-btn" 
+          data-name="Butterfly Dream Insulated Water Bottle" 
+          data-price="42.50" 
+          data-type="physical" 
+          data-product-id="76266" 
+          data-variant-id="71790">
+    Add to Cart
+  </button>
+</div>
+
+<!-- Butterfly Dreams Women's Leggings -->
+<div class="product-card" data-category="apparel" data-aos="fade-up">
+  <div class="product-carousel">
+    <div class="product-carousel-track">
+      <img src="images/Butterfly Leggings1.png" alt="Butterfly Leggings1" class="product-slide" />
+      <img src="images/Butterfly Leggings2.png" alt="Butterfly Leggings2" class="product-slide" />
+      <img src="images/Butterfly Leggings3.png" alt="Butterfly Leggings3" class="product-slide" />
+      <img src="images/Butterfly Leggings4.png" alt="Butterfly Leggings4" class="product-slide" />
+    </div>
+    <div class="product-carousel-dots"></div>
+  </div>
+
+  <h3>Butterfly Dreams Women's Leggings</h3>
+
+  <p>🦋👖 Step into comfort and confidence with our Butterfly Dreams leggings. Featuring butterflies down the sides, these leggings bring vibrant energy to your outfit while offering a sleek, comfortable fit. Perfect for pairing with a t-shirt, hoodie, or hat, they’re versatile enough for workouts, lounging, or casual outings.</p>
+
+  <ul>
+    <li>🩳 Thin elastic waistband for all-day comfort</li>
+    <li>🎨 Vibrant colors with crisp precision</li>
+    <li>🧵 Durable blend of 83% polyester & 17% spandex</li>
+    <li>✨ Silky finish for a polished aesthetic</li>
+    <li>📏 Runs true to size with care info inside waistband</li>
+    <li>🚫 Do not dry clean or iron</li>
+    <li>♻️ Tumble dry low heat</li>
+    <li>🧺 Machine wash cold (max 30°C / 90°F)</li>
+  </ul>
+
+  <p class="price">💲 Price: $49.00</p>
+
+  <label for="size-butterfly-leggings">Choose Size:</label>
+  <select name="size" class="size-select">
+    <option value="S" data-variant-id="78567">Small</option>
+    <option value="M" data-variant-id="78568">Medium</option>
+    <option value="L" data-variant-id="78569">Large</option>
+    <option value="XL" data-variant-id="78570">XL</option>
+  </select>
+
+  <button class="add-cart-btn" 
+          data-name="Butterfly Dreams Women's Leggings" 
+          data-price="49.00" 
+          data-type="physical" 
+          data-product-id="68b7cdc5d7eba1338103dfd1">
+    Add to Cart
+  </button>
+</div>
+
+ <!-- Butterfly Mug 11oz -->
+<div class="product-card" data-category="drinkware" data-aos="fade-up">
+  <div class="product-carousel">
+    <div class="product-carousel-track">
+      <img src="images/Butterfly Mug1.png" alt="Butterfly Mug1" class="product-slide" />
+      <img src="images/Butterfly Mug2.png" alt="Butterfly Mug2" class="product-slide" />
+      <img src="images/Butterfly Mug3.png" alt="Butterfly Mug3" class="product-slide" />
+      <img src="images/Butterfly Mug4.png" alt="Butterfly Mug4" class="product-slide" />
+    </div>
+    <div class="product-carousel-dots"></div>
+  </div>
+
+  <h3>Butterfly Mug 11oz</h3>
+
+  <p>☕ Start your day with inspiration. This beautifully designed mug features a delicate butterfly motif, symbolizing transformation and joy. Perfect for coffee, tea, or any comforting beverage, it adds color and meaning to your daily routine. A thoughtful gift for birthdays, holidays, or simply to brighten someone’s day.</p>
+
+  <ul>
+    <li>🔥 Microwave-safe for easy heating</li>
+    <li>🧼 Dishwasher-safe for effortless cleaning</li>
+    <li>🎨 Vibrant colors to enhance your collection</li>
+    <li>✅ Lead & BPA-free for safe enjoyment</li>
+    <li>🧽 Clean in dishwasher or wash by hand with warm water and dish soap</li>
+  </ul>
+
+  <p class="price">💲 Price: $9.50</p>
+
+  <button class="add-cart-btn" 
+          data-name="Butterfly Mug" 
+          data-price="9.50" 
+          data-type="physical" 
+          data-product-id="68b62af09d2c100d860088e5" 
+          data-variant-id="72184">
+    Add to Cart
+  </button>
+</div>
+
+<!-- Distressed Butterfly Cap -->
+<div class="product-card" data-category="apparel" data-aos="fade-up">
+  <div class="product-carousel">
+    <div class="product-carousel-track">
+      <img src="images/Distressed Butterfly Cap1.png" alt="Distressed Butterfly Cap1" class="product-slide" />
+      <img src="images/Distressed Butterfly Cap2.png" alt="Distressed Butterfly Cap2" class="product-slide" />
+      <img src="images/Distressed Butterfly Cap3.png" alt="Distressed Butterfly Cap3" class="product-slide" />
+      <img src="images/Distressed Butterfly Cap4.png" alt="Distressed Butterfly Cap4" class="product-slide" />
+    </div>
+    <div class="product-carousel-dots"></div>
+  </div>
+
+  <h3>Distressed Butterfly Cap</h3>
+
+  <p>🧢 Top off your look with this stylish distressed cap, featuring the Bean’s Dreams logo and a treble clef with butterflies for a touch of music and inspiration. Perfect for casual wear, outdoor adventures, or showing off your love for dance, healing, and music.</p>
+
+  <ul>
+    <li>🌿 100% cotton twill for comfort & breathability</li>
+    <li>🏷️ Sewn-in label for authenticity</li>
+    <li>🔒 Self-fabric hideaway strap + metal D-ring closure</li>
+    <li>🎨 Printed with Direct to Film (DTF) technology</li>
+    <li>⚡ Unique distressed finish (color & texture may vary)</li>
+    <li>🧼 Spot clean with mild soap & water</li>
+    <li>🌬️ Air dry only</li>
+  </ul>
+
+  <p class="price">💲 Price: $26.00</p>
+
+  <button class="add-cart-btn" 
+          data-name="Distressed Butterfly Cap" 
+          data-price="26.00" 
+          data-type="physical" 
+          data-product-id="68b90a7df82667e241102af6" 
+          data-variant-id="103876">
+    Add to Cart
+  </button>
+</div>
+
+<!-- Empowerment Stuffie -->
+<div class="product-card" data-category="accessories" data-aos="fade-up">
+  <div class="product-carousel">
+    <div class="product-carousel-track">
+      <img src="images/stuffie1.png" alt="Stuffie 1" class="product-slide" />
+      <img src="images/stuffie2.png" alt="Stuffie 2" class="product-slide" />
+      <img src="images/stuffie3.png" alt="Stuffie 3" class="product-slide" />
+      <img src="images/stuffie4.png" alt="Stuffie 4" class="product-slide" />
+    </div>
+    <div class="product-carousel-dots"></div>
+  </div>
+
+  <h3>Empowerment Stuffie</h3>
+
+  <p>🐑 Meet the sweetest companion for comfort and courage—our Lamb Empowerment Stuffie. Dressed in a tee shirt that proudly declares “I Choose Joy”, this soft and huggable friend is a daily reminder to embrace happiness, even in life’s little moments. Perfect for kids, teens, or anyone who could use a gentle symbol of positivity.</p>
+
+  <ul>
+    <li>📏 8" tall, perfect for little hands</li>
+    <li>☁️ Soft cotton + polyester blend for extra comfort</li>
+    <li>🎁 Safe for ages 3+ — ideal for gifting</li>
+    <li>🌀 Machine wash cold (max 30°C / 90°F)</li>
+    <li>🚫 No bleach, tumble dry, ironing, or drycleaning</li>
+  </ul>
+
+  <p class="price">💲 Price: $29.50</p>
+
+  <button class="add-cart-btn" 
+          data-name="Empowerment Stuffie" 
+          data-price="29.50" 
+          data-type="physical" 
+          data-product-id="68bfa5ec23eea2da9608b1be" 
+          data-variant-id="81105">
+    Add to Cart
+  </button>
+</div>
+
+<!-- Musical Dreams Tote Bag -->
+<div class="product-card" data-category="accessories" data-aos="fade-up">
+  <div class="product-carousel">
+    <div class="product-carousel-track">
+      <img src="images/Musical Dreams Tote1.png" alt="Musical Dreams Tote1" class="product-slide" />
+      <img src="images/Musical Dreams Tote2.png" alt="Musical Dreams Tote2" class="product-slide" />
+      <img src="images/Musical Dreams Tote3.png" alt="Musical Dreams Tote3" class="product-slide" />
+      <img src="images/Musical Dreams Tote4.png" alt="Musical Dreams Tote4" class="product-slide" />
+    </div>
+    <div class="product-carousel-dots"></div>
+  </div>
+
+  <h3>Musical Dreams Tote Bag</h3>
+
+  <p>🎶 Carry your essentials with style and inspiration. Perfect for daily errands, dance rehearsals, or music lessons. Strong enough for everyday use, yet chic enough to show off your love of music and dreams.</p>
+
+  <ul>
+    <li>👜 100% polyester body for durability & quick drying</li>
+    <li>🧵 Seamless black inner stitching for a polished look</li>
+    <li>💪 Reinforced handle stitching for extra strength</li>
+    <li>📦 Boxed corners for added storage space</li>
+    <li>📏 Size: 16" x 16" (handle length: 28.74")</li>
+    <li>✨ Pretreat visible stains with remover</li>
+    <li>🌀 Hand clean with warm water + detergent</li>
+    <li>🌬️ Air dry only</li>
+  </ul>
+
+  <p class="price">💲 Price: $23.50</p>
+
+  <button class="add-cart-btn" 
+          data-name="Musical Dreams Tote" 
+          data-price="23.50" 
+          data-type="physical" 
+          data-product-id="68bfad2a7957025d230f61ba" 
+          data-variant-id="103606">
+    Add to Cart
+  </button>
+</div>
+
+<!-- Butterfly Dreams Women’s Cropped Hoodie – Peach -->
+<div class="product-card" data-category="apparel" data-aos="fade-up">
+  <div class="product-carousel">
+    <div class="product-carousel-track">
+      <img src="images/Butterfly Hoodie1.png" alt="Butterfly Hoodie1" class="product-slide" />
+      <img src="images/Butterfly Hoodie2.png" alt="Butterfly Hoodie2" class="product-slide" />
+      <img src="images/Butterfly Hoodie3.png" alt="Butterfly Hoodie3" class="product-slide" />
+      <img src="images/Butterfly Hoodie4.png" alt="Butterfly Hoodie4" class="product-slide" />
+    </div>
+    <div class="product-carousel-dots"></div>
+  </div>
+
+  <h3>Butterfly Dreams Women’s Cropped Hoodie – Peach</h3>
+
+  <p>🦋👚 Bring cozy charm and effortless style to your wardrobe with the Butterfly Dreams Cropped Hoodie. Featuring a soft peach tone and butterflies that inspire movement and grace, this hoodie is perfect for layering with leggings, jeans, or skirts for a chic and comfortable look.</p>
+
+  <ul>
+    <li>🎀 Dyed-to-match drawstrings for a cohesive finish</li>
+    <li>🛋️ Dropped shoulders for a relaxed fit</li>
+    <li>🌿 52% airlume combed & ring-spun cotton / 48% poly fleece for ultimate softness</li>
+    <li>☁️ Lightweight 6.5 oz/yd² fabric for year-round wear</li>
+    <li>✂️ Chic cropped body with a raw hem</li>
+    <li>🧺 Machine wash cold with like colors</li>
+    <li>🚫 Do not bleach or iron design</li>
+    <li>🌀 Tumble dry low heat</li>
+    <li>♻️ Wash inside out for best results</li>
+  </ul>
+
+  <p class="price">💲 Price: $55.25</p>
+
+  <label for="size-butterfly-hoodie">Choose Size:</label>
+  <select name="size" class="size-select" id="size-butterfly-hoodie">
+    <option value="S" data-variant-id="119355">Small</option>
+    <option value="M" data-variant-id="119359">Medium</option>
+    <option value="L" data-variant-id="119363">Large</option>
+    <option value="XL" data-variant-id="119367">XL</option>
+  </select>
+
+  <button class="btn add-cart-btn" 
+          data-name="Butterfly Hoodie" 
+          data-price="55.25" 
+          data-type="physical" 
+          data-product-id="68b772e76cddea56440037a9">
+    Add to Cart
+  </button>
+</div>
+
+<!-- Inspirational Desktop Calendar -->
+<div class="product-card" data-category="accessories" data-aos="fade-up">
+  <div class="product-carousel">
+    <div class="product-carousel-track">
+      <img src="images/Inspirational Desktop Calendar1.png" alt="Inspirational Desktop Calendar1" class="product-slide" />
+      <img src="images/Inspirational Desktop Calendar2.png" alt="Inspirational Desktop Calendar2" class="product-slide" />
+      <img src="images/Inspirational Desktop Calendar3.png" alt="Inspirational Desktop Calendar3" class="product-slide" />
+      <img src="images/Inspirational Desktop Calendar4.png" alt="Inspirational Desktop Calendar4" class="product-slide" />
+    </div>
+    <div class="product-carousel-dots"></div>
+  </div>
+
+  <h3>Inspirational Desktop Calendar</h3>
+
+  <p>📅🌿 Stay inspired all year long with this beautifully designed desktop calendar. Each month brings a fresh motivational quote paired with uplifting imagery to brighten your space and mindset. Perfect for your home office, workspace, or as a thoughtful gift.</p>
+
+  <ul>
+    <li>🌈 Vibrant colors with crisp printing techniques</li>
+    <li>📐 Size: 10" x 5" (25cm x 12.5cm)</li>
+    <li>📄 Paper thickness: 270 gsm for durability</li>
+    <li>🔗 Spiral bound at the top for easy flipping</li>
+    <li>📆 Includes 12 unique monthly quotes</li>
+    <li>🎁 Perfect for gifting to friends, family, or coworkers</li>
+    <li>🧹 Keep away from direct sunlight and moisture for long-lasting vibrance</li>
+  </ul>
+
+  <p class="price">💲 Price: $11.00</p>
+
+  <button class="btn add-cart-btn" 
+          data-name="Inspirational Desktop Calendar" 
+          data-price="11.00" 
+          data-type="physical" 
+          data-product-id="68b6423a9d2c100d86008e93" 
+          data-variant-id="91088">
+    Add to Cart
+  </button>
+</div>
+
+<!-- Butterfly Dance Yoga Mat -->
+<div class="product-card" data-category="accessories" data-aos="fade-up">
+  <div class="product-carousel">
+    <div class="product-carousel-track">
+      <img src="images/Butterfly Dance Yoga Mat1.png" alt="Butterfly Dance Yoga Mat1" class="product-slide" />
+      <img src="images/Butterfly Dance Yoga Mat2.png" alt="Butterfly Dance Yoga Mat2" class="product-slide" />
+      <img src="images/Butterfly Dance Yoga Mat3.png" alt="Butterfly Dance Yoga Mat3" class="product-slide" />
+      <img src="images/Butterfly Dance Yoga Mat4.png" alt="Butterfly Dance Yoga Mat4" class="product-slide" />
+    </div>
+    <div class="product-carousel-dots"></div>
+  </div>
+
+  <h3>Butterfly Dance Yoga Mat</h3>
+
+  <p class="card-description">🦋 A yoga mat featuring butterflies and dancers in motion, designed to bring peace and serenity to your practice. Perfect for yoga, meditation, or relaxation exercises. Ideal for dancers, fitness lovers, and artistic souls. A thoughtful gift for holidays, birthdays, and retreats.</p>
+
+  <ul>
+    <li>🛡️ Anti-slip backing for stability</li>
+    <li>🎒 Lightweight with carrying strap</li>
+    <li>📏 24″ x 70″ (61cm x 178cm)</li>
+    <li>🌿 Microfiber suede top + natural rubber base</li>
+    <li>🪷 0.12" (3mm) thick for comfort</li>
+  </ul>
+
+  <p class="card-care">🧼 <strong>Care:</strong> Spot clean with soap and water</p>
+
+  <p class="price">💲 Price: $71.00</p>
+
+  <button class="btn add-cart-btn" 
+          data-name="Butterfly Dance Yoga Mat" 
+          data-price="71.00" 
+          data-type="physical" 
+          data-product-id="68b789c06cddea5644003cf5" 
+          data-variant-id="74936">
+    Add to Cart
+  </button>
+</div>
+
+<!-- Hummingbird Cinnamon Scented Candle -->
+<div class="product-card" data-category="accessories" data-aos="fade-up">
+  <div class="product-carousel">
+    <div class="product-carousel-track">
+      <img src="images/Hummingbird Scented Candle1.png" alt="Hummingbird Scented Candle1" class="product-slide" />
+      <img src="images/Hummingbird Scented Candle2.png" alt="Hummingbird Scented Candle2" class="product-slide" />
+      <img src="images/Hummingbird Scented Candle3.png" alt="Hummingbird Scented Candle3" class="product-slide" />
+      <img src="images/Hummingbird Scented Candle4.png" alt="Hummingbird Scented Candle4" class="product-slide" />
+    </div>
+    <div class="product-carousel-dots"></div>
+  </div>
+
+  <h3>Hummingbird Cinnamon Scented Candle</h3>
+
+  <p class="card-description">🌸 Bring light, calm, and inspiration into your space. Symbolizing joy, healing, and resilience, the hummingbird reminds us to move gracefully through life while seeking sweetness in every moment.</p>
+
+  <ul>
+    <li>♻️ Eco-friendly and non-toxic Coconut Apricot Wax</li>
+    <li>⏳ Up to 20 hours of burn time (4 oz)</li>
+    <li>🪞 Reusable glass vessel for decor</li>
+    <li>🇺🇸 Made in the USA from globally sourced parts</li>
+    <li>🕯️ <strong>Care:</strong> Trim wick to ¼", burn in a safe holder for up to 3 hours, never leave unattended, and keep away from children, pets, and flammables.</li>
+  </ul>
+
+  <p class="price">💲 Price: $18.00</p>
+
+  <button class="btn add-cart-btn" 
+          data-name="Hummingbird Scented Candle" 
+          data-price="18.00" 
+          data-type="physical" 
+          data-product-id="68b78ca0b91640bbce01228f" 
+          data-variant-id="107589">
+    Add to Cart
+  </button>
+</div>
+
+<!-- Holographic Die-Cut Sticker -->
+<div class="product-card" data-category="accessories" data-aos="fade-up">
+  <div class="product-carousel">
+    <div class="product-carousel-track">
+      <img src="images/Holographic Sticker1.png" alt="Holographic Sticker1" class="product-slide" />
+      <img src="images/Holographic Sticker2.png" alt="Holographic Sticker2" class="product-slide" />
+      <img src="images/Holographic Sticker.png" alt="Holographic Sticker3" class="product-slide" />
+      <img src="images/Holographic Sticker4.png" alt="Holographic Sticker4" class="product-slide" />
+    </div>
+    <div class="product-carousel-dots"></div>
+  </div>
+
+  <h3>Holographic Die-Cut Sticker</h3>
+
+  <p class="card-description">🌈 Add sparkle and personality to your world with these holographic die-cut stickers. Perfect for laptops, skateboards, planners, and more—each one shines with shifting colors and playful energy.</p>
+
+  <ul>
+    <li>🌟 Indoor & short-term outdoor use</li>
+    <li>🎨 99% opaque holographic finish</li>
+    <li>🛡️ Durable, weather-resistant vinyl (5+ years)</li>
+    <li>🧩 Easy peel backing for quick application</li>
+    <li>🌍 Printed with eco-friendly inks</li>
+    <li>🧼 Gently clean with a soft, dry cloth from center outward</li>
+  </ul>
+
+  <p class="price">💲 Price: $19.95</p>
+
+  <button class="btn add-cart-btn" 
+          data-name="Holographic Sticker" 
+          data-price="19.95" 
+          data-type="physical" 
+          data-product-id="68b9032491ccadd32e08c851" 
+          data-variant-id="76266">
+    Add to Cart
+  </button>
+</div>
+    </div>
+  </section>
+
+<section id="courses" class="store-section">
+  <h2 class="section-title" data-aos="fade-up">Courses</h2>
+  <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+    Learn with our structured programs — coming soon! 
+  </p>
+  
+  <div class="product-grid">
+
+    <!-- Example Course Card (replace with real data when ready) -->
+   <!-- Coming Soon: Mindful Music Course -->
+<div class="product-card" data-category="course" data-aos="fade-up" data-aos-delay="100">
+  <img src="images/course-placeholder.png" alt="Mindful Music Course" class="center-logo">
+  
+  <h3>Mindful Music Course (Coming Soon)</h3>
+  
+  <p class="card-description">🎶 Immerse yourself in the basics of mindful music practice. This course is designed to help beginners explore music theory, simple exercises, and meditative techniques that enhance focus, creativity, and emotional well-being. Perfect for music lovers of all ages who want to combine learning with mindfulness.</p>
+  
+  <ul>
+    <li>📚 Introduction to music fundamentals</li>
+    <li>🕒 Duration: X hours</li>
+    <li>🎯 Key learning outcomes for beginner musicians</li>
+    <li>💻 Online & accessible anytime</li>
+    <li>🛠️ Exercises and guided practices included</li>
+  </ul>
+  
+  <p class="price">💲 Price: $XX.00</p>
+  <p class="coming-soon-note">⏳ Coming Soon!</p>
+  <button class="btn add-cart-btn" 
+          data-name="Mindful Music Course" 
+          data-price="XX.00" 
+          data-type="digital"
+          data-download-url="" 
+          data-product-id="mindful-music-course">
+    Add to Cart
+  </button>
+</div>
+<!-- Soulful Guitar Foundations -->
+<div class="product-card" data-category="course" data-aos="fade-up" data-aos-delay="200">
+  <img src="images/course-guitar.png" alt="Soulful Guitar Foundations" class="center-logo">
+  
+  <h3>Soulful Guitar Foundations (Coming Soon)</h3>
+  
+  <p class="card-description">🎸 Start your journey with the guitar through gentle, beginner-friendly lessons. Learn chord progressions, strumming patterns, and mindful exercises designed to help you build confidence, creativity, and a love for music. Perfect for all ages and skill levels.</p>
+  
+  <ul>
+    <li>📚 Beginner-friendly chord and rhythm tutorials</li>
+    <li>🕒 Duration: 3 hours</li>
+    <li>🎯 Develop foundational guitar skills</li>
+    <li>💻 Online & accessible anytime</li>
+    <li>🛠️ Guided practice exercises included</li>
+  </ul>
+  
+  <p class="price">💲 Price: $XX.00</p>
+   <p class="coming-soon-note">⏳ Coming Soon!</p>
+  <button class="btn add-cart-btn" 
+          data-name="Soulful Guitar Foundations" 
+          data-price="29.00" 
+          data-type="digital"
+          data-download-url="/downloads/Soulful-Guitar-Foundations" 
+          data-product-id="soulful-guitar-001">
+    Add to Cart
+  </button>
+</div>
+<!-- Coming Soon: Expressive Dance Workshop -->
+<div class="product-card" data-category="course" data-aos="fade-up" data-aos-delay="300">
+  <img src="images/course-dance-placeholder.png" alt="Expressive Dance Workshop" class="center-logo">
+  
+  <h3>Coming Soon: Expressive Dance Workshop</h3>
+  
+  <p class="card-description">💃 Explore movement, rhythm, and self-expression in this upcoming dance course. Designed for beginners and seasoned dancers alike, this course will guide you through foundational techniques, creative exercises, and mindful dance practices—all from the comfort of your own home.</p>
+  
+  <ul>
+    <li>📚 Learn basic to intermediate dance techniques</li>
+    <li>🕒 Duration: XX hours</li>
+    <li>🎯 Build confidence, coordination, and expression</li>
+    <li>💻 Online & accessible anytime</li>
+    <li>🛠️ Creative movement exercises included</li>
+  </ul>
+  
+  <p class="price">💲 Price: XX.00</p>
+  
+  <button class="btn add-cart-btn" 
+          data-name="Expressive Dance Workshop" 
+          data-price="XX.00" 
+          data-type="digital"
+          data-download-url="" 
+          data-product-id="dance-course-coming-soon-001">
+    Add to Cart
+  </button>
+</div>
+<!-- Coming Soon: Healing Through Energy Course -->
+<div class="product-card" data-category="course" data-aos="fade-up" data-aos-delay="400">
+  <img src="images/course-healing-placeholder.png" alt="Healing Through Energy Course" class="center-logo">
+  
+  <h3>Coming Soon: Healing Through Energy</h3>
+  
+  <p class="card-description">🪷 Discover the power of energy healing in this upcoming course. Learn techniques for balancing your mind, body, and spirit, including guided meditations, energy exercises, and reflective practices designed to nurture wellbeing and inner harmony.</p>
+  
+  <ul>
+    <li>📚 Intro to energy healing and mindfulness practices</li>
+    <li>🕒 Duration: XX hours</li>
+    <li>🎯 Learn to reduce stress and cultivate emotional balance</li>
+    <li>💻 Online & accessible anytime</li>
+    <li>🛠️ Includes guided exercises & printable resources</li>
+  </ul>
+  
+  <p class="price">💲 Price: XX.00</p>
+  
+  <button class="btn add-cart-btn" 
+          data-name="Healing Through Energy" 
+          data-price="XX.00" 
+          data-type="digital"
+          data-download-url="" 
+          data-product-id="healing-course-coming-soon-001">
+    Add to Cart
+  </button>
+</div>
+
+
+    <!-- Duplicate the above card for additional courses -->
+
+  </div>
+</section>
+
+  <!-- QUOTES CAROUSEL -->
+  <section class="quotes-section" data-aos="fade-up">
+    <h2 class="section-title">Inspiration for Dance • Music • Healing</h2>
+    <div class="carousel" id="quote-carousel" aria-roledescription="carousel">
+      <div class="carousel-track">
+        <!-- 10 quotes (rotate through) -->
+        <div class="quote-slide active" data-index="0">
+          <p class="quote">"Dance is the hidden language of the soul." — Martha Graham</p>
+        </div>
+        <div class="quote-slide" data-index="1">
+          <p class="quote">"Where words fail, music speaks." — Hans Christian Andersen</p>
+        </div>
+        <div class="quote-slide" data-index="2">
+          <p class="quote">"Stillness is where healing begins."</p>
+        </div>
+        <div class="quote-slide" data-index="3">
+          <p class="quote">"Move your body, move your heart."</p>
+        </div>
+        <div class="quote-slide" data-index="4">
+          <p class="quote">"A single chord can change a mood."</p>
+        </div>
+        <div class="quote-slide" data-index="5">
+          <p class="quote">"Breath is the bridge between body and mind."</p>
+        </div>
+        <div class="quote-slide" data-index="6">
+          <p class="quote">"Practice quietly, perform boldly."</p>
+        </div>
+        <div class="quote-slide" data-index="7">
+          <p class="quote">"Healing happens in the small, steady moments."</p>
+        </div>
+        <div class="quote-slide" data-index="8">
+          <p class="quote">"Rhythm is the heart's native language."</p>
+        </div>
+        <div class="quote-slide" data-index="9">
+          <p class="quote">"Let sound carry you back to yourself."</p>
+        </div>
+      </div>
+
+      <!-- Controls -->
+      <button class="carousel-btn prev" aria-label="Previous quote">‹</button>
+      <button class="carousel-btn next" aria-label="Next quote">›</button>
+
+      <!-- Dots (10) -->
+      <div class="carousel-dots" role="tablist" aria-label="Quote dots">
+        <button class="dot active" data-index="0" aria-label="Quote 1"></button>
+        <button class="dot" data-index="1" aria-label="Quote 2"></button>
+        <button class="dot" data-index="2" aria-label="Quote 3"></button>
+        <button class="dot" data-index="3" aria-label="Quote 4"></button>
+        <button class="dot" data-index="4" aria-label="Quote 5"></button>
+        <button class="dot" data-index="5" aria-label="Quote 6"></button>
+        <button class="dot" data-index="6" aria-label="Quote 7"></button>
+        <button class="dot" data-index="7" aria-label="Quote 8"></button>
+        <button class="dot" data-index="8" aria-label="Quote 9"></button>
+        <button class="dot" data-index="9" aria-label="Quote 10"></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lead Generator -->
+  <section class="lead-banner" data-aos="fade-up">
+    <h2>✨ Join the Dream Circle ✨</h2>
+    <p>Get exclusive discounts, free resources, and early access to new products.</p>
+   <form action="https://formspree.io/f/mgvzboqw" method="POST" class="lead-form">
+  <input type="text" name="name" placeholder="Your Name" required>
+  <input type="email" name="email" placeholder="Your Email" required>
+  <button type="submit" class="join-btn">Join the Dream Circle</button>
+<input type="hidden" name="_redirect" value="https://yourwebsite.com/thankyou.html">
+</form>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer" data-aos="fade-up">
+    <p>© Bean's Dreams — Dance • Heal • Rise</p>
+    <p>&copy; <span id="year"></span></p>
+  </footer>
+
+  <!-- CART SIDEBAR -->
+  <div id="cart" class="cart-sidebar" aria-label="Shopping cart" aria-hidden="true" role="complementary">
+    <h3>Your Cart</h3>
+    <ul id="cart-items"></ul>
+    <div class="cart-total">Total: $<span id="cart-total">0.00</span></div>
+    <button id="checkout-btn" class="btn checkout-btn">Checkout</button>
+    <button id="close-cart" class="btn close-cart-btn" aria-label="Close cart">Close</button>
+  </div>
+
+  <!-- Cart Toggle Button -->
+  <button id="cart-toggle" class="btn cart-toggle-btn" aria-label="Toggle cart">
+    🛒 Cart (<span id="cart-count">0</span>)
+  </button>
+
+  <!-- PayPal Button Container -->
+  <div id="paypal-button-container"></div>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="js/nav.js" defer></script>
+  <!-- Cart logic -->
+<script src="js/cart.js" defer></script>
+
+<!-- Classes page logic -->
+<script src="js/classes.js" defer></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // AOS animations
+      AOS.init({ duration: 700, easing: 'ease-out-quart', once: true });
+
+      // Year in footer
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      // Load navigation from partial
+      fetch("navigation.html")
+        .then(r => r.text())
+        .then(html => {
+          const el = document.getElementById("nav-placeholder");
+          if (el) el.innerHTML = html;
+        })
+        .catch(() => { /* silently fail if not present */ });
+    });
+  </script>
+
+ <!-- PayPal SDK -->
+<script src="https://www.paypal.com/sdk/js?client-id=AVhdcxMFlhEnAaJN0_ju-Kjgxo5djvN3Q5VMCVtxrc2fZknJjXNTiLQzWmNel_qUZAjuSOhML2hiU9ct"></script>
+   <script>
+    // Example cart stored in localStorage
+    const cart = JSON.parse(localStorage.getItem("beansDreamsCart")) || [];
+
+    function calculateCartTotal() {
+      return cart.reduce((total, item) => total + item.price * item.quantity, 0).toFixed(2);
+    }
+
+    paypal.Buttons({
+      createOrder: (data, actions) => {
+        return actions.order.create({
+          purchase_units: [{
+            amount: {
+              value: calculateCartTotal()
+            }
+          }]
+        });
+      },
+
+      onApprove: async (data, actions) => {
+        const order = await actions.order.capture();
+
+        // Send cart + PayPal order to your backend
+        await fetch("/api/save-order", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ cart, paypalOrder: order })
+        });
+
+        alert("Thank you! Your order has been received.");
+        localStorage.removeItem("beansDreamsCart");
+        window.location.href = "/thank-you.html"; // Optional redirect
+      }
+    }).render("#paypal-button-container");
+  </script>
+</body>
+</html>

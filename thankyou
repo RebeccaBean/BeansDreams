@@ -1,0 +1,47 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thank You | Bean’s Dreams</title>
+  <link rel="stylesheet" href="thankyou.css" />
+</head>
+<body>
+  <canvas id="confettiCanvas"></canvas>
+  <div class="thankyou-container">
+    <h1>🌟 Thank You for Joining Bean’s Dreams! 🌟</h1>
+    <p>Your journey to dance, heal, and rise has just begun.</p>
+
+    <!-- PDF Download -->
+    <div class="thankyou-section">
+      <h2>✨ Daily Energy Reset PDF</h2>
+      <p>Click below to download your free PDF right away:</p>
+      <a href="files/DailyEnergyReset.pdf" class="btn" download>📥 Download Now</a>
+    </div>
+
+    <!-- Dream Circle -->
+    <div class="thankyou-section">
+      <h2>🌙 Join the Dream Circle</h2>
+      <p>You’re officially on the list! Look for a welcome email soon with details on how to connect with our community.</p>
+    </div>
+
+    <!-- Free Intro Session -->
+    <div class="thankyou-section">
+      <h2>🎶 Your Free Intro Session</h2>
+      <p>Ready to book your free class? Reserve your spot below:</p>
+      <a href="https://calendly.com/nickrebbean-epkm" target="_blank" class="btn">📅 Book Now</a>
+    </div>
+
+    <footer>
+      <p>💖 With gratitude, Nick & Rebecca | Bean’s Dreams</p>
+    </footer>
+  </div>
+</body>
+</html>
+ <div class="thankyou-buttons">
+      <a href="index.html" class="btn">🏠 Back to Home</a>
+      <a href="blog.html" class="btn">📖 Visit the Blog</a>
+      <a href="store.html" class="btn">🛒 Explore the Store</a>
+    </div>
+  </div>
+</body>
+</html>

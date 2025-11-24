@@ -1,0 +1,295 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  background-color: #FFEBD2;
+  color: #004AAA;
+}
+
+.store-header {
+  text-align: center;
+  padding: 3rem 1rem 2rem;
+  background: linear-gradient(to right, #B3C9F5, #030998);
+  color: white;
+}
+
+.logo-container {
+  text-align: left;
+  margin: 1rem 0 0 2rem; /* top/right/bottom/left spacing */
+}
+
+.logo-bounce-in {
+  width: 200px; /* Adjust as needed */
+  animation: slideDownBounce 1s ease-out forwards, bounce 2s ease-in-out infinite;
+  animation-delay: 0s, 1s; /* Bounce starts after slide finishes */
+  opacity: 0;
+}
+
+/* Slide from top */
+@keyframes slideDownBounce {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Gentle bounce loop */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+.store-header h1 {
+  font-family: 'Alex Brush', cursive;
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+.store-tabs {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.tab-btn {
+  background: #007BFF;
+  color: white;
+  padding: 10px 18px;
+  margin: 0 5px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 1rem;
+}
+
+.tab-btn:hover {
+  background: #FF3B3B;
+}
+
+.tab-btn.active {
+  background: #0056b3;
+}
+
+.subcategories {
+  text-align: center;
+  margin-bottom: 20px;
+  
+}
+.subcategory-select {
+  background-color: #FFF5EA; /* Light cream background */
+  color: #333; /* Dark text for contrast */
+  padding: 10px 18px;
+  border: none;
+  border-radius: 5px; /* Rounded edges */
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.subcategory-select:hover {
+  background-color: #B3C9F5; /* Light coral hover color */
+  color: #fff; /* White text on hover */
+}
+.subcategory-select {
+  padding: 8px 12px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+}
+
+
+.hidden {
+  display: none;
+}
+
+.product-section {
+  display: none;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
+}
+
+.product-section.active {
+  display: grid;
+}
+
+.product-card {
+  background: #f5f5f5;
+  padding: 20px;
+  text-align: center;
+  border-radius: 8px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+.store-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.tab-btn {
+  padding: 0.7rem 1.5rem;
+  border: none;
+  background-color: #030998;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.tab-btn.active,
+.tab-btn:hover {
+  background-color: #FEB803;
+  color: #004AAA;
+}
+
+.store-section {
+  display: none;
+  padding: 2rem;
+}
+
+.store-section.active {
+  display: block;
+}
+
+.product-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.product-card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 1.5rem;
+  width: 280px;
+  text-align: center;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.5rem 1.2rem;
+  margin-top: 0.5rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.add-cart-btn {
+  background-color: #030998; /* Deep blue */
+  color: white;
+  border: none;
+  padding: 0.6rem 1.4rem;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-cart-btn:hover {
+  background-color: #b50202; /* Rich red */
+}
+
+.price{ font-weight:800; color: #004AAD ; }
+
+.product-carousel {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+}
+
+.product-carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 400%; /* 4 slides */
+}
+
+.product-slide {
+  width: 100%;
+  flex: 0 0 100%;
+  object-fit: cover;
+}
+
+.product-carousel-dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+
+.product-carousel-dots span {
+  height: 10px;
+  width: 10px;
+  margin: 0 5px;
+  background-color: #ccc;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.product-carousel-dots span.active {
+  background-color: #FD8100;
+}
+
+.join-btn {
+  background-color: #FEB803;
+  color: #004AAA;
+  font-size: 1.1rem;
+}
+
+.join-btn:hover {
+  background-color: #FF940E;
+}
+/* Quotes carousel */
+.quotes-section{ max-width:900px; margin:2.5rem auto; padding:0 1rem; text-align:center; }
+.carousel{ position:relative; background: #fff; padding:1.4rem; border-radius:12px; box-shadow:0 8px 24px rgba(0,0,0,0.06); overflow:hidden; }
+.carousel-track{ min-height:90px; display:flex; align-items:center; justify-content:center; position:relative; }
+.quote-slide{ display:none; padding: .6rem 1rem; }
+.quote-slide.active{ display:block; }
+.quote{ font-size:1.02rem; font-style:italic; color:#222; margin:0; }
+
+/* carousel buttons */
+.carousel-btn{ position:absolute; top:50%; transform:translateY(-50%); background:transparent; border:none; font-size:1.8rem; color:var(--dark-blue); cursor:pointer; padding:.2rem .6rem; }
+.carousel-btn.prev{ left:8px; }
+.carousel-btn.next{ right:8px; }
+
+/* dots */
+.carousel-dots{ display:flex; gap:.4rem; justify-content:center; margin-top:1rem; flex-wrap:wrap; }
+.dot{ width:10px; height:10px; border-radius:50%; background:#ddd; border:none; cursor:pointer; }
+.dot.active{ background:var(--gold); box-shadow:0 0 0 3px rgba(254,184,3,0.12); }
+
+.lead-banner {
+  text-align: center;
+  background-color: #B3C9F5;
+  padding: 2rem;
+  margin-top: 3rem;
+  border-radius: 10px;
+}
+
+.lead-banner input {
+  padding: 0.5rem;
+  width: 250px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-right: 0.5rem;
+}

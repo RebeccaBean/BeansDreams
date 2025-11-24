@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bean’s Dreams | Home</title>
+
+  <!-- Page Styles -->
+  <link rel="stylesheet" href="index.css" />
+  <link rel="stylesheet" href="nav.css" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- AOS Library -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- Navigation -->
+  <div id="nav-placeholder"></div>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-content">
+      <div class="logo-container">
+        <img src="imagelogo/Beans Butterfly.png" alt="Bean's Butterfly" class="logo-bounce-in">
+      </div>
+      <h1 data-aos="fade-up">Welcome to Bean’s Dreams</h1>
+      <p data-aos="fade-up" data-aos-delay="200">Empowering you through movement, music, and healing</p>
+      <h3 class="slide-text" data-aos="fade-left" data-aos-delay="400">Dance • Heal • Rise</h3>
+
+      <!-- Lead Magnet Top -->
+      <section class="lead-buttons">
+        <button class="lead-toggle" data-target="pdfForm">🌞 Get Your Free Daily Energy Reset 🌞</button>
+        <button class="lead-toggle" data-target="introForm">🎁 Claim Your Free Intro Session</button>
+      </section>
+
+      <!-- PDF Form -->
+      <section id="pdfForm" class="lead-form-section hidden" data-aos="fade-up">
+        <h2 class="form-heading">🌞 Daily Energy Reset PDF</h2>
+        <button class="close-btn" aria-label="Close Form">✖</button>
+        <form action="https://formspree.io/f/xdkdvoal" method="POST" class="lead-form">
+          <label for="name-pdf">Full Name</label>
+          <input type="text" name="name" id="name-pdf" required placeholder="Your Name" />
+
+          <label for="email-pdf">Email Address</label>
+          <input type="email" name="email" id="email-pdf" required placeholder="you@example.com" />
+
+          <label for="interest-pdf">Area of Interest</label>
+          <select name="interest" id="interest-pdf" required>
+            <option value="">-- Select One --</option>
+            <option value="coaching">Coaching</option>
+            <option value="dance">Dance</option>
+            <option value="music">Music</option>
+          </select>
+
+          <label for="focus-pdf">What you'd like to work on</label>
+          <input type="text" name="focus" id="focus-pdf" placeholder="e.g. confidence, creativity, healing" />
+
+          <label for="message-pdf">Your goals or needs</label>
+          <textarea name="message" id="message-pdf" rows="4" placeholder="Tell us more about your journey..."></textarea>
+
+          <input type="hidden" name="_redirect" value="thankyou.html" />
+          <button type="submit" class="submit-btn">Send My Free PDF</button>
+        </form>
+      </section>
+
+      <!-- Intro Form -->
+      <section id="introForm" class="lead-form-section hidden" data-aos="fade-up">
+        <h2 class="form-heading">🎁 Free Intro Session</h2>
+        <button class="close-btn" aria-label="Close Form">✖</button>
+        <form action="https://formspree.io/f/mkgzebjn" method="POST" class="lead-form">
+          <label for="name-intro">Full Name</label>
+          <input type="text" name="name" id="name-intro" required placeholder="Your Name" />
+
+          <label for="email-intro">Email Address</label>
+          <input type="email" name="email" id="email-intro" required placeholder="you@example.com" />
+
+          <label for="interest-intro">Area of Interest</label>
+          <select name="interest" id="interest-intro" required>
+            <option value="">-- Select One --</option>
+            <option value="coaching">Coaching</option>
+            <option value="dance">Dance</option>
+            <option value="music">Music</option>
+          </select>
+
+          <label for="focus-intro">What you'd like to work on</label>
+          <input type="text" name="focus" id="focus-intro" placeholder="e.g. confidence, creativity, healing" />
+
+          <label for="message-intro">Your goals or needs</label>
+          <textarea name="message" id="message-intro" rows="4" placeholder="Tell us more about your journey..."></textarea>
+
+          <input type="hidden" name="_redirect" value="thankyou.html" />
+          <button type="submit" class="submit-btn">Book My Free Intro</button>
+        </form>
+      </section>
+    </div>
+  </header>
+
+  <!-- WHAT WE OFFER -->
+  <section class="services" data-aos="fade-up">
+    <h2>What We Offer</h2>
+    <div class="service-cards">
+      <div class="card" data-aos="zoom-in">
+        <img src="imageslogo/coaching.png" alt="Coaching">
+        <h3>Healing Coaching</h3>
+        <p>One-on-one support for recovery, emotional regulation, and personal growth.</p>
+      </div>
+      <div class="card" data-aos="zoom-in" data-aos-delay="150">
+        <img src="imageslogo/dance.png" alt="Dance">
+        <h3>Dance Classes</h3>
+        <p>Tap, ballet, and movement-based classes that bring joy, strength, and artistry.</p>
+      </div>
+      <div class="card" data-aos="zoom-in" data-aos-delay="300">
+        <img src="imageslogo/music.png" alt="Music">
+        <h3>Guitar & Singing</h3>
+        <p>Private lessons that build confidence, technique, and creativity in performance.</p>
+      </div>
+      <div class="card" data-aos="zoom-in" data-aos-delay="450">
+        <img src="imageslogo/courses.png" alt="Courses">
+        <h3>Online Courses</h3>
+        <p>Self-paced programs in movement, music, and mindfulness for transformation.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials" data-aos="fade-up">
+    <h2>What Our Students Say</h2>
+    <div class="carousel">
+      <div class="testimonial active">
+        <p>“I used to think dance was for younger people or professionals. But this program made me feel welcomed, strong, and expressive.”</p>
+        <h4>— Karen B., 47, Office Manager</h4>
+      </div>
+      <div class="testimonial">
+        <p>This program connected me to my body in a way nothing else has. The combination of coaching and movement helped me release years of pain.</p>
+        <h4>— Danielle M., 45, Entrepreneur</h4>
+      </div>
+      <div class="testimonial">
+        <p>“It’s incredible to see your child light up. Their online classes helped my daughter express herself in ways I never imagined.”</p>
+        <h4>— Janine H., Parent</h4>
+      </div>
+      <div class="testimonial">
+        <p>“The coaching was life-changing. I felt heard, supported, and more empowered than I’ve ever been.”</p>
+        <h4>— Dana R.</h4>
+      </div>
+      <div class="testimonial">
+        <p>“The Daily Energy Reset PDF keeps me grounded and motivated.”</p>
+        <h4>— Carlos T., 33</h4>
+      </div>
+      <div class="testimonial">
+        <p>“I started guitar with zero experience. Now I play confidently thanks to the Healing Strings Pack!”</p>
+        <h4>— James M., 21</h4>
+      </div>
+      <div class="testimonial">
+        <p>“Rebecca and Nick helped me rediscover my love for dance. Their warmth and guidance made all the difference.”</p>
+        <h4>— Sarah L.</h4>
+      </div>
+    </div>
+    <div class="carousel-dots">
+      <span class="dot active"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+  </section>
+
+  <!-- OUR MISSION -->
+  <section class="our-mission" data-aos="fade-up">
+    <h2>Our Mission</h2>
+    <div class="flourish"></div>
+    <div class="mission-content">
+      <img src="imageslogo/nick.jpg" alt="Nick" class="mission-photo" data-aos="fade-right">
+      <p data-aos="fade-up">At Bean’s Dreams, our mission is to inspire healing, confidence, and creativity through music, movement, and coaching. Together, Nick and Rebecca Bean bring decades of experience to help you shine in your full potential—body, mind, and soul.</p>
+      <img src="imageslogo/rebecca.jpg" alt="Rebecca" class="mission-photo" data-aos="fade-left">
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq" data-aos="fade-up">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <button class="faq-question slide-text" data-aos="fade-left" data-aos-delay="400">❓ What is Bean’s Dreams Coaching?</button>
+      <div class="faq-answer">It’s a supportive, personalized journey of healing and growth through coaching, music, and movement.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question slide-text" data-aos="fade-left" data-aos-delay="400">📅 How do I book a class?</button>
+      <div class="faq-answer">You can book via our Calendly link after payment.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question slide-text" data-aos="fade-left" data-aos-delay="400">⏱️ How long are the sessions?</button>
+      <div class="faq-answer">Dance & music lessons are 30 minutes. Healing sessions are 1 hour.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question slide-text" data-aos="fade-left" data-aos-delay="400">💳 How do payments work?</button>
+      <div class="faq-answer">Payments are handled securely online before booking.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question slide-text" data-aos="fade-left" data-aos-delay="400">🎁 Do you offer a free intro class?</button>
+      <div class="faq-answer">Yes! Claim your free intro session above.</div>
+    </div>
+  </section>
+
+  <!-- Lead Magnet Bottom -->
+  <section class="lead-buttons" data-aos="fade-up">
+    <button class="lead-toggle" data-target="pdfForm">🌞 Get Your Free Daily Energy Reset 🌞</button>
+    <button class="lead-toggle" data-target="introForm">🎁 Claim Your Free Intro Session</button>
+  </section>
+
+  
+  <!-- CART SIDEBAR -->
+  <div id="cart" class="cart-sidebar" aria-label="Shopping cart" aria-hidden="true">
+    <h3>Your Cart</h3>
+    <ul id="cart-items"></ul>
+    <div class="cart-total">Total: $<span id="cart-total">0.00</span></div>
+    <button id="checkout-btn" class="btn checkout-btn">Checkout</button>
+    <button id="close-cart" class="btn close-cart-btn">Close</button>
+  </div>
+
+  <!-- Floating Cart Button -->
+  <button id="cart-toggle" class="btn cart-toggle-btn">
+    🛒 Cart (<span id="cart-count">0</span>)
+  </button>
+
+  <!-- PayPal Buttons -->
+  <div id="paypal-button-container"></div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" data-aos="fade-up">
+    <p>© Bean's Dreams — Dance • Heal • Rise</p>
+    <p>&copy; <span id="year"></span></p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="js/nav.js" defer></script>
+  <script src="js/cart.js" defer></script>
+  <!-- PayPal SDK -->
+<script src="https://www.paypal.com/sdk/js?client-id=AVhdcxMFlhEnAaJN0_ju-Kjgxo5djvN3Q5VMCVtxrc2fZknJjXNTiLQzWmNel_qUZAjuSOhML2hiU9ct"></script>
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // AOS
+      AOS.init({ duration: 700, easing: 'ease-out-quart', once: true });
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      // Load navigation (if you use an HTML partial)
+      fetch("navigation.html")
+        .then(r => r.text())
+        .then(html => {
+          const el = document.getElementById("nav-placeholder");
+          if (el) el.innerHTML = html;
+        })
+        .catch(() => { /* silently fail if not present */ });
+
+      // Lead form toggles
+      const toggles = document.querySelectorAll(".lead-toggle");
+      const forms = document.querySelectorAll(".lead-form-section");
+      const closeBtns = document.querySelectorAll(".close-btn");
+
+      toggles.forEach(btn => {
+        btn.addEventListener("click", () => {
+          forms.forEach(f => f.classList.add("hidden"));
+          const target = document.getElementById(btn.dataset.target);
+          if (target) target.classList.remove("hidden");
+        });
+      });
+
+      closeBtns.forEach(btn => {
+        btn.addEventListener("click", () => {
+          btn.parentElement.classList.add("hidden");
+        });
+      });
+
+      // Testimonials carousel
+      const testimonials = document.querySelectorAll(".testimonial");
+      const dots = document.querySelectorAll(".dot");
+      let index = 0;
+
+      function showTestimonial(i) {
+        testimonials.forEach((t, j) => t.classList.toggle("active", j === i));
+        dots.forEach((d, j) => d.classList.toggle("active", j === i));
+      }
+      dots.forEach((dot, i) => {
+        dot.addEventListener("click", () => {
+          index = i;
+          showTestimonial(index);
+        });
+      });
+      setInterval(() => {
+        index = (index + 1) % testimonials.length;
+        showTestimonial(index);
+      }, 4000);
+      showTestimonial(index);
+
+      // FAQ accordion
+      const questions = document.querySelectorAll(".faq-question");
+      questions.forEach(q => {
+        q.addEventListener("click", () => {
+          questions.forEach(btn => {
+            if (btn !== q && btn.nextElementSibling) {
+              btn.nextElementSibling.style.display = "none";
+            }
+          });
+          const answer = q.nextElementSibling;
+          if (answer) {
+            const visible = answer.style.display === "block";
+            answer.style.display = visible ? "none" : "block";
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

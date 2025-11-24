@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bean's Dreams Blog</title>
+
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <!-- Font Awesome & Google Fonts -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Open+Sans&display=swap" rel="stylesheet">
+
+  <!-- Site CSS -->
+  <link rel="stylesheet" href="css/nav.css">
+  <link rel="stylesheet" href="css/cart.css">
+  <link rel="stylesheet" href="css/blog.css">
+</head>
+<body>
+
+  <!-- Logo -->
+  <div class="logo-container" data-aos="fade-down">
+    <img src="imageslogo/beansbutterfly.png" alt="Bean's Butterfly" class="logo-bounce-in">
+  </div>
+
+  <!-- Blog Header -->
+  <header class="blog-header" data-aos="fade-down">
+    <h1><i class="fa-solid fa-pen-nib"></i> Bean's Dreams Blog</h1>
+    <p class="subtitle">Stories of creativity, healing, and growth — from our hearts to yours.</p>
+    <p class="about-subtitle" data-aos="fade-right" data-aos-delay="300" style="color:#b50202;">
+      <strong>Dance • Heal • Rise</strong>
+    </p>
+    <a href="https://www.notion.so/Bean-s-Dreams-Blog-2307d89c078b80d997cff6bf6281591c?source=copy_link"
+       target="_blank" rel="noopener" class="blog-btn" data-aos="zoom-in">Explore Blog</a>
+  </header>
+
+  <!-- Navigation -->
+  <div id="nav-placeholder"></div>
+
+  <!-- Featured Post -->
+  <section class="featured-post" data-aos="fade-up">
+    <h2>🌟 Featured Post</h2>
+    <article class="blog-card">
+      <i class="fa-solid fa-star"></i>
+      <h3>The Moment You Realize It Was Abuse</h3>
+      <p>You’re not crazy. You’re waking up. This is the moment everything starts to change.</p>
+      <a href="https://www.notion.so/The-Moment-You-Realize-It-Was-Abuse-and-What-Comes-Next-23f7d89c078b80a584d2f0a47d96d841?source=copy_link" target="_blank" rel="noopener">Read More</a>
+    </article>
+  </section>
+
+  <!-- Coaching Section -->
+    <section id="coaching" data-aos="fade-up">
+    <h2>
+  <i class="fa-solid fa-music"></i> 
+  <a href="https://www.notion.so/2367d89c078b80a789a7d5ae770ce9e7?v=2367d89c078b80688cbc000ce8f9b85a&source=copy_link" target="_blank" class="music-link">
+    Rebecca's Coaching Thoughts
+  </a>
+</h2>
+    
+    <div class="blog-grid">
+      <article class="blog-card">
+        <i class="fa-solid fa-brain"></i>
+        <h3>Boundaries Are Not Mean</h3>
+        <p>Why setting limits is one of the kindest things you can do for yourself.</p>
+        <a href="https://www.notion.so/Boundaries-Are-Not-Mean-They-re-Medicine-2367d89c078b805db4cbd92c0810fbeb?source=copy_link" target="_blank" rel="noopener noreferrer">Read More</a>
+      </article>
+      <article class="blog-card">
+        <i class="fa-solid fa-fire"></i>
+        <h3>Healing From Narcissistic Abuse</h3>
+        <p>The silent scars you can’t see — and how we gently heal them.</p>
+        <a href="https://www.notion.so/Healing-From-Narcissistic-Abuse-2467d89c078b804a9e18cc432cb8af1b?source=copy_link" target="_blank" rel="noopener noreferrer">Read More</a>
+      </article>
+    </div>
+    <div class="blog-grid">
+      <article class="blog-card">
+     <i class="fa-solid fa-face-smile-beam"></i>
+        <h3>Rebuilding Self-Trust After Trauma</h3>
+        <p>Trusting yourself again takes time, and it starts with small, daily choices that honor your truth.</p>
+        <a href="https://www.notion.so/Rebuilding-Self-Trust-After-Trauma-2367d89c078b8007803dc90e21c8086e?source=copy_link" target="_blank" rel="noopener noreferrer">Read More</a>
+      </article>
+      <article class="blog-card">
+    <i class="fa-solid fa-dove"></i>
+        <h3>Creating a Safe Space for Emotional Expression in Online Classes</h3>
+        <p>Our mission is to nurture safety and expression — here’s how we build that virtually.</p>
+        <a href="https://www.notion.so/Creating-a-Safe-Space-for-Emotional-Expression-in-Online-Classes-2367d89c078b8064bdaac2c82136f208?source=copy_link" target="_blank" rel="noopener noreferrer">Read More</a>
+  </section>
+
+  <section id="music" data-aos="fade-up">
+    <h2>
+  <i class="fa-solid fa-music"></i> 
+  <a href="https://www.notion.so/2367d89c078b801495d2feed05c3c14b?v=2367d89c078b80f48eea000c02240a50&source=copy_link" target="_blank" class="music-link">
+    Nick's Music Corner
+  </a>
+</h2>
+</h2>
+    <div class="blog-grid">
+      <article class="blog-card">
+        <i class="fa-solid fa-drum"></i>
+        <h3>How Music Helped Me Heal</h3>
+        <p>When words fail, music speaks. Here’s how guitar and rhythm changed my life.</p>
+        <a href="https://www.notion.so/How-Music-Helped-Me-Heal-2467d89c078b8071962ff32fcdd342f7?source=copy_link" target="_blank" rel="noopener noreferrer">Read More</a>
+      </article>
+      <article class="blog-card">
+        <i class="fa-solid fa-headphones"></i>
+        <h3>Top 5 Blues Chord Progressions</h3>
+        <p>Start simple, feel deeply. These are the chord combos every beginner should learn.</p>
+        <a href="https://www.notion.so/Top-5-Blues-Chord-Progressions-2467d89c078b805eba0cfa840c77a554?source=copy_link" target="_blank" rel="noopener noreferrer">Read More</a>
+      </article>
+    </div>
+     <div class="blog-grid">
+      <article class="blog-card">
+        <i class="fa-solid fa-guitar"></i>
+        <h3>How Guitar Lessons Support Emotional Growth in Kids & Adults</h3>
+        <p>Music opens the heart and mind. Learn how guitar can build focus, confidence, and calm.</p>
+        <a href="https://www.notion.so/How-Guitar-Lessons-Support-Emotional-Growth-in-Kids-Adults-2367d89c078b8031848df8a538bd66d2?source=copy_link" target="_blank" rel="noopener noreferrer">Read More</a>
+      </article>
+      <article class="blog-card">
+        <i class="fa-solid fa-microphone"></i>
+        <h3>Singing as Self-Care: The Power of Voice and Vibration</h3>
+        <p>There’s power in your voice — literally. Here’s how singing can regulate emotions and restore joy.</p>
+        <a href="https://www.notion.so/Singing-as-Self-Care-The-Power-of-Voice-and-Vibration-2367d89c078b80208e4bc715bf6827fd?source=copy_link" target="_blank" rel="noopener noreferrer">Read More</a>
+  </section>
+
+  <section id="all-posts" data-aos="fade-up">
+    <h2><i class="fa-solid fa-book-open"></i> More From the Blog</h2>
+    <div class="blog-grid">
+      <article class="blog-card">
+     <i class="fa-solid fa-heart"></i>
+        <h3>Why Dance Is a Form of Healing</h3>
+        <p>Movement speaks the emotions we can’t say. Here’s how dance restores your nervous system.</p>
+        <a href="https://www.notion.so/Why-Dance-Is-a-Form-of-Healing-2467d89c078b80d39bdbd7c3645722b2?source=copy_link" target="_blank" rel="noopener noreferrer">Read More</a>
+      </article>
+      <article class="blog-card">
+        <i class="fa-solid fa-star"></i>
+        <h3>The Power of Creative Routine</h3>
+        <p>Daily rituals aren’t boring — they’re where your dreams come to life.</p>
+        <a href="https://www.notion.so/The-Power-of-Creative-Routine-2467d89c078b80f392a5e61fc8b51f5d?source=copy_link" target="_blank" rel="noopener noreferrer">Read More</a>
+      </article>
+    </div>
+  </section>
+
+
+  <!-- Lead Circle Popup -->
+  <div class="lead-modal" id="dreamCircleModal" role="dialog" aria-modal="true" aria-labelledby="dreamCircleTitle">
+    <div class="lead-card">
+      <button class="lead-close" id="dreamCircleClose" aria-label="Close popup">&times;</button>
+      <h3 id="dreamCircleTitle">🌙 Join the Dream Circle</h3>
+      <p>Be the first to get fresh coaching thoughts, Nick’s music updates, and special offers. 🌟</p>
+      <form action="https://formspree.io/f/mgvzboqw" method="POST" class="lead-form">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <button type="submit" class="join-btn">Join the Dream Circle</button>
+        <input type="hidden" name="_redirect" value="https://beansdreams.org/thankyou.html">
+      </form>
+    </div>
+  </div>
+
+  <!-- Lead Circle Banner -->
+  <section class="lead-banner" data-aos="fade-up">
+    <h2>✨ Join the Dream Circle ✨</h2>
+    <p>Get exclusive discounts, free resources, and early access to new products.</p>
+    <form action="https://formspree.io/f/mgvzboqw" method="POST" class="lead-form">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <button type="submit" class="join-btn">Join the Dream Circle</button>
+      <input type="hidden" name="_redirect" value="https://beansdreams.org/thankyou.html">
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer" data-aos="fade-up">
+    <p>© Bean's Dreams — Dance • Heal • Rise</p>
+    <p>&copy; <span id="year"></span></p>
+  </footer>
+
+  <!-- CART SIDEBAR -->
+  <div id="cart" class="cart-sidebar" aria-label="Shopping cart" aria-hidden="true" role="complementary">
+    <h3>Your Cart</h3>
+    <ul id="cart-items"></ul>
+    <div class="cart-total">Total: $<span id="cart-total">0.00</span></div>
+    <button id="checkout-btn" class="btn checkout-btn">Checkout</button>
+    <button id="close-cart" class="btn close-cart-btn" aria-label="Close cart">Close</button>
+  </div>
+
+  <!-- Cart Toggle Button -->
+  <button id="cart-toggle" class="btn cart-toggle-btn" aria-label="Toggle cart">
+    🛒 Cart (<span id="cart-count">0</span>)
+  </button>
+
+  <!-- PayPal Buttons -->
+  <div id="paypal-button-container"></div>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="js/nav.js" defer></script>
+  <script src="js/cart.js" defer></script>
+  <script src="js/blog.js" defer></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // AOS init
+      if (window.AOS) AOS.init({ duration: 700, easing: 'ease-out-quart', once: true });
+
+      // Footer year
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      // Load nav partial
+      const navEl = document.getElementById("nav-placeholder");
+      if (navEl) fetch("navigation.html").then(r=>r.text()).then(html=>navEl.innerHTML=html);
+
+      // Initialize cart from localStorage
+      if (window.initCart) window.initCart();
+
+      // Initialize Dream Circle popup
+      if (window.initDreamCircle) window.initDreamCircle();
+    });
+  </script>
+
+  <!-- PayPal SDK -->
+  <script src="https://www.paypal.com/sdk/js?client-id=AVhdcxMFlhEnAaJN0_ju-Kjgxo5djvN3Q5VMCVtxrc2fZknJjXNTiLQzWmNel_qUZAjuSOhML2hiU9ct" async></script>
+
+</body>
+</html>

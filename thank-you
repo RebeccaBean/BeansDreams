@@ -1,0 +1,22 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thank You | Bean's Dreams</title>
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="thank-you.css" />
+</head>
+<body>
+  <div class="thank-you-container">
+    <div class="logo-section" data-aos="fade-down">
+      <img src="imageslogo/beansbutterfly.png" alt="Bean's Butterfly" class="logo-bounce-in" />
+      <h1>Thank You!</h1>
+      <p class="message">Your message has been received. We’ll be in touch shortly!</p>
+      <p class="follow-up">
+        While you wait, feel free to explore our <a href="classes.html">classes</a> or <a href="store.html">store</a>.
+      </p>
+      <a href="index.html" class="btn-home">Return to Home</a>
+    </div>
+  </div>
+</body>
+</html>
