@@ -9,7 +9,7 @@
     :root{
       --orange:#FF940E;
       --peach:#FFEBD2;
-      --navy:#004AAP;
+      --navy:#004AAA;
       --gold:#FEB803;
     }
     body{font-family:Inter,system-ui,Arial,sans-serif;background:var(--peach);margin:0;display:flex;align-items:center;justify-content:center;height:100vh}
