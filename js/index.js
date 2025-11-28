@@ -19,16 +19,32 @@ setInterval(() => {
 }, 4000);
 
 // FAQ ACCORDION
-const questions = document.querySelectorAll('.faq-question');
-questions.forEach(q => {
-  q.addEventListener('click', () => {
-    questions.forEach(btn => {
-      if (btn !== q) btn.nextElementSibling.style.display = "none";
+document.addEventListener("DOMContentLoaded", () => {
+  const questions = document.querySelectorAll('.faq-question');
+
+  questions.forEach(q => {
+    q.addEventListener('click', () => {
+      // Close other answers (accordion behavior)
+      questions.forEach(btn => {
+        if (btn !== q) {
+          btn.classList.remove("active");
+          btn.nextElementSibling.style.display = "none";
+        }
+      });
+
+      // Toggle current answer
+      const answer = q.nextElementSibling;
+      if (answer.style.display === "block") {
+        answer.style.display = "none";
+        q.classList.remove("active");
+      } else {
+        answer.style.display = "block";
+        q.classList.add("active");
+      }
     });
-    const answer = q.nextElementSibling;
-    answer.style.display = (answer.style.display === "block") ? "none" : "block";
   });
 });
+
 
 // FORM REDIRECT
 document.addEventListener("DOMContentLoaded", () => {
