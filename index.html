@@ -231,7 +231,6 @@
 
   <!-- PayPal Buttons -->
   <div id="paypal-button-container"></div>
-
   <!-- FOOTER -->
   <footer class="site-footer" data-aos="fade-up">
     <p>© Bean's Dreams — Dance • Heal • Rise</p>
@@ -243,23 +242,41 @@
   <script src="js/nav.js" defer></script>
   <script src="js/cart.js" defer></script>
   <script src="js/index.js" defer></script>
+
   <!-- PayPal SDK -->
-<script src="https://www.paypal.com/sdk/js?client-id=AVhdcxMFlhEnAaJN0_ju-Kjgxo5djvN3Q5VMCVtxrc2fZknJjXNTiLQzWmNel_qUZAjuSOhML2hiU9ct"></script>
+  <script src="https://www.paypal.com/sdk/js?client-id=AVhdcxMFlhEnAaJN0_ju-Kjgxo5djvN3Q5VMCVtxrc2fZknJjXNTiLQzWmNel_qUZAjuSOhML2hiU9ct"></script>
   
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       // AOS
       AOS.init({ duration: 700, easing: 'ease-out-quart', once: true });
-      document.getElementById('year').textContent = new Date().getFullYear();
 
-      // Load navigation (if you use an HTML partial)
-      fetch("navigation.html")
-        .then(r => r.text())
+      // Footer year
+      const yearEl = document.getElementById('year');
+      if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+      // Load navigation with fallback
+      fetch("/navigation.html")
+        .then(r => {
+          if (!r.ok) throw new Error("Navigation file not found");
+          return r.text();
+        })
         .then(html => {
           const el = document.getElementById("nav-placeholder");
           if (el) el.innerHTML = html;
         })
-        .catch(() => { /* silently fail if not present */ });
+        .catch(() => {
+          const el = document.getElementById("nav-placeholder");
+          if (el) {
+            el.innerHTML = `
+              <nav class="fallback-nav">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+              </nav>
+            `;
+          }
+        });
 
       // Lead form toggles
       const toggles = document.querySelectorAll(".lead-toggle");
@@ -270,13 +287,18 @@
         btn.addEventListener("click", () => {
           forms.forEach(f => f.classList.add("hidden"));
           const target = document.getElementById(btn.dataset.target);
-          if (target) target.classList.remove("hidden");
+          if (target) {
+            target.classList.remove("hidden");
+            target.classList.add("visible");
+          }
         });
       });
 
       closeBtns.forEach(btn => {
         btn.addEventListener("click", () => {
-          btn.parentElement.classList.add("hidden");
+          const section = btn.parentElement;
+          section.classList.add("hidden");
+          section.classList.remove("visible");
         });
       });
 
@@ -289,31 +311,35 @@
         testimonials.forEach((t, j) => t.classList.toggle("active", j === i));
         dots.forEach((d, j) => d.classList.toggle("active", j === i));
       }
+
       dots.forEach((dot, i) => {
         dot.addEventListener("click", () => {
           index = i;
           showTestimonial(index);
         });
       });
+
       setInterval(() => {
         index = (index + 1) % testimonials.length;
         showTestimonial(index);
       }, 4000);
+
       showTestimonial(index);
 
-      // FAQ accordion
+      // FAQ accordion (using .open class)
       const questions = document.querySelectorAll(".faq-question");
       questions.forEach(q => {
         q.addEventListener("click", () => {
+          // Close other answers
           questions.forEach(btn => {
             if (btn !== q && btn.nextElementSibling) {
-              btn.nextElementSibling.style.display = "none";
+              btn.nextElementSibling.classList.remove("open");
             }
           });
+          // Toggle current answer
           const answer = q.nextElementSibling;
           if (answer) {
-            const visible = answer.style.display === "block";
-            answer.style.display = visible ? "none" : "block";
+            answer.classList.toggle("open");
           }
         });
       });

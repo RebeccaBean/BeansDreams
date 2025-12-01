@@ -139,3 +139,39 @@
 
 /* Utility */
 .hidden { display: none; }
+/* ===== Fallback Navigation ===== */
+.fallback-nav {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  background-color: #004AAD;   /* matches your brand blue */
+  padding: 1rem;
+  border-radius: 8px;
+  margin: 1rem 0;
+}
+
+.fallback-nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.fallback-nav a:hover {
+  color: #FEB803;              /* your accent gold */
+  transform: scale(1.05);
+}
+
+/* Responsive tweaks */
+@media (max-width: 480px) {
+  .fallback-nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  .fallback-nav a {
+    font-size: 0.9rem;
+  }
+}

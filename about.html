@@ -88,10 +88,15 @@
   <!-- PayPal Button Container -->
   <div id="paypal-button-container"></div>
 
-  <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+   <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script src="js/nav.js" defer></script>
   <script src="js/cart.js" defer></script>
+  <script src="js/index.js" defer></script>
+
+  <!-- PayPal SDK -->
+  <script src="https://www.paypal.com/sdk/js?client-id=AVhdcxMFlhEnAaJN0_ju-Kjgxo5djvN3Q5VMCVtxrc2fZknJjXNTiLQzWmNel_qUZAjuSOhML2hiU9ct"></script>
+  
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       // AOS animations
@@ -101,20 +106,31 @@
       const yearEl = document.getElementById('year');
       if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-      // Load navigation from partial
-      fetch("navigation.html")
-        .then(r => r.text())
+      // Load navigation with fallback
+      fetch("/navigation.html")
+        .then(r => {
+          if (!r.ok) throw new Error("Navigation file not found");
+          return r.text();
+        })
         .then(html => {
           const el = document.getElementById("nav-placeholder");
           if (el) el.innerHTML = html;
         })
-        .catch(() => {});
+        .catch(() => {
+          const el = document.getElementById("nav-placeholder");
+          if (el) {
+            el.innerHTML = `
+              <nav class="fallback-nav">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+              </nav>
+            `;
+          }
+        });
     });
-  </script>
 
-  <!-- PayPal SDK -->
-  <script src="https://www.paypal.com/sdk/js?client-id=AVhdcxMFlhEnAaJN0_ju-Kjgxo5djvN3Q5VMCVtxrc2fZknJjXNTiLQzWmNel_qUZAjuSOhML2hiU9ct"></script>
-  <script>
+    // PayPal integration
     const cart = JSON.parse(localStorage.getItem("beansDreamsCart")) || [];
 
     function calculateCartTotal() {
