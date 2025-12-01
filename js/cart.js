@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const removeBtn = document.createElement("button");
         removeBtn.textContent = "×";
-        removeBtn.classList.add("remove-item-btn"); // CSS styling
+        removeBtn.classList.add("remove-item-btn");
         removeBtn.addEventListener("click", () => {
           cart.splice(index, 1);
           saveCart();
@@ -137,10 +137,8 @@ document.addEventListener("DOMContentLoaded", () => {
           cart = [];
           saveCart();
           updateCartUI();
-          if (cartSidebar) {
-            cartSidebar.classList.remove("active");
-            cartSidebar.setAttribute("aria-hidden", "true");
-          }
+          cartSidebar.classList.remove("active");
+          cartSidebar.setAttribute("aria-hidden", "true");
         } else {
           alert("Error: " + (data.error || "Unknown error"));
         }
@@ -192,5 +190,3 @@ document.addEventListener("DOMContentLoaded", () => {
   // Initialize UI
   updateCartUI();
 });
-
-

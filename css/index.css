@@ -12,7 +12,7 @@ h1, h3 {
   text-align: center;
 }
 
-/* ===== Section Titles (Alex Brush, centered) ===== */
+/* ===== Section Titles ===== */
 .services h2,
 .testimonials h2,
 .our-mission h2,
@@ -41,22 +41,16 @@ h1, h3 {
 .hero {
   background: linear-gradient(135deg, #FF940E, #b50202, #FEB803, #004AAD);
   color: white;
-  padding: 5rem 2rem;       /* more breathing room */
+  padding: 5rem 2rem;
   text-align: center;
   font-family: 'Open Sans', sans-serif;
-  width: 100%;              /* full width */
+  width: 100%;
   max-width: 100%;
   box-sizing: border-box;
 }
 
-.hero h1 {
-  font-size: 2.5rem;
-}
-
-.hero p {
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
-}
+.hero h1 { font-size: 2.5rem; }
+.hero p { font-size: 1.2rem; margin-bottom: 1rem; }
 
 .slide-text {
   font-size: 2rem;
@@ -71,33 +65,22 @@ h1, h3 {
 }
 
 .logo-bounce-in {
-  width: 200px; /* Adjust as needed */
+  width: 200px;
   animation: slideDownBounce 1s ease-out forwards, bounce 2s ease-in-out infinite;
-  animation-delay: 0s, 1s; /* Bounce starts after slide finishes */
+  animation-delay: 0s, 1s;
   opacity: 0;
 }
 
-/* Slide from top */
 @keyframes slideDownBounce {
-  0% {
-    transform: translateY(-50px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
+  0% { transform: translateY(-50px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
 }
 
-/* Gentle bounce loop */
 @keyframes bounce {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-8px);
-  }
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
 }
+
 /* ===== Lead Forms ===== */
 .lead-buttons {
   text-align: center;
@@ -131,6 +114,14 @@ h1, h3 {
   margin: 2rem auto;
   text-align: center;
   position: relative;
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.lead-form-section.visible {
+  opacity: 1;
+  transform: scale(1);
 }
 
 .form-heading {
@@ -187,9 +178,7 @@ h1, h3 {
   transform: scale(1.05);
 }
 
-.hidden {
-  display: none;
-}
+.hidden { display: none; }
 
 .close-btn {
   position: absolute;
@@ -203,15 +192,13 @@ h1, h3 {
   transition: transform 0.2s ease;
 }
 
-.close-btn:hover {
-  transform: scale(1.2);
-}
+.close-btn:hover { transform: scale(1.2); }
 
 /* ===== Services ===== */
 .services {
-  padding: 4rem 2rem;       /* more breathing room */
+  padding: 4rem 2rem;
   background: #FFE89C;
-  width: 100%;              /* full width */
+  width: 100%;
   max-width: 100%;
   box-sizing: border-box;
 }
@@ -221,7 +208,7 @@ h1, h3 {
   flex-wrap: wrap;
   justify-content: center;
   gap: 2rem;
-  max-width: 1200px;        /* keeps cards neat on large screens */
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -234,10 +221,7 @@ h1, h3 {
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-.card img {
-  width: 80px;
-  margin-bottom: 1rem;
-}
+.card img { width: 80px; margin-bottom: 1rem; }
 
 .services h3 {
   font-family: 'Open Sans', sans-serif;
@@ -254,19 +238,19 @@ h1, h3 {
   box-sizing: border-box;
 }
 
-.carousel {
-  position: relative;
-  text-align: center;
-}
+.carousel { position: relative; text-align: center; }
 
 .testimonial {
   display: none;
   font-style: italic;
   font-size: 1.1rem;
+  opacity: 0;
+  transition: opacity 0.5s ease;
 }
 
 .testimonial.active {
   display: block;
+  opacity: 1;
 }
 
 .carousel-dots {
@@ -284,9 +268,7 @@ h1, h3 {
   cursor: pointer;
 }
 
-.dot.active {
-  background: #FD8100;
-}
+.dot.active { background: #FD8100; }
 
 /* ===== Our Mission ===== */
 .our-mission {
@@ -317,9 +299,7 @@ h1, h3 {
   box-sizing: border-box;
 }
 
-.faq-item {
-  margin-bottom: 1rem;
-}
+.faq-item { margin-bottom: 1rem; }
 
 .faq-question {
   width: 100%;
@@ -340,11 +320,20 @@ h1, h3 {
   border-left: 3px solid #FEB803;
   margin-top: 0.5rem;
   border-radius: 0 0 10px 10px;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
 }
 
+  .faq-answer.open {
+  display: block;
+  max-height: 500px; /* enough to fit content */
+  opacity: 1;
+}
 /* ===== Footer ===== */
 .site-footer {
-  background: none; /* removed blue block */
+  background: none;
   color: #333;
   text-align: center;
   padding: 1rem;
@@ -357,25 +346,14 @@ h1, h3 {
   .slide-text { font-size: 1.5rem; }
   .hero p { font-size: 1rem; }
 
-  .card {
-    width: 90%; /* cards fill screen width on mobile */
-  }
-
-  .mission-photo {
-    width: 120px;
-  }
-
-  .form-heading {
-    font-size: 1.8rem;
-  }
-
-  .site-footer {
-    font-size: 0.9rem;
-  }
+  .card { width: 90%; }
+  .mission-photo { width: 120px; }
+  .form-heading { font-size: 1.8rem; }
+  .site-footer { font-size: 0.9rem; }
 }
 
 @media (max-width: 480px) {
   .hero h1 { font-size: 1.6rem; }
   .slide-text { font-size: 1.2rem; }
-  .hero p { font-size: 1.5rem; }
-  }
+  .hero p { font-size: 0.9rem; }
+}

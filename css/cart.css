@@ -1,6 +1,4 @@
-/* ============================
-   CART SIDEBAR
-============================ */
+/* ===== Cart Sidebar ===== */
 .cart-sidebar {
   position: fixed;
   top: 0;
@@ -27,7 +25,7 @@
   color: #004AAA;
 }
 
-/* Cart items list */
+/* ===== Cart Items ===== */
 #cart-items {
   list-style: none;
   padding: 0;
@@ -47,7 +45,7 @@
   font-weight: 600;
 }
 
-/* REMOVE BUTTONS - force red */
+/* Remove Buttons */
 .cart-sidebar #cart-items li button.remove-item-btn {
   background-color: #b50202 !important;
   color: white !important;
@@ -65,7 +63,7 @@
   background-color: #FF940E !important;
 }
 
-/* TOTAL & CHECKOUT */
+/* ===== Total & Checkout ===== */
 .cart-total {
   font-weight: bold;
   font-size: 1.2rem;
@@ -90,7 +88,7 @@
   background-color: #b50202;
 }
 
-/* CLOSE BUTTON - from second version */
+/* ===== Close Button ===== */
 .close-cart-btn {
   background: transparent;
   border: none;
@@ -102,7 +100,28 @@
   margin-bottom: 0.5rem;
 }
 
-/* CART TOGGLE BUTTON */
+/* Ensure the close button is visible and at the bottom */
+#close-cart {
+  order: 99;
+  align-self: stretch;
+  margin-top: auto;
+  display: block;
+  padding: 0.7rem;
+  background-color: #b50202;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+#close-cart:hover {
+  background-color: #FF940E;
+}
+
+/* ===== Cart Toggle Button ===== */
 .cart-toggle-btn {
   position: fixed;
   bottom: 20px;
@@ -116,14 +135,15 @@
   font-weight: bold;
   box-shadow: 0 3px 8px rgba(0,0,0,0.15);
   z-index: 10000;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .cart-toggle-btn:hover {
   background-color: #FF940E;
+  transform: scale(1.05);
 }
 
-/* Scrollbar styling for cart items (optional) */
+/* ===== Scrollbar Styling ===== */
 #cart-items::-webkit-scrollbar {
   width: 6px;
 }
@@ -135,19 +155,4 @@
 
 #cart-items::-webkit-scrollbar-track {
   background-color: transparent;
-}
-/* Ensure the close button is visible and at the bottom */
-#close-cart {
-  order: 99;              /* pushes it to the bottom if using flex container */
-  align-self: stretch;    /* button fills sidebar width */
-  margin-top: auto;       /* pushes to bottom */
-  display: block;         /* ensure it’s visible */
-  padding: 0.7rem;
-  background-color: #b50202;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 1rem;
-  text-align: center;
 }
