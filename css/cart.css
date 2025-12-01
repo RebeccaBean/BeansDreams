@@ -2,20 +2,22 @@
 .cart-sidebar {
   position: fixed;
   top: 0;
-  right: -320px; /* hidden by default */
+  right: -320px; /* hidden off-screen by default */
   width: 300px;
   height: 100vh;
   background: #FFEBD2;
   box-shadow: -4px 0 12px rgba(0,0,0,0.2);
   padding: 1.5rem;
-  transition: right 0.3s ease;
+  transition: right 0.3s ease, opacity 0.3s ease;
   z-index: 9999;
   display: flex;
   flex-direction: column;
+  opacity: 0;
 }
 
 .cart-sidebar.active {
   right: 0;
+  opacity: 1;
 }
 
 .cart-sidebar h3 {
@@ -46,9 +48,9 @@
 }
 
 /* Remove Buttons */
-.cart-sidebar #cart-items li button.remove-item-btn {
-  background-color: #b50202 !important;
-  color: white !important;
+#cart-items li button.remove-item-btn {
+  background-color: #b50202;
+  color: white;
   border: none;
   border-radius: 3px;
   cursor: pointer;
@@ -56,11 +58,11 @@
   font-weight: bold;
   font-size: 0.9rem;
   margin-left: 0.5rem;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s ease;
 }
 
-.cart-sidebar #cart-items li button.remove-item-btn:hover {
-  background-color: #FF940E !important;
+#cart-items li button.remove-item-btn:hover {
+  background-color: #FF940E;
 }
 
 /* ===== Total & Checkout ===== */
@@ -81,7 +83,7 @@
   cursor: pointer;
   border: none;
   margin-bottom: 0.5rem;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s ease;
 }
 
 .checkout-btn:hover {
@@ -155,4 +157,11 @@
 
 #cart-items::-webkit-scrollbar-track {
   background-color: transparent;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 480px) {
+  .cart-sidebar {
+    width: 80%; /* narrower sidebar for phones */
+  }
 }
