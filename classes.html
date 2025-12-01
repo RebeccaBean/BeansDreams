@@ -919,39 +919,46 @@
   <div id="paypal-button-container"></div>
 
   <!-- Scripts -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script src="js/nav.js" defer></script>
-  <script src="js/cart.js" defer>
-  <script src="js/classes.js"></script>
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      AOS.init({ duration: 700, easing: 'ease-out-quart', once: true });
-      document.getElementById('year').textContent = new Date().getFullYear();
-        // Load navigation (if you use an HTML partial)
-      fetch("navigation.html")
-        .then(r => r.text())
-        .then(html => {
-          const el = document.getElementById("nav-placeholder");
-          if (el) el.innerHTML = html;
-        })
-        .catch(() => { /* silently fail if not present */ });
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="js/nav.js" defer></script>
+<script src="js/cart.js" defer></script>
+<script src="js/classes.js" defer></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // Initialize AOS
+    AOS.init({ duration: 700, easing: 'ease-out-quart', once: true });
 
-      // Tabs
-      const tabButtons = document.querySelectorAll(".tab-button");
-      const tabContents = document.querySelectorAll(".tab-content");
-      tabButtons.forEach(button => {
-        button.addEventListener("click", () => {
-          tabButtons.forEach(btn => btn.classList.remove("active"));
-          button.classList.add("active");
-          tabContents.forEach(content => {
-            content.classList.remove("active");
-            if (content.id === button.dataset.tab) {
-              content.classList.add("active");
-            }
-          });
+    // Set footer year
+    const yearEl = document.getElementById("year");
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+    // Load navigation
+    fetch("navigation.html")
+      .then(r => r.text())
+      .then(html => {
+        const el = document.getElementById("nav-placeholder");
+        if (el) el.innerHTML = html;
+      })
+      .catch(() => { /* silently fail if not present */ });
+
+    // Tabs
+    const tabButtons = document.querySelectorAll(".tab-button");
+    const tabContents = document.querySelectorAll(".tab-content");
+
+    tabButtons.forEach(button => {
+      button.addEventListener("click", () => {
+        tabButtons.forEach(btn => btn.classList.remove("active"));
+        button.classList.add("active");
+
+        tabContents.forEach(content => {
+          content.classList.remove("active");
+          if (content.id === button.dataset.tab) {
+            content.classList.add("active");
+          }
         });
       });
     });
-  </script>
+  });
+</script>
 </body>
 </html>
