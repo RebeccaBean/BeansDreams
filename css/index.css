@@ -1,4 +1,6 @@
-/* ===== Global Styles ===== */
+/* =========================================================
+   GLOBAL STYLES
+   ========================================================= */
 body {
   font-family: 'Open Sans', sans-serif;
   margin: 0;
@@ -12,7 +14,7 @@ h1, h3 {
   text-align: center;
 }
 
-/* ===== Section Titles ===== */
+/* Section Titles - Alex Brush */
 .services h2,
 .testimonials h2,
 .our-mission h2,
@@ -37,19 +39,26 @@ h1, h3 {
   border-radius: 2px;
 }
 
-/* ===== HERO ===== */
+/* =========================================================
+   HERO
+   ========================================================= */
 .hero {
   background: linear-gradient(135deg, #FF940E, #b50202, #FEB803, #004AAD);
   color: white;
   padding: 5rem 2rem;
   text-align: center;
   width: 100%;
-  max-width: 100%;
   box-sizing: border-box;
 }
 
-.hero h1 { font-size: 2.5rem; }
-.hero p  { font-size: 1.2rem; margin-bottom: 1rem; }
+.hero h1 {
+  font-size: 2.5rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
 
 .slide-text {
   font-size: 2rem;
@@ -60,29 +69,34 @@ h1, h3 {
 
 @keyframes slideIn {
   from { transform: translateX(-100%); opacity: 0; }
-  to   { transform: translateX(0); opacity: 1; }
+  to { transform: translateX(0); opacity: 1; }
 }
 
+/* Logo animation */
 .logo-bounce-in {
   width: 200px;
-  animation: slideDownBounce 1s ease-out forwards,
-             bounce 2s ease-in-out infinite;
-  animation-delay: 0s, 1s;
   opacity: 0;
+  animation: slideDownBounce 1s ease-out forwards, bounce 2s ease-in-out infinite;
+  animation-delay: 0s, 1s;
 }
 
 @keyframes slideDownBounce {
-  0%   { transform: translateY(-50px); opacity: 0; }
+  0% { transform: translateY(-50px); opacity: 0; }
   100% { transform: translateY(0); opacity: 1; }
 }
 
 @keyframes bounce {
-  0%,100% { transform: translateY(0); }
-  50%     { transform: translateY(-8px); }
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
 }
 
-/* ===== Lead Forms ===== */
-.lead-buttons { text-align: center; margin: 2rem 0; }
+/* =========================================================
+   LEAD FORMS
+   ========================================================= */
+.lead-buttons {
+  text-align: center;
+  margin: 2rem 0;
+}
 
 .lead-toggle {
   background-color: #030998;
@@ -93,7 +107,8 @@ h1, h3 {
   font-size: 1rem;
   margin: 0.5rem;
   cursor: pointer;
-  transition: 0.3s ease;
+  transition: all 0.3s ease;
+  font-family: 'Segoe UI', sans-serif;
 }
 
 .lead-toggle:hover {
@@ -146,7 +161,7 @@ h1, h3 {
 .lead-form textarea:focus {
   outline: none;
   border-color: #FEB803;
-  box-shadow: 0 0 6px rgba(254,184,3,0.5);
+  box-shadow: 0 0 6px rgba(254, 184, 3, 0.5);
 }
 
 .submit-btn {
@@ -158,7 +173,7 @@ h1, h3 {
   border: none;
   border-radius: 30px;
   cursor: pointer;
-  transition: 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .submit-btn:hover {
@@ -177,15 +192,21 @@ h1, h3 {
   font-size: 1.5rem;
   color: #b50202;
   cursor: pointer;
-  transition: 0.2s ease;
+  transition: transform 0.2s ease;
 }
 
-.close-btn:hover { transform: scale(1.2); }
+.close-btn:hover {
+  transform: scale(1.2);
+}
 
-/* ===== Services ===== */
+/* =========================================================
+   SERVICES
+   ========================================================= */
 .services {
   padding: 4rem 2rem;
   background: #FFE89C;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .service-cards {
@@ -212,29 +233,44 @@ h1, h3 {
 }
 
 .services h3 {
+  font-family: 'Open Sans', sans-serif;
   font-size: 1.4rem;
   color: #030998;
   margin-top: 1rem;
 }
 
-/* ===== Testimonials ===== */
+/* =========================================================
+   TESTIMONIALS
+   ========================================================= */
 .testimonials {
   padding: 4rem 2rem;
   background: linear-gradient(to bottom, #FFE89C, #B5FFFC);
+  width: 100%;
+  box-sizing: border-box;
 }
 
-.carousel { text-align: center; }
+.carousel {
+  position: relative;
+  text-align: center;
+}
 
 .testimonial {
   display: none;
   font-style: italic;
+  font-size: 1.1rem;
 }
 
-.testimonial.active { display: block; }
+.testimonial.active {
+  display: block;
+}
 
-.carousel-dots { margin-top: 1rem; }
+.carousel-dots {
+  margin-top: 1rem;
+  text-align: center;
+}
 
 .dot {
+  display: inline-block;
   height: 12px;
   width: 12px;
   background: #ccc;
@@ -243,13 +279,19 @@ h1, h3 {
   cursor: pointer;
 }
 
-.dot.active { background: #FD8100; }
+.dot.active {
+  background: #FD8100;
+}
 
-/* ===== Mission ===== */
+/* =========================================================
+   OUR MISSION
+   ========================================================= */
 .our-mission {
   padding: 4rem 2rem;
-  background: linear-gradient(135deg, #FFF5EA, #B3C9F5);
+  background: linear-gradient(135deg, #FFF5EA , #B3C9F5);
   text-align: center;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .mission-content {
@@ -265,10 +307,18 @@ h1, h3 {
   border-radius: 15px;
 }
 
-/* ===== FAQ ===== */
-.faq { padding: 4rem 2rem; }
+/* =========================================================
+   FAQ
+   ========================================================= */
+.faq {
+  padding: 4rem 2rem;
+  width: 100%;
+  box-sizing: border-box;
+}
 
-.faq-item { margin-bottom: 1rem; }
+.faq-item {
+  margin-bottom: 1rem;
+}
 
 .faq-question {
   width: 100%;
@@ -291,7 +341,13 @@ h1, h3 {
   border-radius: 0 0 10px 10px;
 }
 
-/* ===== Footer ===== */
+.faq-answer.open {
+  display: block;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
 .site-footer {
   background: none;
   color: #333;
@@ -300,12 +356,13 @@ h1, h3 {
   font-size: 1rem;
 }
 
-/* ===== Responsive Styles ===== */
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
 @media (max-width: 768px) {
   .hero h1 { font-size: 2rem; }
   .slide-text { font-size: 1.5rem; }
   .hero p { font-size: 1rem; }
-
   .card { width: 90%; }
   .mission-photo { width: 120px; }
   .form-heading { font-size: 1.8rem; }
