@@ -1,28 +1,5 @@
 // index.js – Bean's Dreams homepage interactions
 document.addEventListener("DOMContentLoaded", () => {
-  // ===== Navigation Loader =====
-  fetch("navigation.html") // relative path since files are side-by-side
-    .then(r => {
-      if (!r.ok) throw new Error("Navigation file not found");
-      return r.text();
-    })
-    .then(html => {
-      const el = document.getElementById("nav-placeholder");
-      if (el) el.innerHTML = html;
-    })
-    .catch(() => {
-      const el = document.getElementById("nav-placeholder");
-      if (el) {
-        el.innerHTML = `
-          <nav class="fallback-nav">
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="contact.html">Contact</a>
-          </nav>
-        `;
-      }
-    });
-
   // ===== Testimonials Carousel =====
   const testimonials = document.querySelectorAll(".testimonial");
   const dots = document.querySelectorAll(".dot");
@@ -50,29 +27,31 @@ document.addEventListener("DOMContentLoaded", () => {
   showTestimonial(index); // initialize first testimonial
 
   // ===== FAQ Accordion =====
-  const questions = document.querySelectorAll(".faq-question");
-  questions.forEach(q => {
-    q.addEventListener("click", () => {
-      const answer = q.nextElementSibling;
+const questions = document.querySelectorAll(".faq-question");
 
-      // Close all other answers
-      document.querySelectorAll(".faq-answer").forEach(a => {
-        if (a !== answer) {
-          a.style.maxHeight = null;
-          a.classList.remove("open");
-        }
-      });
+questions.forEach(q => {
+  q.addEventListener("click", () => {
+    const answer = q.nextElementSibling;
 
-      // Toggle current answer
-      if (answer.classList.contains("open")) {
-        answer.style.maxHeight = null;
-        answer.classList.remove("open");
-      } else {
-        answer.classList.add("open");
-        answer.style.maxHeight = answer.scrollHeight + "px"; // auto height
+    // Close all other answers
+    questions.forEach(btn => {
+      const otherAnswer = btn.nextElementSibling;
+      if (btn !== q && otherAnswer) {
+        otherAnswer.style.maxHeight = null;
+        otherAnswer.classList.remove("open");
       }
     });
+
+    // Toggle current answer
+    if (answer.classList.contains("open")) {
+      answer.style.maxHeight = null;
+      answer.classList.remove("open");
+    } else {
+      answer.classList.add("open");
+      answer.style.maxHeight = answer.scrollHeight + "px"; // auto height
+    }
   });
+});
 
   // ===== Lead Form Toggles =====
   const buttons = document.querySelectorAll(".lead-toggle");
