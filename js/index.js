@@ -27,22 +27,31 @@ document.addEventListener("DOMContentLoaded", () => {
   showTestimonial(index); // initialize first testimonial
 
   // ===== FAQ Accordion =====
-  const questions = document.querySelectorAll(".faq-question");
-  questions.forEach(q => {
-    q.addEventListener("click", () => {
-      // Close other answers
-      questions.forEach(btn => {
-        if (btn !== q && btn.nextElementSibling) {
-          btn.classList.remove("active");
-          btn.nextElementSibling.classList.remove("open");
-        }
-      });
+const questions = document.querySelectorAll(".faq-question");
 
-      // Toggle current answer
-      q.classList.toggle("active");
-      q.nextElementSibling.classList.toggle("open");
+questions.forEach(q => {
+  q.addEventListener("click", () => {
+    const answer = q.nextElementSibling;
+
+    // Close all other answers
+    questions.forEach(btn => {
+      const otherAnswer = btn.nextElementSibling;
+      if (btn !== q && otherAnswer) {
+        otherAnswer.style.maxHeight = null;
+        otherAnswer.classList.remove("open");
+      }
     });
+
+    // Toggle current answer
+    if (answer.classList.contains("open")) {
+      answer.style.maxHeight = null;
+      answer.classList.remove("open");
+    } else {
+      answer.classList.add("open");
+      answer.style.maxHeight = answer.scrollHeight + "px"; // auto height
+    }
   });
+});
 
   // ===== Lead Form Toggles =====
   const buttons = document.querySelectorAll(".lead-toggle");

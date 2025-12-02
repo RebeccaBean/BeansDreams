@@ -274,7 +274,6 @@ h1, h3 {
   border-radius: 10px;
   font-size: 1rem;
 }
-
 .faq-answer {
   max-height: 0;
   overflow: hidden;
@@ -288,7 +287,6 @@ h1, h3 {
 }
 
 .faq-answer.open {
-  max-height: 500px;
   opacity: 1;
   padding: 0.8rem;
 }
