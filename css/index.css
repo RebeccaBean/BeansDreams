@@ -333,16 +333,17 @@ h1, h3 {
 }
 
 .faq-answer {
-  display: none;
-  padding: 0.8rem;
-  background: #f9f9f9;
-  border-left: 3px solid #FEB803;
-  margin-top: 0.5rem;
-  border-radius: 0 0 10px 10px;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.4s ease, opacity 0.3s ease;
+  padding: 0 0.8rem; /* maintains space for animation */
 }
 
 .faq-answer.open {
-  display: block;
+  max-height: 500px; /* large enough to fit text */
+  opacity: 1;
+  padding: 0.8rem;
 }
 
 /* =========================================================
