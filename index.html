@@ -6,9 +6,8 @@
   <title>Bean’s Dreams | Home</title>
 
   <!-- Page Styles -->
-  <link rel="stylesheet" href="css/index.css" />
-  <link rel="stylesheet" href="css/nav.css" />
-  <link rel="stylesheet" href="css/cart.css" />
+  <link rel="stylesheet" href="index.css" />
+  <link rel="stylesheet" href="nav.css" />
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
@@ -25,7 +24,7 @@
   <header class="hero">
     <div class="hero-content">
       <div class="logo-container">
-        <img src="imageslogo/beansbutterfly.png" alt="Bean's Butterfly" class="logo-bounce-in">
+        <img src="imagelogo/Beans Butterfly.png" alt="Bean's Butterfly" class="logo-bounce-in">
       </div>
       <h1 data-aos="fade-up">Welcome to Bean’s Dreams</h1>
       <p data-aos="fade-up" data-aos-delay="200">Empowering you through movement, music, and healing</p>
@@ -99,7 +98,7 @@
     </div>
   </header>
 
-  <!-- WHAT WE OFFER -->
+ <!-- WHAT WE OFFER -->
 <section class="services" data-aos="fade-up">
   <h2>What We Offer</h2>
   <div class="service-cards">
@@ -190,61 +189,303 @@
     </div>
   </section>
 
-  <!-- FAQ -->
-  <section class="faq" data-aos="fade-up">
-    <h2>Frequently Asked Questions</h2>
-    <div class="faq-item">
-      <button class="faq-question slide-text" aria-expanded="false" data-aos="fade-left" data-aos-delay="400">❓ What is Bean’s Dreams Coaching?</button>
-      <div class="faq-answer">It’s a supportive, personalized journey of healing and growth through coaching, music, and movement.</div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-question slide-text" aria-expanded="false" data-aos="fade-left" data-aos-delay="400">📅 How do I book a class?</button>
-      <div class="faq-answer">You can book via our Calendly link after payment.</div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-question slide-text" aria-expanded="false" data-aos="fade-left" data-aos-delay="400">⏱️ How long are the sessions?</button>
-      <div class="faq-answer">Dance & music lessons are 30 minutes. Healing sessions are 1 hour.</div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-question slide-text" aria-expanded="false" data-aos="fade-left" data-aos-delay="400">💳 How do payments work?</button>
-      <div class="faq-answer">Payments are handled securely online before booking.</div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-question slide-text" aria-expanded="false" data-aos="fade-left" data-aos-delay="400">🎁 Do you offer a free intro class?</button>
-      <div class="faq-answer">Yes! Claim your free intro session above.</div>
-    </div>
-  </section>
-  
-  <!-- CART SIDEBAR -->
-  <div id="cart" class="cart-sidebar" aria-label="Shopping cart" aria-hidden="true">
-    <h3>Your Cart</h3>
-    <ul id="cart-items"></ul>
-    <div class="cart-total">Total: $<span id="cart-total">0.00</span></div>
-    <!-- PayPal Buttons inside cart -->
-    <div id="paypal-button-container"></div>
-    <button id="checkout-btn" class="btn checkout-btn">Checkout</button>
-    <button id="close-cart" class="btn close-cart-btn">Close</button>
+<!-- FAQ -->
+<section class="faq" data-aos="fade-up">
+  <h2>Frequently Asked Questions</h2>
+
+  <div class="faq-item">
+    <button class="faq-question slide-text" aria-expanded="false" data-aos="fade-left" data-aos-delay="400">
+      ❓ What is Bean’s Dreams Coaching?
+    </button>
+    <div class="faq-answer">It’s a supportive, personalized journey of healing and growth through coaching, music, and movement.</div>
   </div>
 
-  <!-- Floating Cart Button -->
-  <button id="cart-toggle" class="btn cart-toggle-btn">
-    🛒 Cart (<span id="cart-count">0</span>)
-  </button>
+  <div class="faq-item">
+    <button class="faq-question slide-text" aria-expanded="false" data-aos="fade-left" data-aos-delay="400">
+      📅 How do I book a class?
+    </button>
+    <div class="faq-answer">You can book via our Calendly link after payment.</div>
+  </div>
 
-  <!-- FOOTER -->
-  <footer class="site-footer" data-aos="fade-up">
-    <p>© Bean's Dreams — Dance • Heal • Rise</p>
-    <p>&copy; <span id="year"></span></p>
-  </footer>
+  <div class="faq-item">
+    <button class="faq-question slide-text" aria-expanded="false" data-aos="fade-left" data-aos-delay="400">
+      ⏱️ How long are the sessions?
+    </button>
+    <div class="faq-answer">Dance & music lessons are 30 minutes. Healing sessions are 1 hour.</div>
+  </div>
 
- 
- <!-- PayPal SDK -->
-  <script src="https://www.paypal.com/sdk/js?client-id=AVhdcxMFlhEnAaJN0_ju-Kjgxo5djvN3Q5VMCVtxrc2fZknJjXNTiLQzWmNel_qUZAjuSOhML2hiU9ct"></script> <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-   <!-- Scripts -->
-  <script src="js/nav.js" defer></script>
-  <script src="js/cart.js" defer></script>
-  <script src="js/index.js" defer></script>
+  <div class="faq-item">
+    <button class="faq-question slide-text" aria-expanded="false" data-aos="fade-left" data-aos-delay="400">
+      💳 How do payments work?
+    </button>
+    <div class="faq-answer">Payments are handled securely online before booking.</div>
+  </div>
 
-  
-</body>
-</html>
+  <div class="faq-item">
+    <button class="faq-question slide-text" aria-expanded="false" data-aos="fade-left" data-aos-delay="400">
+      🎁 Do you offer a free intro class?
+    </button>
+    <div class="faq-answer">Yes! Claim your free intro session above.</div>
+  </div>
+</section>
+
+<!-- CART SIDEBAR -->
+<div id="cart" class="cart-sidebar" aria-label="Shopping cart" aria-hidden="true">
+  <h3>Your Cart</h3>
+  <ul id="cart-items" aria-live="polite"></ul>
+  <div class="cart-total">Total: $<span id="cart-total">0.00</span></div>
+  <button id="checkout-btn" class="btn checkout-btn">Checkout</button>
+  <button id="close-cart" class="btn close-cart-btn">Close</button>
+</div>
+
+<!-- Floating Cart Button -->
+<button id="cart-toggle" class="btn cart-toggle-btn" aria-controls="cart" aria-expanded="false">
+  🛒 Cart (<span id="cart-count">0</span>)
+</button>
+
+<!-- PayPal Buttons container -->
+<div id="paypal-button-container" aria-hidden="true"></div>
+
+<!-- FOOTER -->
+<footer class="site-footer" data-aos="fade-up">
+  <p>© Bean's Dreams — Dance • Heal • Rise</p>
+  <p>&copy; <span id="year"></span></p>
+</footer>
+
+<!-- Scripts -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+<!-- PayPal SDK (keep above cart.js if cart.js depends on it) -->
+<script src="https://www.paypal.com/sdk/js?client-id=AVhdcxMFlhEnAaJN0_ju-Kjgxo5djvN3Q5VMCVtxrc2fZknJjXNTiLQzWmNel_qUZAjuSOhML2hiU9ct"></script>
+
+<!-- Local scripts (defer so they run after parsing) -->
+<script src="js/nav.js" defer></script>
+<script src="js/cart.js" defer></script>
+<script src="js/index.js" defer></script>
+
+<!-- Single consolidated initializer: AOS, year, nav loader with fallback, nav behavior, lead forms, testimonials, FAQ, cart -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  /* ---------------------------
+     AOS and Year
+     --------------------------- */
+  if (window.AOS && typeof AOS.init === 'function') {
+    AOS.init({ duration: 700, easing: 'ease-out-quart', once: true });
+  }
+  const yearEl = document.getElementById('year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+  /* ---------------------------
+     Robust navigation loader with fallback
+     --------------------------- */
+  const navPlaceholder = document.getElementById('nav-placeholder');
+  const fallbackNav = `
+    <nav class="site-nav" role="navigation" aria-label="Main navigation">
+      <div class="nav-inner">
+        <a href="/" class="nav-brand" aria-label="Bean's Dreams home">Bean's Dreams</a>
+        <button id="mobile-nav-toggle" aria-expanded="false" aria-controls="primary-nav">Menu</button>
+        <ul id="primary-nav" class="nav-list">
+          <li><a href="/">Home</a></li>
+          <li><a href="/classes.html">Classes</a></li>
+          <li><a href="/coaching.html">Coaching</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+  `;
+
+  function insertNav(html) {
+    if (!navPlaceholder) return;
+    navPlaceholder.innerHTML = html;
+    document.dispatchEvent(new CustomEvent('nav:loaded'));
+  }
+
+  if (navPlaceholder) {
+    fetch('navigation.html', { cache: 'no-store' })
+      .then(resp => {
+        if (!resp.ok) throw new Error('no partial');
+        return resp.text();
+      })
+      .then(text => {
+        if (!text || text.trim().length < 20) insertNav(fallbackNav);
+        else insertNav(text);
+      })
+      .catch(() => insertNav(fallbackNav));
+  }
+
+  /* ---------------------------
+     Fallback nav behavior (runs after nav is inserted)
+     --------------------------- */
+  function initFallbackNav() {
+    const mobileToggle = document.getElementById('mobile-nav-toggle');
+    const primaryNav = document.getElementById('primary-nav');
+    if (!mobileToggle || !primaryNav) return;
+
+    function setInitialState() {
+      if (window.innerWidth <= 768) {
+        primaryNav.classList.add('collapsed');
+        primaryNav.classList.remove('open');
+        mobileToggle.setAttribute('aria-expanded', 'false');
+      } else {
+        primaryNav.classList.remove('collapsed');
+        primaryNav.classList.remove('open');
+        mobileToggle.setAttribute('aria-expanded', 'false');
+      }
+    }
+    setInitialState();
+    window.addEventListener('resize', setInitialState);
+
+    mobileToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = primaryNav.classList.toggle('open');
+      primaryNav.classList.toggle('collapsed', !isOpen);
+      mobileToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!primaryNav.classList.contains('open')) return;
+      if (!primaryNav.contains(e.target) && !mobileToggle.contains(e.target)) {
+        primaryNav.classList.remove('open');
+        primaryNav.classList.add('collapsed');
+        mobileToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && primaryNav.classList.contains('open')) {
+        primaryNav.classList.remove('open');
+        primaryNav.classList.add('collapsed');
+        mobileToggle.setAttribute('aria-expanded', 'false');
+        mobileToggle.focus();
+      }
+    });
+  }
+
+  document.addEventListener('nav:loaded', initFallbackNav);
+  // If nav already present (server-rendered), initialize immediately
+  initFallbackNav();
+
+  /* ---------------------------
+     Cart accessibility and toggle
+     --------------------------- */
+  const cartEl = document.getElementById('cart');
+  const cartToggle = document.getElementById('cart-toggle');
+  const closeCartBtn = document.getElementById('close-cart');
+
+  function setCartOpen(open) {
+    if (!cartEl || !cartToggle) return;
+    if (open) {
+      cartEl.classList.add('open');
+      cartEl.setAttribute('aria-hidden', 'false');
+      cartToggle.setAttribute('aria-expanded', 'true');
+    } else {
+      cartEl.classList.remove('open');
+      cartEl.setAttribute('aria-hidden', 'true');
+      cartToggle.setAttribute('aria-expanded', 'false');
+    }
+  }
+
+  if (cartToggle && cartEl) {
+    cartToggle.addEventListener('click', () => {
+      const isHidden = cartEl.getAttribute('aria-hidden') === 'true';
+      setCartOpen(isHidden);
+    });
+  }
+  if (closeCartBtn) closeCartBtn.addEventListener('click', () => setCartOpen(false));
+
+  window.BeanCart = {
+    open: () => setCartOpen(true),
+    close: () => setCartOpen(false),
+    toggle: () => setCartOpen(cartEl && cartEl.getAttribute('aria-hidden') === 'true')
+  };
+
+  /* ---------------------------
+     Lead form toggles (class-based)
+     --------------------------- */
+  const toggles = Array.from(document.querySelectorAll('.lead-toggle'));
+  const forms = Array.from(document.querySelectorAll('.lead-form-section'));
+  const closeBtns = Array.from(document.querySelectorAll('.close-btn'));
+
+  toggles.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const targetId = btn.dataset.target;
+      if (!targetId) return;
+      forms.forEach(f => { f.classList.add('hidden'); f.classList.remove('visible'); });
+      const target = document.getElementById(targetId);
+      if (target) {
+        target.classList.remove('hidden');
+        requestAnimationFrame(() => target.classList.add('visible'));
+        const first = target.querySelector('input, select, textarea, button');
+        if (first) first.focus();
+      }
+    });
+  });
+
+  closeBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const parent = btn.closest('.lead-form-section');
+      if (!parent) return;
+      parent.classList.add('hidden');
+      parent.classList.remove('visible');
+      const related = document.querySelector(`.lead-toggle[data-target="${parent.id}"]`);
+      if (related) related.focus();
+    });
+  });
+
+  /* ---------------------------
+     Testimonials carousel (defensive)
+     --------------------------- */
+  const testimonials = Array.from(document.querySelectorAll('.testimonial'));
+  const dots = Array.from(document.querySelectorAll('.dot'));
+  let tIndex = 0;
+  let tTimer = null;
+
+  function showTestimonial(i) {
+    if (!testimonials.length) return;
+    tIndex = i % testimonials.length;
+    testimonials.forEach((t, j) => t.classList.toggle('active', j === tIndex));
+    dots.forEach((d, j) => d.classList.toggle('active', j === tIndex));
+  }
+
+  if (testimonials.length && dots.length) {
+    if (testimonials.length !== dots.length) console.warn('testimonials/dots mismatch', testimonials.length, dots.length);
+    dots.forEach((dot, i) => dot.addEventListener('click', () => {
+      showTestimonial(i);
+      if (tTimer) clearInterval(tTimer);
+      tTimer = setInterval(() => showTestimonial((tIndex + 1) % testimonials.length), 4000);
+    }));
+    showTestimonial(0);
+    tTimer = setInterval(() => showTestimonial((tIndex + 1) % testimonials.length), 4000);
+  }
+
+  /* ---------------------------
+     FAQ accordion (class-based + aria)
+     --------------------------- */
+  const questions = Array.from(document.querySelectorAll('.faq-question'));
+  questions.forEach(q => {
+    if (!q.hasAttribute('aria-expanded')) q.setAttribute('aria-expanded', 'false');
+    q.addEventListener('click', () => {
+      const answer = q.nextElementSibling;
+      if (!answer) return;
+      questions.forEach(btn => {
+        const other = btn.nextElementSibling;
+        if (other && other !== answer) {
+          other.classList.remove('open');
+          btn.setAttribute('aria-expanded', 'false');
+        }
+      });
+      const isOpen = answer.classList.toggle('open');
+      q.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+  });
+
+  /* ---------------------------
+     Ensure AOS refresh after dynamic content insertion
+     --------------------------- */
+  if (window.AOS && typeof AOS.refresh === 'function') {
+    // small timeout to allow inserted nav to render
+    setTimeout(() => AOS.refresh(), 250);
+  }
+});
+</script>

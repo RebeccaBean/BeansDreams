@@ -13,7 +13,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   if (testimonials.length && dots.length) {
-    // defensive: if counts mismatch, use min length
     if (testimonials.length !== dots.length) {
       console.warn('testimonials and dots count mismatch:', testimonials.length, dots.length);
     }
@@ -29,7 +28,6 @@ document.addEventListener("DOMContentLoaded", () => {
   /* ===== FAQ Accordion (class-based, accessible) ===== */
   const questions = Array.from(document.querySelectorAll('.faq-question'));
   questions.forEach(q => {
-    // ensure aria-expanded exists
     if (!q.hasAttribute('aria-expanded')) q.setAttribute('aria-expanded', 'false');
 
     q.addEventListener('click', () => {
@@ -66,9 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const targetForm = document.getElementById(targetId);
       if (targetForm) {
         targetForm.classList.remove("hidden");
-        // allow layout to update then add visible for transition
         requestAnimationFrame(() => targetForm.classList.add("visible"));
-        // focus first input for accessibility
         const firstInput = targetForm.querySelector('input, select, textarea, button');
         if (firstInput) firstInput.focus();
       }
@@ -82,7 +78,6 @@ document.addEventListener("DOMContentLoaded", () => {
       if (!parent) return;
       parent.classList.add("hidden");
       parent.classList.remove("visible");
-      // return focus to the first lead-toggle button for accessibility
       const relatedToggle = document.querySelector(`.lead-toggle[data-target="${parent.id}"]`);
       if (relatedToggle) relatedToggle.focus();
     });
@@ -122,7 +117,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function openCart() {
     if (!cartEl) return;
-    cartEl.classList.add('open'); // optional: style in cart.css
+    cartEl.classList.add('open');
     cartEl.setAttribute('aria-hidden', 'false');
   }
   function closeCart() {
@@ -144,3 +139,4 @@ document.addEventListener("DOMContentLoaded", () => {
     AOS.init({ once: true, duration: 600 });
   }
 });
+
