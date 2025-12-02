@@ -244,103 +244,109 @@
   <script src="js/index.js" defer></script>
 
   <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      // AOS
-      AOS.init({ duration: 700, easing: 'ease-out-quart', once: true });
+  document.addEventListener("DOMContentLoaded", () => {
+    // AOS
+    AOS.init({ duration: 700, easing: 'ease-out-quart', once: true });
 
-      // Footer year
-      const yearEl = document.getElementById('year');
-      if (yearEl) yearEl.textContent = new Date().getFullYear();
+    // Footer year
+    const yearEl = document.getElementById('year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-      // Load navigation with fallback
-      fetch("partials/navigation.html")
-        .then(r => {
-          if (!r.ok) throw new Error("Navigation file not found");
-          return r.text();
-        })
-        .then(html => {
-          const el = document.getElementById("nav-placeholder");
-          if (el) el.innerHTML = html;
-        })
-        .catch(() => {
-          const el = document.getElementById("nav-placeholder");
-          if (el) {
-            el.innerHTML = `
-              <nav class="fallback-nav">
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="contact.html">Contact</a>
-              </nav>
-            `;
-          }
-        });
-
-      // Lead form toggles
-      const toggles = document.querySelectorAll(".lead-toggle");
-      const forms = document.querySelectorAll(".lead-form-section");
-      const closeBtns = document.querySelectorAll(".close-btn");
-
-      toggles.forEach(btn => {
-        btn.addEventListener("click", () => {
-          forms.forEach(f => f.classList.add("hidden"));
-          const target = document.getElementById(btn.dataset.target);
-          if (target) {
-            target.classList.remove("hidden");
-            target.classList.add("visible");
-          }
-        });
+    // Load navigation with fallback
+    fetch("navigation.html")   // ✅ relative path
+      .then(r => {
+        if (!r.ok) throw new Error("Navigation file not found");
+        return r.text();
+      })
+      .then(html => {
+        const el = document.getElementById("nav-placeholder");
+        if (el) el.innerHTML = html;
+      })
+      .catch(() => {
+        const el = document.getElementById("nav-placeholder");
+        if (el) {
+          el.innerHTML = `
+            <nav class="fallback-nav">
+              <a href="index.html">Home</a>
+              <a href="about.html">About</a>
+              <a href="contact.html">Contact</a>
+            </nav>
+          `;
+        }
       });
 
-      closeBtns.forEach(btn => {
-        btn.addEventListener("click", () => {
-          const section = btn.parentElement;
-          section.classList.add("hidden");
-          section.classList.remove("visible");
-        });
-      });
+    // Lead form toggles
+    const toggles = document.querySelectorAll(".lead-toggle");
+    const forms = document.querySelectorAll(".lead-form-section");
+    const closeBtns = document.querySelectorAll(".close-btn");
 
-      // Testimonials carousel
-      const testimonials = document.querySelectorAll(".testimonial");
-      const dots = document.querySelectorAll(".dot");
-      let index = 0;
-
-      function showTestimonial(i) {
-        testimonials.forEach((t, j) => t.classList.toggle("active", j === i));
-        dots.forEach((d, j) => d.classList.toggle("active", j === i));
-      }
-
-      dots.forEach((dot, i) => {
-        dot.addEventListener("click", () => {
-          index = i;
-          showTestimonial(index);
-        });
-      });
-
-      setInterval(() => {
-        index = (index + 1) % testimonials.length;
-        showTestimonial(index);
-      }, 4000);
-
-      showTestimonial(index);
-
-      // FAQ accordion (using .open class)
-      const questions = document.querySelectorAll(".faq-question");
-      questions.forEach(q => {
-        q.addEventListener("click", () => {
-          // Close other answers
-          questions.forEach(btn => {
-            if (btn !== q && btn.nextElementSibling) {
-              btn.nextElementSibling.classList.remove("open");
-            }
-          });
-          // Toggle current answer
-          const answer = q.nextElementSibling;
-          if (answer) {
-            answer.classList.toggle("open");
-          }
-        });
+    toggles.forEach(btn => {
+      btn.addEventListener("click", () => {
+        forms.forEach(f => f.classList.add("hidden"));
+        const target = document.getElementById(btn.dataset.target);
+        if (target) {
+          target.classList.remove("hidden");
+          target.classList.add("visible");
+        }
       });
     });
-  </script>
-</body>
-</html>
+
+    closeBtns.forEach(btn => {
+      btn.addEventListener("click", () => {
+        const section = btn.parentElement;
+        section.classList.add("hidden");
+        section.classList.remove("visible");
+      });
+    });
+
+    // Testimonials carousel
+    const testimonials = document.querySelectorAll(".testimonial");
+    const dots = document.querySelectorAll(".dot");
+    let index = 0;
+
+    function showTestimonial(i) {
+      testimonials.forEach((t, j) => t.classList.toggle("active", j === i));
+      dots.forEach((d, j) => d.classList.toggle("active", j === i));
+    }
+
+    dots.forEach((dot, i) => {
+      dot.addEventListener("click", () => {
+        index = i;
+        showTestimonial(index);
+      });
+    });
+
+    setInterval(() => {
+      index = (index + 1) % testimonials.length;
+      showTestimonial(index);
+    }, 4000);
+
+    showTestimonial(index);
+
+    // FAQ accordion (dynamic height)
+    const questions = document.querySelectorAll(".faq-question");
+    questions.forEach(q => {
+      q.addEventListener("click", () => {
+        const answer = q.nextElementSibling;
+
+        // Close other answers
+        questions.forEach(btn => {
+          const otherAnswer = btn.nextElementSibling;
+          if (btn !== q && otherAnswer) {
+            otherAnswer.style.maxHeight = null;
+            otherAnswer.classList.remove("open");
+          }
+        });
+
+        // Toggle current answer
+        if (answer.classList.contains("open")) {
+          answer.style.maxHeight = null;
+          answer.classList.remove("open");
+        } else {
+          answer.classList.add("open");
+          answer.style.maxHeight = answer.scrollHeight + "px"; // ✅ auto height
+        }
+      });
+    });
+  });
+</script>

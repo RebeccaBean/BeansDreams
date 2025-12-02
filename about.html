@@ -107,7 +107,7 @@
       if (yearEl) yearEl.textContent = new Date().getFullYear();
 
       // Load navigation with fallback
-      fetch("/navigation.html")
+      fetch("navigation.html")
         .then(r => {
           if (!r.ok) throw new Error("Navigation file not found");
           return r.text();
