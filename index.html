@@ -233,8 +233,15 @@
 <!-- CART SIDEBAR -->
 <div id="cart" class="cart-sidebar" aria-label="Shopping cart" aria-hidden="true">
   <h3>Your Cart</h3>
+
   <ul id="cart-items" aria-live="polite"></ul>
-  <div class="cart-total">Total: $<span id="cart-total">0.00</span></div>
+
+  <div class="cart-actions">
+    <div class="cart-total">Total: $<span id="cart-total">0.00</span></div>
+    <!-- PayPal Buttons container -->
+    <div id="paypal-button-container" aria-hidden="true"></div>
+  </div>
+
   <button id="checkout-btn" class="btn checkout-btn">Checkout</button>
   <button id="close-cart" class="btn close-cart-btn">Close</button>
 </div>
@@ -243,9 +250,6 @@
 <button id="cart-toggle" class="btn cart-toggle-btn" aria-controls="cart" aria-expanded="false">
   🛒 Cart (<span id="cart-count">0</span>)
 </button>
-
-<!-- PayPal Buttons container -->
-<div id="paypal-button-container" aria-hidden="true"></div>
 
 <!-- FOOTER -->
 <footer class="site-footer" data-aos="fade-up">
@@ -256,10 +260,10 @@
 <!-- Scripts -->
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 
-<!-- PayPal SDK (keep above cart.js if cart.js depends on it) -->
+<!-- PayPal SDK -->
 <script src="https://www.paypal.com/sdk/js?client-id=AVhdcxMFlhEnAaJN0_ju-Kjgxo5djvN3Q5VMCVtxrc2fZknJjXNTiLQzWmNel_qUZAjuSOhML2hiU9ct"></script>
 
-<!-- Local scripts (defer so they run after parsing) -->
+<!-- Local scripts -->
 <script src="js/nav.js" defer></script>
 <script src="js/cart.js" defer></script>
 <script src="js/index.js" defer></script>

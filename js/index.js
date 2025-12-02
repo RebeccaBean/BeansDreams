@@ -1,28 +1,30 @@
-/* index.js - main page behaviors */
+/* index.js - main page behaviors (without cart) */
 document.addEventListener("DOMContentLoaded", () => {
+
   /* ===== Testimonials Carousel ===== */
   const testimonials = Array.from(document.querySelectorAll('.testimonial'));
   const dots = Array.from(document.querySelectorAll('.dot'));
-  let index = 0;
+  let tIndex = 0;
+  let tTimer = null;
 
   function showTestimonial(i) {
     if (!testimonials.length) return;
-    index = i % testimonials.length;
-    testimonials.forEach((t, j) => t.classList.toggle('active', j === index));
-    dots.forEach((d, j) => d.classList.toggle('active', j === index));
+    tIndex = i % testimonials.length;
+    testimonials.forEach((t, j) => t.classList.toggle('active', j === tIndex));
+    dots.forEach((d, j) => d.classList.toggle('active', j === tIndex));
   }
 
   if (testimonials.length && dots.length) {
-    if (testimonials.length !== dots.length) {
-      console.warn('testimonials and dots count mismatch:', testimonials.length, dots.length);
-    }
+    if (testimonials.length !== dots.length) console.warn('testimonials/dots mismatch', testimonials.length, dots.length);
+
     dots.forEach((dot, i) => dot.addEventListener('click', () => {
       showTestimonial(i);
+      if (tTimer) clearInterval(tTimer);
+      tTimer = setInterval(() => showTestimonial((tIndex + 1) % testimonials.length), 4000);
     }));
+
     showTestimonial(0);
-    setInterval(() => {
-      showTestimonial((index + 1) % testimonials.length);
-    }, 4000);
+    tTimer = setInterval(() => showTestimonial((tIndex + 1) % testimonials.length), 4000);
   }
 
   /* ===== FAQ Accordion (class-based, accessible) ===== */
@@ -49,37 +51,34 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  /* ===== Lead Form toggles (use hidden + visible classes) ===== */
-  const buttons = Array.from(document.querySelectorAll(".lead-toggle"));
-  const forms = Array.from(document.querySelectorAll(".lead-form-section"));
+  /* ===== Lead Form toggles (hidden + visible classes) ===== */
+  const toggles = Array.from(document.querySelectorAll('.lead-toggle'));
+  const forms = Array.from(document.querySelectorAll('.lead-form-section'));
+  const closeBtns = Array.from(document.querySelectorAll('.close-btn'));
 
-  buttons.forEach(button => {
-    button.addEventListener("click", () => {
-      const targetId = button.dataset.target;
+  toggles.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const targetId = btn.dataset.target;
       if (!targetId) return;
-      forms.forEach(form => {
-        form.classList.add("hidden");
-        form.classList.remove("visible");
-      });
-      const targetForm = document.getElementById(targetId);
-      if (targetForm) {
-        targetForm.classList.remove("hidden");
-        requestAnimationFrame(() => targetForm.classList.add("visible"));
-        const firstInput = targetForm.querySelector('input, select, textarea, button');
-        if (firstInput) firstInput.focus();
+      forms.forEach(f => { f.classList.add('hidden'); f.classList.remove('visible'); });
+      const target = document.getElementById(targetId);
+      if (target) {
+        target.classList.remove('hidden');
+        requestAnimationFrame(() => target.classList.add('visible'));
+        const first = target.querySelector('input, select, textarea, button');
+        if (first) first.focus();
       }
     });
   });
 
-  /* ===== Close buttons for forms ===== */
-  document.querySelectorAll(".close-btn").forEach(btn => {
-    btn.addEventListener("click", () => {
-      const parent = btn.closest(".lead-form-section");
+  closeBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const parent = btn.closest('.lead-form-section');
       if (!parent) return;
-      parent.classList.add("hidden");
-      parent.classList.remove("visible");
-      const relatedToggle = document.querySelector(`.lead-toggle[data-target="${parent.id}"]`);
-      if (relatedToggle) relatedToggle.focus();
+      parent.classList.add('hidden');
+      parent.classList.remove('visible');
+      const related = document.querySelector(`.lead-toggle[data-target="${parent.id}"]`);
+      if (related) related.focus();
     });
   });
 
@@ -88,10 +87,8 @@ document.addEventListener("DOMContentLoaded", () => {
     form.addEventListener("submit", function(e) {
       e.preventDefault();
       const action = form.getAttribute("action");
-      if (!action) {
-        form.submit();
-        return;
-      }
+      if (!action) { form.submit(); return; }
+
       fetch(action, {
         method: "POST",
         body: new FormData(form),
@@ -110,33 +107,13 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  /* ===== Cart accessibility helper (toggle aria-hidden when cart is shown/hidden) ===== */
-  const cartEl = document.getElementById('cart');
-  const cartToggle = document.getElementById('cart-toggle');
-  const closeCartBtn = document.getElementById('close-cart');
-
-  function openCart() {
-    if (!cartEl) return;
-    cartEl.classList.add('open');
-    cartEl.setAttribute('aria-hidden', 'false');
-  }
-  function closeCart() {
-    if (!cartEl) return;
-    cartEl.classList.remove('open');
-    cartEl.setAttribute('aria-hidden', 'true');
-  }
-
-  if (cartToggle) {
-    cartToggle.addEventListener('click', () => {
-      const isHidden = cartEl && cartEl.getAttribute('aria-hidden') === 'true';
-      if (isHidden) openCart(); else closeCart();
-    });
-  }
-  if (closeCartBtn) closeCartBtn.addEventListener('click', closeCart);
-
-  /* ===== Defensive: ensure AOS is initialized if not already ===== */
+  /* ===== Initialize AOS (Animate On Scroll) ===== */
   if (window.AOS && typeof AOS.init === 'function') {
     AOS.init({ once: true, duration: 600 });
   }
-});
 
+  /* ===== Update footer year ===== */
+  const yearEl = document.getElementById('year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+});
