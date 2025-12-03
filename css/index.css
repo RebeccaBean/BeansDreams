@@ -299,20 +299,23 @@ h1, h3 {
 
 .faq-question:hover { background-color: #FD8100; }
 
+/* FAQ Accordion Animation */
 .faq-answer {
-  display: none;
-  padding: 0.8rem 1rem;
+  max-height: 0;              /* collapsed */
+  overflow: hidden;
+  padding: 0 1rem;            /* collapsed padding */
   background: #f9f9f9;
   border-left: 3px solid #FEB803;
   margin-top: 0.5rem;
   border-radius: 0 0 10px 10px;
   transition: max-height 0.4s ease, padding 0.3s ease;
-  overflow: hidden;
 }
 
 .faq-answer.open {
-  display: block;
+  max-height: 300px;          /* adjust to fit longest answer */
+  padding: 0.8rem 1rem;       /* expanded padding */
 }
+
 
 /* =========================================================
    CART SIDEBAR

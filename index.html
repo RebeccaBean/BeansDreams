@@ -283,7 +283,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  /* ---------------------------
+    /* ---------------------------
      Robust navigation loader with fallback
      --------------------------- */
   const navPlaceholder = document.getElementById('nav-placeholder');
@@ -323,7 +323,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ---------------------------
-     Fallback nav behavior (runs after nav is inserted)
+     Fallback nav behavior
      --------------------------- */
   function initFallbackNav() {
     const mobileToggle = document.getElementById('mobile-nav-toggle');
@@ -371,7 +371,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   document.addEventListener('nav:loaded', initFallbackNav);
-  // If nav already present (server-rendered), initialize immediately
   initFallbackNav();
 
   /* ---------------------------
@@ -409,7 +408,7 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   /* ---------------------------
-     Lead form toggles (class-based)
+     Lead form toggles
      --------------------------- */
   const toggles = Array.from(document.querySelectorAll('.lead-toggle'));
   const forms = Array.from(document.querySelectorAll('.lead-form-section'));
@@ -442,7 +441,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* ---------------------------
-     Testimonials carousel (defensive)
+     Testimonials carousel
      --------------------------- */
   const testimonials = Array.from(document.querySelectorAll('.testimonial'));
   const dots = Array.from(document.querySelectorAll('.dot'));
@@ -457,7 +456,9 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   if (testimonials.length && dots.length) {
-    if (testimonials.length !== dots.length) console.warn('testimonials/dots mismatch', testimonials.length, dots.length);
+    if (testimonials.length !== dots.length) {
+      console.warn('testimonials/dots mismatch', testimonials.length, dots.length);
+    }
     dots.forEach((dot, i) => dot.addEventListener('click', () => {
       showTestimonial(i);
       if (tTimer) clearInterval(tTimer);
@@ -468,7 +469,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ---------------------------
-     FAQ accordion (class-based + aria)
+     FAQ accordion
      --------------------------- */
   const questions = Array.from(document.querySelectorAll('.faq-question'));
   questions.forEach(q => {
@@ -489,10 +490,9 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* ---------------------------
-     Ensure AOS refresh after dynamic content insertion
+     AOS refresh after dynamic content insertion
      --------------------------- */
   if (window.AOS && typeof AOS.refresh === 'function') {
-    // small timeout to allow inserted nav to render
     setTimeout(() => AOS.refresh(), 250);
   }
 });
