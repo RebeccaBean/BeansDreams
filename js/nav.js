@@ -1,5 +1,7 @@
 // nav.js
-document.addEventListener("DOMContentLoaded", () => {
+
+// Run after navigation has been injected
+document.addEventListener("nav:loaded", () => {
   // Highlight active link
   const currentPage = window.location.pathname.split("/").pop();
   document.querySelectorAll(".nav-link").forEach(link => {
