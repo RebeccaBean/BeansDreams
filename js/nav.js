@@ -39,11 +39,20 @@ function toggleMenu() {
   }
 }
 
-// Toggle dropdown menus
+// Toggle dropdown menus with accessibility fixes
 function toggleDropdown(link) {
   const dropdownMenu = link.nextElementSibling;
   if (!dropdownMenu) return;
 
-  const isOpen = dropdownMenu.classList.toggle("open");
-  link.setAttribute("aria-expanded", isOpen);
+  const isHidden = dropdownMenu.hasAttribute("hidden");
+  if (isHidden) {
+    dropdownMenu.removeAttribute("hidden");
+    dropdownMenu.classList.add("open");
+    link.setAttribute("aria-expanded", "true");
+  } else {
+    dropdownMenu.setAttribute("hidden", "");
+    dropdownMenu.classList.remove("open");
+    link.setAttribute("aria-expanded", "false");
+  }
 }
+
