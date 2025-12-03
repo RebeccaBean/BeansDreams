@@ -245,7 +245,7 @@
   <p>© <span id="year"></span> Bean's Dreams — Dance • Heal • Rise</p>
 </footer>
 
-<!-- Consolidated initializer (single script, no duplicates) -->
+<!-- Consolidated initializer (handles both real nav and fallback) -->
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   /* ---------------------------
@@ -258,7 +258,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
   /* ---------------------------
-     Robust navigation loader with fallback
+     Navigation loader with fallback
      --------------------------- */
   const navPlaceholder = document.getElementById('nav-placeholder');
   const fallbackNav = `
@@ -298,54 +298,88 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ---------------------------
-     Fallback nav behavior
+     Initializers for both nav types
      --------------------------- */
-  function initFallbackNav() {
+  document.addEventListener('nav:loaded', () => {
+    // Case 1: Real navigation.html markup
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.getElementById('navMenu');
+    if (hamburger && navMenu) {
+      hamburger.addEventListener('click', () => {
+        navMenu.classList.toggle('show');
+        const expanded = navMenu.classList.contains('show');
+        hamburger.setAttribute('aria-expanded', expanded);
+      });
+    }
+
+    // Dropdown toggles
+    document.querySelectorAll('.dropdown > a').forEach(link => {
+      link.addEventListener('click', e => {
+        if (window.innerWidth <= 768) {
+          e.preventDefault();
+          const dropdownMenu = link.nextElementSibling;
+          if (dropdownMenu) {
+            const isOpen = dropdownMenu.classList.toggle('open');
+            link.setAttribute('aria-expanded', isOpen);
+          }
+        }
+      });
+    });
+
+    // Highlight active link
+    const currentPage = window.location.pathname.split('/').pop();
+    document.querySelectorAll('.nav-link').forEach(link => {
+      if (link.getAttribute('href') === currentPage) {
+        link.classList.add('active');
+      }
+    });
+
+    // Case 2: Fallback nav markup
     const mobileToggle = document.getElementById('mobile-nav-toggle');
     const primaryNav = document.getElementById('primary-nav');
-    if (!mobileToggle || !primaryNav) return;
-
-    function setInitialState() {
-      if (window.innerWidth <= 768) {
-        primaryNav.classList.add('collapsed');
-        primaryNav.classList.remove('open');
-        mobileToggle.setAttribute('aria-expanded', 'false');
-      } else {
-        primaryNav.classList.remove('collapsed');
-        primaryNav.classList.remove('open');
-        mobileToggle.setAttribute('aria-expanded', 'false');
+    if (mobileToggle && primaryNav) {
+      function setInitialState() {
+        if (window.innerWidth <= 768) {
+          primaryNav.classList.add('collapsed');
+          primaryNav.classList.remove('open');
+          mobileToggle.setAttribute('aria-expanded', 'false');
+        } else {
+          primaryNav.classList.remove('collapsed');
+          primaryNav.classList.remove('open');
+          mobileToggle.setAttribute('aria-expanded', 'false');
+        }
       }
+      setInitialState();
+      window.addEventListener('resize', setInitialState);
+
+      mobileToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isOpen = primaryNav.classList.toggle('open');
+        primaryNav.classList.toggle('collapsed', !isOpen);
+        mobileToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!primaryNav.classList.contains('open')) return;
+        if (!primaryNav.contains(e.target) && !mobileToggle.contains(e.target)) {
+          primaryNav.classList.remove('open');
+          primaryNav.classList.add('collapsed');
+          mobileToggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && primaryNav.classList.contains('open')) {
+          primaryNav.classList.remove('open');
+          primaryNav.classList.add('collapsed');
+          mobileToggle.setAttribute('aria-expanded', 'false');
+          mobileToggle.focus();
+        }
+      });
     }
-    setInitialState();
-    window.addEventListener('resize', setInitialState);
-
-    mobileToggle.addEventListener('click', (e) => {
-      e.stopPropagation();
-      const isOpen = primaryNav.classList.toggle('open');
-      primaryNav.classList.toggle('collapsed', !isOpen);
-      mobileToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-    });
-
-    document.addEventListener('click', (e) => {
-      if (!primaryNav.classList.contains('open')) return;
-      if (!primaryNav.contains(e.target) && !mobileToggle.contains(e.target)) {
-        primaryNav.classList.remove('open');
-        primaryNav.classList.add('collapsed');
-        mobileToggle.setAttribute('aria-expanded', 'false');
-      }
-    });
-
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && primaryNav.classList.contains('open')) {
-        primaryNav.classList.remove('open');
-        primaryNav.classList.add('collapsed');
-        mobileToggle.setAttribute('aria-expanded', 'false');
-        mobileToggle.focus();
-      }
-    });
-  }
-  document.addEventListener('nav:loaded', initFallbackNav);
-  initFallbackNav();
+  });
+});
+</script>
 
   /* ---------------------------
      Cart accessibility and toggle
