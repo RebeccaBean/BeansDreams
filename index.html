@@ -32,72 +32,74 @@
       <h3 class="slide-text" data-aos="fade-left" data-aos-delay="400">Dance • Heal • Rise</h3>
 
       <!-- Lead Magnet Top -->
-      <section class="lead-buttons">
-        <button class="lead-toggle" data-target="pdfForm">🌞 Get Your Free Daily Energy Reset 🌞</button>
-        <button class="lead-toggle" data-target="introForm">🎁 Claim Your Free Intro Session</button>
-      </section>
+<section class="lead-buttons">
+  <button class="lead-toggle" data-target="pdfForm" aria-controls="pdfForm" aria-expanded="false">
+    🌞 Get Your Free Daily Energy Reset 🌞
+  </button>
+  <button class="lead-toggle" data-target="introForm" aria-controls="introForm" aria-expanded="false">
+    🎁 Claim Your Free Intro Session
+  </button>
+</section>
 
-      <!-- PDF Form -->
-      <section id="pdfForm" class="lead-form-section hidden" data-aos="fade-up">
-        <h2 class="form-heading">🌞 Daily Energy Reset PDF</h2>
-        <button class="close-btn" aria-label="Close Form">✖</button>
-        <form action="https://formspree.io/f/xdkdvoal" method="POST" class="lead-form">
-          <label for="name-pdf">Full Name</label>
-          <input type="text" name="name" id="name-pdf" required placeholder="Your Name" />
+<!-- PDF Form -->
+<section id="pdfForm" class="lead-form-section hidden" data-aos="fade-up" aria-hidden="true">
+  <h2 class="form-heading">🌞 Daily Energy Reset PDF</h2>
+  <button class="close-btn" aria-label="Close Form">✖</button>
+  <form action="https://formspree.io/f/xdkdvoal" method="POST" class="lead-form">
+    <label for="name-pdf">Full Name</label>
+    <input type="text" name="name" id="name-pdf" required placeholder="Your Name" autocomplete="name" />
 
-          <label for="email-pdf">Email Address</label>
-          <input type="email" name="email" id="email-pdf" required placeholder="you@example.com" />
+    <label for="email-pdf">Email Address</label>
+    <input type="email" name="email" id="email-pdf" required placeholder="you@example.com" autocomplete="email" />
 
-          <label for="interest-pdf">Area of Interest</label>
-          <select name="interest" id="interest-pdf" required>
-            <option value="">-- Select One --</option>
-            <option value="coaching">Coaching</option>
-            <option value="dance">Dance</option>
-            <option value="music">Music</option>
-          </select>
+    <label for="interest-pdf">Area of Interest</label>
+    <select name="interest" id="interest-pdf" required autocomplete="off">
+      <option value="">-- Select One --</option>
+      <option value="coaching">Coaching</option>
+      <option value="dance">Dance</option>
+      <option value="music">Music</option>
+    </select>
 
-          <label for="focus-pdf">What you'd like to work on</label>
-          <input type="text" name="focus" id="focus-pdf" placeholder="e.g. confidence, creativity, healing" />
+    <label for="focus-pdf">What you'd like to work on</label>
+    <input type="text" name="focus" id="focus-pdf" placeholder="e.g. confidence, creativity, healing" autocomplete="off" />
 
-          <label for="message-pdf">Your goals or needs</label>
-          <textarea name="message" id="message-pdf" rows="4" placeholder="Tell us more about your journey..."></textarea>
+    <label for="message-pdf">Your goals or needs</label>
+    <textarea name="message" id="message-pdf" rows="4" placeholder="Tell us more about your journey..." autocomplete="off"></textarea>
 
-          <input type="hidden" name="_redirect" value="thankyou.html" />
-          <button type="submit" class="submit-btn">Send My Free PDF</button>
-        </form>
-      </section>
+    <input type="hidden" name="_redirect" value="thankyou.html" />
+    <button type="submit" class="submit-btn">Send My Free PDF</button>
+  </form>
+</section>
 
-      <!-- Intro Form -->
-      <section id="introForm" class="lead-form-section hidden" data-aos="fade-up">
-        <h2 class="form-heading">🎁 Free Intro Session</h2>
-        <button class="close-btn" aria-label="Close Form">✖</button>
-        <form action="https://formspree.io/f/mkgzebjn" method="POST" class="lead-form">
-          <label for="name-intro">Full Name</label>
-          <input type="text" name="name" id="name-intro" required placeholder="Your Name" />
+<!-- Intro Form -->
+<section id="introForm" class="lead-form-section hidden" data-aos="fade-up" aria-hidden="true">
+  <h2 class="form-heading">🎁 Free Intro Session</h2>
+  <button class="close-btn" aria-label="Close Form">✖</button>
+  <form action="https://formspree.io/f/mkgzebjn" method="POST" class="lead-form">
+    <label for="name-intro">Full Name</label>
+    <input type="text" name="name" id="name-intro" required placeholder="Your Name" autocomplete="name" />
 
-          <label for="email-intro">Email Address</label>
-          <input type="email" name="email" id="email-intro" required placeholder="you@example.com" />
+    <label for="email-intro">Email Address</label>
+    <input type="email" name="email" id="email-intro" required placeholder="you@example.com" autocomplete="email" />
 
-          <label for="interest-intro">Area of Interest</label>
-          <select name="interest" id="interest-intro" required>
-            <option value="">-- Select One --</option>
-            <option value="coaching">Coaching</option>
-            <option value="dance">Dance</option>
-            <option value="music">Music</option>
-          </select>
+    <label for="interest-intro">Area of Interest</label>
+    <select name="interest" id="interest-intro" required autocomplete="off">
+      <option value="">-- Select One --</option>
+      <option value="coaching">Coaching</option>
+      <option value="dance">Dance</option>
+      <option value="music">Music</option>
+    </select>
 
-          <label for="focus-intro">What you'd like to work on</label>
-          <input type="text" name="focus" id="focus-intro" placeholder="e.g. confidence, creativity, healing" />
+    <label for="focus-intro">What you'd like to work on</label>
+    <input type="text" name="focus" id="focus-intro" placeholder="e.g. confidence, creativity, healing" autocomplete="off" />
 
-          <label for="message-intro">Your goals or needs</label>
-          <textarea name="message" id="message-intro" rows="4" placeholder="Tell us more about your journey..."></textarea>
+    <label for="message-intro">Your goals or needs</label>
+    <textarea name="message" id="message-intro" rows="4" placeholder="Tell us more about your journey..." autocomplete="off"></textarea>
 
-          <input type="hidden" name="_redirect" value="thankyou.html" />
-          <button type="submit" class="submit-btn">Book My Free Intro</button>
-        </form>
-      </section>
-    </div>
-  </header>
+    <input type="hidden" name="_redirect" value="thankyou.html" />
+    <button type="submit" class="submit-btn">Book My Free Intro</button>
+  </form>
+</section>
 
  <!-- WHAT WE OFFER -->
 <section class="services" data-aos="fade-up">
