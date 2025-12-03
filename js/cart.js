@@ -5,21 +5,17 @@ document.addEventListener("DOMContentLoaded", () => {
   const cartTotalEl = document.getElementById("cart-total");
   const cartCountEl = document.getElementById("cart-count");
   const checkoutBtn = document.getElementById("checkout-btn");
-  const cartToggle = document.querySelector(".cart-toggle-btn");
-  const closeCartBtn = document.querySelector(".close-cart-btn");
+  const cartToggle = document.getElementById("cart-toggle");
+  const closeCartBtn = document.getElementById("close-cart");
 
-  // Load existing cart or create empty
   let cart = JSON.parse(localStorage.getItem("beansDreamsCart")) || [];
 
-  // Save cart to localStorage
   function saveCart() {
     localStorage.setItem("beansDreamsCart", JSON.stringify(cart));
   }
 
-  // Update cart UI
   function updateCartUI() {
     if (!cartItemsList) return;
-
     cartItemsList.innerHTML = "";
     let total = 0;
 
@@ -28,7 +24,6 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
       cart.forEach((item, index) => {
         total += item.price * item.quantity;
-
         const li = document.createElement("li");
         li.textContent = `${item.name} x${item.quantity} - $${(item.price * item.quantity).toFixed(2)}`;
 
@@ -50,7 +45,6 @@ document.addEventListener("DOMContentLoaded", () => {
     if (cartCountEl) cartCountEl.textContent = cart.reduce((sum, item) => sum + item.quantity, 0);
   }
 
-  // Add item to cart
   function addToCart(item) {
     const existing = cart.find(ci =>
       ci.bundleKey === item.bundleKey &&
@@ -67,17 +61,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     saveCart();
     updateCartUI();
-
-    if (cartSidebar) {
-      cartSidebar.classList.add("active");
-      cartSidebar.setAttribute("aria-hidden", "false");
-    }
+    openCart();
   }
 
-  // Global add-to-cart click handler
   document.body.addEventListener("click", (e) => {
     if (!e.target.classList.contains("add-cart-btn")) return;
-
     const btn = e.target;
     const item = {
       name: btn.getAttribute("data-name"),
@@ -92,53 +80,56 @@ document.addEventListener("DOMContentLoaded", () => {
     addToCart(item);
   });
 
-  // Sidebar toggle
+  function openCart() {
+    cartSidebar.classList.add("open");
+    cartSidebar.setAttribute("aria-hidden", "false");
+    if (cartToggle) cartToggle.setAttribute("aria-expanded", "true");
+    trapFocus(cartSidebar);
+  }
+
+  function closeCart() {
+    cartSidebar.classList.remove("open");
+    cartSidebar.setAttribute("aria-hidden", "true");
+    if (cartToggle) cartToggle.setAttribute("aria-expanded", "false");
+    releaseFocusTrap();
+  }
+
   if (cartToggle && cartSidebar) {
     cartToggle.addEventListener("click", () => {
-      const isActive = cartSidebar.classList.toggle("active");
-      cartSidebar.setAttribute("aria-hidden", isActive ? "false" : "true");
+      const isOpen = cartSidebar.classList.contains("open");
+      if (isOpen) closeCart();
+      else openCart();
     });
   }
 
   if (closeCartBtn && cartSidebar) {
-    closeCartBtn.addEventListener("click", () => {
-      cartSidebar.classList.remove("active");
-      cartSidebar.setAttribute("aria-hidden", "true");
-    });
+    closeCartBtn.addEventListener("click", () => closeCart());
   }
 
-  // Checkout button handler
   if (checkoutBtn) {
     checkoutBtn.addEventListener("click", async () => {
       if (cart.length === 0) {
         alert("Your cart is empty.");
         return;
       }
-
       try {
         let headers = { "Content-Type": "application/json" };
-
-        // If Firebase auth available, attach ID token
         if (window.firebase && firebase.auth().currentUser) {
           const idToken = await firebase.auth().currentUser.getIdToken();
           headers.Authorization = `Bearer ${idToken}`;
         }
-
         const resp = await fetch("/capture-order", {
           method: "POST",
           headers,
           body: JSON.stringify({ cart })
         });
-
         const data = await resp.json();
-
         if (data.success) {
           alert(`Order confirmed! ID: ${data.orderId}`);
           cart = [];
           saveCart();
           updateCartUI();
-          cartSidebar.classList.remove("active");
-          cartSidebar.setAttribute("aria-hidden", "true");
+          closeCart();
         } else {
           alert("Error: " + (data.error || "Unknown error"));
         }
@@ -149,7 +140,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // PayPal integration (if SDK loaded)
   if (window.paypal && typeof window.paypal.Buttons === "function") {
     try {
       window.paypal.Buttons({
@@ -159,20 +149,17 @@ document.addEventListener("DOMContentLoaded", () => {
         },
         onApprove: async (_data, actions) => {
           const details = await actions.order.capture();
-
           try {
             let headers = { "Content-Type": "application/json" };
             if (window.firebase && firebase.auth().currentUser) {
               const idToken = await firebase.auth().currentUser.getIdToken();
               headers.Authorization = `Bearer ${idToken}`;
             }
-
             await fetch("/capture-order", {
               method: "POST",
               headers,
               body: JSON.stringify({ cart, order: details })
             });
-
             alert(`Transaction completed by ${details?.payer?.name?.given_name || "customer"}.`);
             cart = [];
             saveCart();
@@ -187,6 +174,38 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Initialize UI
+  // Focus trap logic
+  let focusTrapHandler = null;
+  function trapFocus(container) {
+    const focusableSelectors = 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
+    const focusableEls = Array.from(container.querySelectorAll(focusableSelectors));
+    if (focusableEls.length === 0) return;
+    const firstEl = focusableEls[0];
+    const lastEl = focusableEls[focusableEls.length - 1];
+    focusTrapHandler = (e) => {
+      if (e.key !== "Tab") return;
+      if (e.shiftKey) {
+        if (document.activeElement === firstEl) {
+          e.preventDefault();
+          lastEl.focus();
+        }
+      } else {
+        if (document.activeElement === lastEl) {
+          e.preventDefault();
+          firstEl.focus();
+        }
+      }
+    };
+    document.addEventListener("keydown", focusTrapHandler);
+    firstEl.focus();
+  }
+
+  function releaseFocusTrap() {
+    if (focusTrapHandler) {
+      document.removeEventListener("keydown", focusTrapHandler);
+      focusTrapHandler = null;
+    }
+  }
+
   updateCartUI();
 });
