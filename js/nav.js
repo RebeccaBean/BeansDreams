@@ -1,34 +1,47 @@
+// nav.js
 document.addEventListener("DOMContentLoaded", () => {
-  fetch("nav.html")
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById("nav-placeholder").innerHTML = data;
+  // Highlight active link
+  const currentPage = window.location.pathname.split("/").pop();
+  document.querySelectorAll(".nav-link").forEach(link => {
+    if (link.getAttribute("href") === currentPage) {
+      link.classList.add("active");
+    }
+  });
 
-      // Highlight active link
-      const currentPage = window.location.pathname.split("/").pop();
-      document.querySelectorAll(".nav-link").forEach(link => {
-        if (link.getAttribute("href") === currentPage) {
-          link.classList.add("active");
-        }
-      });
+  // Mobile dropdown toggle (click + keyboard)
+  document.querySelectorAll('.dropdown > a').forEach(link => {
+    link.addEventListener('click', e => {
+      if (window.innerWidth <= 768) {
+        e.preventDefault();
+        toggleDropdown(link);
+      }
+    });
 
-      // Mobile dropdown toggle
-      document.querySelectorAll('.dropdown > a').forEach(link => {
-        link.addEventListener('click', e => {
-          if (window.innerWidth <= 768) {
-            e.preventDefault();
-            const dropdownMenu = link.nextElementSibling;
-            if (!dropdownMenu) return;  // safety
-            dropdownMenu.style.display =
-              dropdownMenu.style.display === 'block' ? 'none' : 'block';
-          }
-        });
-      });
-    })
-    .catch(error => console.error("Error loading nav:", error));
+    link.addEventListener('keydown', e => {
+      if (window.innerWidth <= 768 && (e.key === "Enter" || e.key === " ")) {
+        e.preventDefault();
+        toggleDropdown(link);
+      }
+    });
+  });
 });
 
+// Toggle hamburger menu
 function toggleMenu() {
   const navMenu = document.getElementById("navMenu");
-  if (navMenu) navMenu.classList.toggle("show");
+  const hamburger = document.querySelector(".hamburger");
+  if (navMenu && hamburger) {
+    navMenu.classList.toggle("show");
+    const expanded = navMenu.classList.contains("show");
+    hamburger.setAttribute("aria-expanded", expanded);
+  }
+}
+
+// Toggle dropdown menus
+function toggleDropdown(link) {
+  const dropdownMenu = link.nextElementSibling;
+  if (!dropdownMenu) return;
+
+  const isOpen = dropdownMenu.classList.toggle("open");
+  link.setAttribute("aria-expanded", isOpen);
 }

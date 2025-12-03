@@ -1,24 +1,33 @@
-/* Font for brand */
+/* Import brand font */
 @import url('https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap');
 
+/* Color variables */
+:root {
+  --brand-blue: #004AAA;
+  --accent-orange: #FF940E;
+  --hover-bg: #FFEBD2;
+  --accent-gold: #FEB803;
+}
+
+/* Brand/logo font */
 .alex-brush {
   font-family: 'Alex Brush', cursive;
   font-size: 2rem;
-  color: #004AAA;
+  color: var(--brand-blue);
   text-decoration: none;
 }
 
 /* NAV BAR ROOT */
 .navbar {
   background-color: white;
-  border-bottom: 2px solid #FF940E;
+  border-bottom: 2px solid var(--accent-orange);
   position: sticky;
   top: 0;
   z-index: 1000;
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between; /* logo left, links right */
+  justify-content: space-between;
   padding: 1rem 2rem;
   box-sizing: border-box;
 }
@@ -49,7 +58,7 @@
 /* Individual links */
 .nav-link {
   text-decoration: none;
-  color: #004AAA;
+  color: var(--brand-blue);
   font-weight: bold;
   padding: 0.5rem 1rem;
   display: inline-block;
@@ -59,7 +68,7 @@
 
 .nav-link:hover,
 .nav-link.active {
-  background-color: #FFEBD2;
+  background-color: var(--hover-bg);
 }
 
 /* Dropdown */
@@ -88,7 +97,7 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  color: #004AAA;
+  color: var(--brand-blue);
   text-decoration: none;
   padding: 0.6rem 1rem;
 }
@@ -97,39 +106,46 @@
   display: block;
 }
 
+/* Accessibility focus states */
+.nav-link:focus,
+.dropdown-menu a:focus,
+.fallback-nav a:focus {
+  outline: 2px solid var(--brand-blue);
+  outline-offset: 2px;
+  background-color: var(--hover-bg);
+}
+
 /* Responsive (mobile) */
 @media (max-width: 768px) {
   .hamburger {
     display: block;
   }
 
-  /* Stack nav items in a slide-down panel */
   .nav-links {
     position: absolute;
     top: 100%;
     left: 0;
     right: 0;
-    display: none;          /* hidden until toggled */
-    flex-direction: column; /* vertical */
+    flex-direction: column;
     background-color: #fff;
-    border-bottom: 2px solid #FF940E;
+    border-bottom: 2px solid var(--accent-orange);
     padding: 0.75rem 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
   }
 
-  /* Shown when toggled */
   .nav-links.show {
-    display: flex;
+    max-height: 500px; /* adjust as needed */
   }
 
-  /* Full-width touch-friendly links */
   .nav-link {
     padding: 0.9rem 1.2rem;
     width: 100%;
   }
 
-  /* Mobile dropdown: reveal on tap (we’ll toggle via JS) */
   .dropdown.open > .dropdown-menu {
-    position: static;    /* flow inside the column */
+    position: static;
     display: block;
     box-shadow: none;
     border-top: 1px solid #eee;
@@ -139,12 +155,13 @@
 
 /* Utility */
 .hidden { display: none; }
+
 /* ===== Fallback Navigation ===== */
 .fallback-nav {
   display: flex;
   justify-content: center;
   gap: 1.5rem;
-  background-color: #004AAD;   /* matches your brand blue */
+  background-color: var(--brand-blue);
   padding: 1rem;
   border-radius: 8px;
   margin: 1rem 0;
@@ -159,11 +176,10 @@
 }
 
 .fallback-nav a:hover {
-  color: #FEB803;              /* your accent gold */
+  color: var(--accent-gold);
   transform: scale(1.05);
 }
 
-/* Responsive tweaks */
 @media (max-width: 480px) {
   .fallback-nav {
     flex-direction: column;
