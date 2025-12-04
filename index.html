@@ -220,19 +220,26 @@
     🛒 Cart (<span id="cart-count">0</span>)
   </button>
 
-  <<!-- FOOTER -->
+  <!-- FOOTER -->
+  <footer class="site-footer" data-aos="fade-up">
+    <p>© <span id="year"></span> Bean's Dreams — Dance • Heal • Rise</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://www.paypal.com/sdk/js?client-id=AVhdcxMFlhEnAaJN0_ju-Kjgxo5djvN3Q5VMCVtxrc2fZknJjXNTiLQzWmNel_qUZAjuSOhML2hiU9ct"></script>
+  <script src="js/nav.js" defer></script>
+  <script src="js/cart.js" defer></script>
+  <script src="js/index.js" defer></script>
+</body>
+</html>
+
+<!-- FOOTER -->
 <footer class="site-footer" data-aos="fade-up">
   <p>© <span id="year"></span> Bean's Dreams — Dance • Heal • Rise</p>
 </footer>
 
-<!-- External Scripts -->
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<script src="https://www.paypal.com/sdk/js?client-id=YOUR_CLIENT_ID"></script>
-<script src="js/nav.js" defer></script>
-<script src="js/cart.js" defer></script>
-<script src="js/index.js" defer></script>
-
-<!-- Inline Initializers -->
+<!-- Consolidated initializer -->
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   /* ---------------------------
@@ -275,16 +282,103 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (navPlaceholder) {
     fetch('navigation.html', { cache: 'no-store' })
-      .then(resp => {
-        if (!resp.ok) throw new Error('no partial');
-        return resp.text();
-      })
+      .then(resp => resp.ok ? resp.text() : Promise.reject())
       .then(text => {
         if (!text || text.trim().length < 20) insertNav(fallbackNav);
         else insertNav(text);
       })
       .catch(() => insertNav(fallbackNav));
   }
+
+  /* ---------------------------
+     Initializers for both nav types
+     --------------------------- */
+  document.addEventListener('nav:loaded', () => {
+    // Case 1: Real navigation.html markup
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.getElementById('navMenu');
+    if (hamburger && navMenu) {
+      hamburger.addEventListener('click', () => {
+        navMenu.classList.toggle('show');
+        const expanded = navMenu.classList.contains('show');
+        hamburger.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+      });
+    }
+
+    // Dropdown toggles with accessibility fixes
+    document.querySelectorAll('.dropdown > a').forEach(link => {
+      link.addEventListener('click', e => {
+        if (window.innerWidth <= 768) {
+          e.preventDefault();
+          const dropdownMenu = link.nextElementSibling;
+          if (dropdownMenu) {
+            const isHidden = dropdownMenu.hasAttribute('hidden');
+            if (isHidden) {
+              dropdownMenu.removeAttribute('hidden');
+              dropdownMenu.classList.add('open');
+              link.setAttribute('aria-expanded', 'true');
+            } else {
+              dropdownMenu.setAttribute('hidden', '');
+              dropdownMenu.classList.remove('open');
+              link.setAttribute('aria-expanded', 'false');
+            }
+          }
+        }
+      });
+    });
+
+    // Highlight active link
+    const currentPage = window.location.pathname.split('/').pop();
+    document.querySelectorAll('.nav-link').forEach(link => {
+      if (link.getAttribute('href') === currentPage) {
+        link.classList.add('active');
+      }
+    });
+
+    // Case 2: Fallback nav markup
+    const mobileToggle = document.getElementById('mobile-nav-toggle');
+    const primaryNav = document.getElementById('primary-nav');
+    if (mobileToggle && primaryNav) {
+      function setInitialState() {
+        if (window.innerWidth <= 768) {
+          primaryNav.classList.add('collapsed');
+          primaryNav.classList.remove('open');
+          mobileToggle.setAttribute('aria-expanded', 'false');
+        } else {
+          primaryNav.classList.remove('collapsed');
+          primaryNav.classList.remove('open');
+          mobileToggle.setAttribute('aria-expanded', 'false');
+        }
+      }
+      setInitialState();
+      window.addEventListener('resize', setInitialState);
+
+      mobileToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isOpen = primaryNav.classList.toggle('open');
+        primaryNav.classList.toggle('collapsed', !isOpen);
+        mobileToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!primaryNav.classList.contains('open')) return;
+        if (!primaryNav.contains(e.target) && !mobileToggle.contains(e.target)) {
+          primaryNav.classList.remove('open');
+          primaryNav.classList.add('collapsed');
+          mobileToggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && primaryNav.classList.contains('open')) {
+          primaryNav.classList.remove('open');
+          primaryNav.classList.add('collapsed');
+          mobileToggle.setAttribute('aria-expanded', 'false');
+          mobileToggle.focus();
+        }
+      });
+    }
+  });
 
   /* ---------------------------
      Cart accessibility and toggle
@@ -312,10 +406,12 @@ document.addEventListener('DOMContentLoaded', () => {
       setCartOpen(!isOpen);
     });
   }
+
   if (closeCartBtn) {
     closeCartBtn.addEventListener('click', () => setCartOpen(false));
   }
 
+  // Optional global API
   window.BeanCart = {
     open: () => setCartOpen(true),
     close: () => setCartOpen(false),
@@ -378,11 +474,13 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   if (testimonials.length && dots.length) {
-    dots.forEach((dot, i) => dot.addEventListener('click', () => {
-      showTestimonial(i);
-      if (tTimer) clearInterval(tTimer);
-      tTimer = setInterval(() => showTestimonial((tIndex + 1) % testimonials.length), 4000);
-    }));
+    dots.forEach((dot, i) => {
+      dot.addEventListener('click', () => {
+        showTestimonial(i);
+        if (tTimer) clearInterval(tTimer);
+        tTimer = setInterval(() => showTestimonial((tIndex + 1) % testimonials.length), 4000);
+      });
+    });
     showTestimonial(0);
     tTimer = setInterval(() => showTestimonial((tIndex + 1) % testimonials.length), 4000);
   }
@@ -393,15 +491,16 @@ document.addEventListener('DOMContentLoaded', () => {
   const questions = Array.from(document.querySelectorAll('.faq-question'));
   questions.forEach(q => {
     if (!q.hasAttribute('aria-expanded')) q.setAttribute('aria-expanded', 'false');
-    const answer = document.getElementById(q.getAttribute('aria-controls'));
+    const answerId = q.getAttribute('aria-controls');
+    const answer = answerId ? document.getElementById(answerId) : null;
     if (answer) answer.hidden = true;
 
     q.addEventListener('click', () => {
-      const answer = document.getElementById(q.getAttribute('aria-controls'));
-      if (!answer) return;
+      const answerEl = answerId ? document.getElementById(answerId) : null;
+      if (!answerEl) return;
       const isOpen = q.getAttribute('aria-expanded') === 'true';
       q.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
-      answer.hidden = isOpen;
+      answerEl.hidden = isOpen;
     });
   });
 
@@ -413,6 +512,3 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 </script>
-
-</body>
-</html>
