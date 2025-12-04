@@ -40,16 +40,19 @@
 
   <main>
     <!-- Your about content -->
-    <section class="about-content" data-aos="fade-up">
+       <section class="about-content" data-aos="fade-up">
       <div class="profile-container">
-        <img src="https://via.placeholder.com/400x300" alt="Nick Bean" class="about-photo">
-        <img src="https://via.placeholder.com/400x300" alt="Rebecca Bean" class="about-photo">
+       
+       
         <div class="bio-text">
           <h2 class="alex-brush">Nick & Rebecca Bean</h2>
           <p style="color:#030998;"><strong><u>Founders of Bean’s Dreams</u></strong></p>
 
-          <p><strong>Nick and Rebecca</strong> are a husband-and-wife duo dedicated to helping others rise through movement, music, and emotional recovery...</p>
-          <!-- (rest of your bio text unchanged) -->
+          <p><strong>Nick and Rebecca</strong> are a husband-and-wife duo dedicated to helping others rise through movement, music, and emotional recovery.</p>
+           <img src="https://via.placeholder.com/400x300" alt="Nick Bean" class="about-photo">
+          <p>Nick grew up in the dance business and brings over 40 years of experience teaching dance and gymnastics. He’s also a lifelong musician and coach, having spent his summers as a teen in Los Angeles coaching Olympic gymnasts and performing in bands. Nick has worked for Hanna-Barbera and Disney and now shares his gifts through personalized instruction in guitar, singing, and movement.</p>
+           <img src="https://via.placeholder.com/400x300" alt="Rebecca Bean" class="about-photo">
+           <p>Rebecca is a passionate mentor who blends her background in dance, music, and trauma-informed healing to help people rise. Her mission is to empower others through joyful expression and deep emotional support.</p>
         </div>
       </div>
     </section>
@@ -57,7 +60,7 @@
     <section class="mission" data-aos="fade-up">
       <h1 class="alex-brush">Our Mission</h1>
       <p>
-        To help people heal, express, and rise through soulful movement, creative education, and personal empowerment...
+        We are dedicated to helping individuals discover their authentic voice, embrace their natural rhythm, and walk confidently along their healing path. By fostering a heart‑centered environment, we create space where creativity flourishes and personal growth is nurtured, empowering each person to thrive.
       </p>
       <div class="about-cta" data-aos="zoom-in" data-aos-delay="800">
         <a href="classes.html" class="cta-button">🎵 Explore Our Classes 🎵</a>
@@ -76,6 +79,10 @@
     <h3>Your Cart</h3>
     <ul id="cart-items"></ul>
     <div class="cart-total">Total: $<span id="cart-total">0.00</span></div>
+    
+  <!-- PayPal Button Container -->
+  <div id="paypal-button-container"></div>
+
     <button id="checkout-btn" class="btn checkout-btn">Checkout</button>
     <button id="close-cart" class="btn close-cart-btn" aria-label="Close cart">Close</button>
   </div>
@@ -84,9 +91,6 @@
   <button id="cart-toggle" class="btn cart-toggle-btn" aria-label="Toggle cart">
     🛒 Cart (<span id="cart-count">0</span>)
   </button>
-
-  <!-- PayPal Button Container -->
-  <div id="paypal-button-container"></div>
 
    <!-- Scripts -->
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
@@ -122,8 +126,13 @@
             el.innerHTML = `
               <nav class="fallback-nav">
                 <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="contact.html">Contact</a>
+                <li><a href="/classes.html">Classes</a></li>
+          <li><a href="/coaching.html">Coaching</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+          <li><a href="/store.html">Store</a></li>
+          <li><a href="/blog.html">Blog</a></li>
+          <li><a href="/portal.html">Student Portal</a></li>
               </nav>
             `;
           }

@@ -24,7 +24,7 @@
 <header class="hero">
   <div class="hero-content">
     <div class="logo-container">
-      <img src="imageslogo/Bean's Butterfly.png" alt="Bean's Dreams butterfly logo" class="logo-bounce-in">
+      <img src="imageslogo/beansbutterfly.png" alt="Bean's Dreams butterfly logo" class="logo-bounce-in">
     </div>
     <h1 data-aos="fade-up">Welcome to Bean’s Dreams</h1>
     <p data-aos="fade-up" data-aos-delay="200">Empowering you through movement, music, and healing</p>
@@ -89,7 +89,7 @@
     <!-- Courses -->
     <div class="card" data-aos="zoom-in" data-aos-delay="450">
       <img src="imageslogo/courses.png" alt="Laptop with online course materials">
-      <h3><a href="classes.html#courses">Online Courses</a></h3>
+      <h3><a href="store.html#courses">Online Courses</a></h3>
       <p>Self-paced programs in movement, music, and mindfulness for transformation.</p>
     </div>
 
@@ -206,25 +206,19 @@
     </div>
   </section>
 
- <!-- CART SIDEBAR -->
-<div id="cart" class="cart-sidebar" aria-label="Shopping cart">
-  <h3>Your Cart</h3>
-  <ul id="cart-items" aria-live="polite"></ul>
-  <div class="cart-actions">
-    <div class="cart-total">
-      Total: $<span id="cart-total">0.00</span>
-    </div>
-    <!-- PayPal Buttons container -->
-    <div id="paypal-button-container" role="region" aria-label="PayPal checkout buttons"></div>
+  <!-- CART SIDEBAR -->
+  <div id="cart" class="cart-sidebar" aria-label="Shopping cart" aria-hidden="true" role="complementary">
+    <h3>Your Cart</h3>
+    <ul id="cart-items"></ul>
+    <div class="cart-total">Total: $<span id="cart-total">0.00</span></div>
+    <button id="checkout-btn" class="btn checkout-btn">Checkout</button>
+    <button id="close-cart" class="btn close-cart-btn" aria-label="Close cart">Close</button>
   </div>
-  <button id="checkout-btn" class="btn checkout-btn">Checkout</button>
-  <button id="close-cart" class="btn close-cart-btn">Close</button>
-</div>
 
-<!-- Floating Cart Button -->
-<button id="cart-toggle" class="btn cart-toggle-btn" aria-controls="cart" aria-expanded="false">
-  🛒 Cart (<span id="cart-count">0</span>)
-</button>
+  <!-- Cart Toggle Button -->
+  <button id="cart-toggle" class="btn cart-toggle-btn" aria-label="Toggle cart">
+    🛒 Cart (<span id="cart-count">0</span>)
+  </button>
 
   <!-- FOOTER -->
   <footer class="site-footer" data-aos="fade-up">
