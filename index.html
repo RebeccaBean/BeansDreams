@@ -220,26 +220,19 @@
     🛒 Cart (<span id="cart-count">0</span>)
   </button>
 
-  <!-- FOOTER -->
-  <footer class="site-footer" data-aos="fade-up">
-    <p>© <span id="year"></span> Bean's Dreams — Dance • Heal • Rise</p>
-  </footer>
-
-  <!-- Scripts -->
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script src="https://www.paypal.com/sdk/js?client-id=AVhdcxMFlhEnAaJN0_ju-Kjgxo5djvN3Q5VMCVtxrc2fZknJjXNTiLQzWmNel_qUZAjuSOhML2hiU9ct"></script>
-  <script src="js/nav.js" defer></script>
-  <script src="js/cart.js" defer></script>
-  <script src="js/index.js" defer></script>
-</body>
-</html>
-
-<!-- FOOTER -->
+  <<!-- FOOTER -->
 <footer class="site-footer" data-aos="fade-up">
   <p>© <span id="year"></span> Bean's Dreams — Dance • Heal • Rise</p>
 </footer>
 
-<!-- Consolidated initializer (handles both real nav and fallback) -->
+<!-- External Scripts -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script src="https://www.paypal.com/sdk/js?client-id=YOUR_CLIENT_ID"></script>
+<script src="js/nav.js" defer></script>
+<script src="js/cart.js" defer></script>
+<script src="js/index.js" defer></script>
+
+<!-- Inline Initializers -->
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   /* ---------------------------
@@ -294,97 +287,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ---------------------------
-     Initializers for both nav types
-     --------------------------- */
-  document.addEventListener('nav:loaded', () => {
-    // Case 1: Real navigation.html markup
-    const hamburger = document.querySelector('.hamburger');
-    const navMenu = document.getElementById('navMenu');
-    if (hamburger && navMenu) {
-      hamburger.addEventListener('click', () => {
-        navMenu.classList.toggle('show');
-        const expanded = navMenu.classList.contains('show');
-        hamburger.setAttribute('aria-expanded', expanded);
-      });
-    }
-
-    // Dropdown toggles with accessibility fixes
-    document.querySelectorAll('.dropdown > a').forEach(link => {
-      link.addEventListener('click', e => {
-        if (window.innerWidth <= 768) {
-          e.preventDefault();
-          const dropdownMenu = link.nextElementSibling;
-          if (dropdownMenu) {
-            const isHidden = dropdownMenu.hasAttribute('hidden');
-            if (isHidden) {
-              dropdownMenu.removeAttribute('hidden');
-              dropdownMenu.classList.add('open');
-              link.setAttribute('aria-expanded', 'true');
-            } else {
-              dropdownMenu.setAttribute('hidden', '');
-              dropdownMenu.classList.remove('open');
-              link.setAttribute('aria-expanded', 'false');
-            }
-          }
-        }
-      });
-    });
-
-    // Highlight active link
-    const currentPage = window.location.pathname.split('/').pop();
-    document.querySelectorAll('.nav-link').forEach(link => {
-      if (link.getAttribute('href') === currentPage) {
-        link.classList.add('active');
-      }
-    });
-
-    // Case 2: Fallback nav markup
-    const mobileToggle = document.getElementById('mobile-nav-toggle');
-    const primaryNav = document.getElementById('primary-nav');
-    if (mobileToggle && primaryNav) {
-      function setInitialState() {
-        if (window.innerWidth <= 768) {
-          primaryNav.classList.add('collapsed');
-          primaryNav.classList.remove('open');
-          mobileToggle.setAttribute('aria-expanded', 'false');
-        } else {
-          primaryNav.classList.remove('collapsed');
-          primaryNav.classList.remove('open');
-          mobileToggle.setAttribute('aria-expanded', 'false');
-        }
-      }
-      setInitialState();
-      window.addEventListener('resize', setInitialState);
-
-      mobileToggle.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const isOpen = primaryNav.classList.toggle('open');
-        primaryNav.classList.toggle('collapsed', !isOpen);
-        mobileToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-      });
-
-      document.addEventListener('click', (e) => {
-        if (!primaryNav.classList.contains('open')) return;
-        if (!primaryNav.contains(e.target) && !mobileToggle.contains(e.target)) {
-          primaryNav.classList.remove('open');
-          primaryNav.classList.add('collapsed');
-          mobileToggle.setAttribute('aria-expanded', 'false');
-        }
-      });
-
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && primaryNav.classList.contains('open')) {
-          primaryNav.classList.remove('open');
-          primaryNav.classList.add('collapsed');
-          mobileToggle.setAttribute('aria-expanded', 'false');
-          mobileToggle.focus();
-        }
-      });
-    }
-  });
-});
-
-  /* ---------------------------
      Cart accessibility and toggle
      --------------------------- */
   const cartEl = document.getElementById('cart');
@@ -395,9 +297,11 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!cartEl || !cartToggle) return;
     if (open) {
       cartEl.classList.add('open');
+      cartEl.setAttribute('aria-hidden', 'false');
       cartToggle.setAttribute('aria-expanded', 'true');
     } else {
       cartEl.classList.remove('open');
+      cartEl.setAttribute('aria-hidden', 'true');
       cartToggle.setAttribute('aria-expanded', 'false');
     }
   }
@@ -408,7 +312,9 @@ document.addEventListener('DOMContentLoaded', () => {
       setCartOpen(!isOpen);
     });
   }
-  if (closeCartBtn) closeCartBtn.addEventListener('click', () => setCartOpen(false));
+  if (closeCartBtn) {
+    closeCartBtn.addEventListener('click', () => setCartOpen(false));
+  }
 
   window.BeanCart = {
     open: () => setCartOpen(true),
@@ -505,4 +411,8 @@ document.addEventListener('DOMContentLoaded', () => {
   if (window.AOS && typeof AOS.refresh === 'function') {
     setTimeout(() => AOS.refresh(), 250);
   }
+});
 </script>
+
+</body>
+</html>
