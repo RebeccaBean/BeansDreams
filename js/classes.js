@@ -76,3 +76,23 @@ document.querySelectorAll(".product-carousel").forEach((carousel) => {
     dots[index].classList.add("active");
   }
 });
+/* -------------------------------
+   Activate tab based on URL hash
+-------------------------------- */
+document.addEventListener("DOMContentLoaded", () => {
+  const hash = window.location.hash.replace("#", "");
+  if (hash) {
+    const targetButton = document.querySelector(`.tab-button[data-tab="${hash}"]`);
+    const targetContent = document.getElementById(hash);
+
+    if (targetButton && targetContent) {
+      // deactivate all tabs
+      document.querySelectorAll(".tab-button").forEach(btn => btn.classList.remove("active"));
+      document.querySelectorAll(".tab-content").forEach(sec => sec.style.display = "none");
+
+      // activate the correct tab
+      targetButton.classList.add("active");
+      targetContent.style.display = "block";
+    }
+  }
+});
