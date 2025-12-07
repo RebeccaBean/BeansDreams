@@ -40,7 +40,7 @@
 
   <main>
     <!-- Your about content -->
-       <section class="about-content" data-aos="fade-up">
+   <section class="about-content" data-aos="fade-up">
       <div class="profile-container">
        
        
@@ -74,32 +74,30 @@
     <p>&copy; <span id="year"></span></p>
   </footer>
 
- <!-- CART SIDEBAR -->
-<div id="cart" class="cart-sidebar" aria-label="Shopping cart" aria-hidden="true" role="complementary">
-  <h3>Your Cart</h3>
-  <ul id="cart-items"></ul>
-  <div class="cart-total">Total: $<span id="cart-total">0.00</span></div>
+  <!-- CART SIDEBAR -->
+  <div id="cart" class="cart-sidebar" aria-label="Shopping cart" aria-hidden="true" role="complementary">
+    <h3>Your Cart</h3>
+    <ul id="cart-items"></ul>
+    <div class="cart-total">Total: $<span id="cart-total">0.00</span></div>
+    <!-- PayPal SDK -->
+  <script src="https://www.paypal.com/sdk/js?client-id=ASZdz2ZDv89Gl4Y2CjfbrbCkhEtuhG2JxHweQk1Q3xLk90b6yO-HvHQ5XvklGpB4nXbYU5APdK5qoNUP"></script>
+  
+  <button id="checkout-btn" class="btn checkout-btn">Checkout</button>
+    <button id="close-cart" class="btn close-cart-btn" aria-label="Close cart">Close</button>
+  </div>
+
+  <!-- Cart Toggle Button -->
+  <button id="cart-toggle" class="btn cart-toggle-btn" aria-label="Toggle cart">
+    🛒 Cart (<span id="cart-count">0</span>)
+  </button>
 
   <!-- PayPal Button Container -->
   <div id="paypal-button-container"></div>
 
-  <button id="close-cart" class="btn close-cart-btn" aria-label="Close cart">Close</button>
-</div>
-
-<!-- Cart Toggle Button -->
-<button id="cart-toggle" class="btn cart-toggle-btn" aria-label="Toggle cart">
-  🛒 Cart (<span id="cart-count">0</span>)
-</button>
-
-   <!-- Scripts -->
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script src="js/nav.js" defer></script>
   <script src="js/cart.js" defer></script>
-  <script src="js/index.js" defer></script>
-
-  <!-- PayPal SDK -->
-  <script src="https://www.paypal.com/sdk/js?client-id=AVhdcxMFlhEnAaJN0_ju-Kjgxo5djvN3Q5VMCVtxrc2fZknJjXNTiLQzWmNel_qUZAjuSOhML2hiU9ct"></script>
-  
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       // AOS animations
@@ -109,36 +107,17 @@
       const yearEl = document.getElementById('year');
       if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-      // Load navigation with fallback
+      // Load navigation from partial
       fetch("navigation.html")
-        .then(r => {
-          if (!r.ok) throw new Error("Navigation file not found");
-          return r.text();
-        })
+        .then(r => r.text())
         .then(html => {
           const el = document.getElementById("nav-placeholder");
           if (el) el.innerHTML = html;
         })
-        .catch(() => {
-          const el = document.getElementById("nav-placeholder");
-          if (el) {
-            el.innerHTML = `
-              <nav class="fallback-nav">
-                <a href="index.html">Home</a>
-                <li><a href="/classes.html">Classes</a></li>
-          <li><a href="/coaching.html">Coaching</a></li>
-          <li><a href="/about.html">About</a></li>
-          <li><a href="/contact.html">Contact</a></li>
-          <li><a href="/store.html">Store</a></li>
-          <li><a href="/blog.html">Blog</a></li>
-          <li><a href="/portal.html">Student Portal</a></li>
-              </nav>
-            `;
-          }
-        });
+        .catch(() => {});
     });
+  </script>
 
-    // PayPal integration
     const cart = JSON.parse(localStorage.getItem("beansDreamsCart")) || [];
 
     function calculateCartTotal() {
