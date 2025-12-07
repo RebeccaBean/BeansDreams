@@ -253,11 +253,10 @@
   <h3>Your Cart</h3>
   <ul id="cart-items"></ul>
   <div class="cart-total">Total: $<span id="cart-total">0.00</span></div>
- <!-- PayPal SDK -->
-  <script src="https://www.paypal.com/sdk/js?client-id=AVhdcxMFlhEnAaJN0_ju-Kjgxo5djvN3Q5VMCVtxrc2fZknJjXNTiLQzWmNel_qUZAjuSOhML2hiU9ct"></script>
  
-  <!-- PayPal Button Container -->
-  <div id="paypal-button-container"></div>
+  <!-- Hidden PayPal mount point -->
+  <div id="hidden-paypal" style="display:none;"></div>
+
  <button id="checkout-btn" class="btn checkout-btn">Checkout</button>
     <button id="close-cart" class="btn close-cart-btn" aria-label="Close cart">Close</button>
   </div>
@@ -267,7 +266,9 @@
   🛒 Cart (<span id="cart-count">0</span>)
 </button>
 
-  
+  <!-- PayPal SDK -->
+  <script src="https://www.paypal.com/sdk/js?client-id=AVhdcxMFlhEnAaJN0_ju-Kjgxo5djvN3Q5VMCVtxrc2fZknJjXNTiLQzWmNel_qUZAjuSOhML2hiU9ct"></script>
+ 
   <!-- FOOTER -->
   <footer class="site-footer" data-aos="fade-up">
     <p>© <span id="year"></span> Bean's Dreams — Dance • Heal • Rise</p>

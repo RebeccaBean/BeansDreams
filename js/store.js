@@ -2,11 +2,16 @@
   /* ---------- Safe helpers ---------- */
   const $ = (sel, root = document) => root.querySelector(sel);
   const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
+
   const isFunction = fn => typeof fn === "function";
+  const toNumber = v => {
+    const n = parseFloat(v);
+    return Number.isFinite(n) ? n : 0;
+  };
 
   /* ---------- Config: selectors & attribute mapping ---------- */
   const cfg = {
-    // Sidebar/cart controls (if needed later)
+    // Sidebar/cart controls
     cartToggleId: "cart-toggle",
     cartSidebarId: "cart",
     cartCloseId: "close-cart",
@@ -28,29 +33,17 @@
       bundleKey: ["data-bundle-key", "data-key", "data-bundle"],
       productId: ["data-product-id", "data-digital-id", "data-id"],
       printifyProductId: ["data-printify-product-id", "data-merch-id", "data-product-id"],
+      // variant usually on the <option>
       variantId: ["data-variant-id"]
     },
 
     // Optional: build backend URL base for relative calls
-    apiBase: "https://api.beansdreams.org" // adjust to your backend base URL
+    apiBase: "", // e.g., "" for same origin, or "https://api.beansdreams.org"
   };
 
   /* ---------- AOS ---------- */
   if (typeof AOS !== "undefined" && isFunction(AOS.init)) {
-    try { AOS.init({ duration: 700, easing: "ease-out-quart", once: true }); } catch (e) {}
-  }
-
-  /* ---------- Footer Year ---------- */
-  const yearEl = $("#year");
-  if (yearEl) yearEl.textContent = new Date().getFullYear();
-
-  /* ---------- Navigation Loader ---------- */
-  const navPlaceholder = $("#nav-placeholder");
-  if (navPlaceholder) {
-    fetch("navigation.html")
-      .then(r => r.text())
-      .then(html => { navPlaceholder.innerHTML = html; })
-      .catch(() => { /* silently fail */ });
+    try { AOS.init(); } catch (e) { /* ignore */ }
   }
 
   /* ---------- Tabs ---------- */
@@ -127,7 +120,7 @@
 
   /* ---------- Quote Carousel ---------- */
   (function initQuoteCarousel() {
-    const quoteCarousel = $(".quotes-section");
+    const quoteCarousel = $(".quote-carousel");
     if (!quoteCarousel) return;
     const track = $(".carousel-track", quoteCarousel);
     const slides = $$(".quote-slide", quoteCarousel);

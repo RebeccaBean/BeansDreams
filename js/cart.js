@@ -209,3 +209,41 @@ document.addEventListener("DOMContentLoaded", () => {
 
   updateCartUI();
 });
+// --- Hidden PayPal integration at bottom of cart.js ---
+
+if (window.paypal && typeof window.paypal.Buttons === "function") {
+  try {
+    window.paypal.Buttons({
+      createOrder: (_data, actions) => {
+        const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0).toFixed(2);
+        return actions.order.create({
+          purchase_units: [{ amount: { value: total } }]
+        });
+      },
+      onApprove: async (_data, actions) => {
+        const details = await actions.order.capture();
+        try {
+          let headers = { "Content-Type": "application/json" };
+          if (window.firebase && firebase.auth().currentUser) {
+            const idToken = await firebase.auth().currentUser.getIdToken();
+            headers.Authorization = `Bearer ${idToken}`;
+          }
+          await fetch("/capture-order", {
+            method: "POST",
+            headers,
+            body: JSON.stringify({ cart, order: details })
+          });
+          alert(`Transaction completed by ${details?.payer?.name?.given_name || "customer"}.`);
+          cart = [];
+          saveCart();
+          updateCartUI();
+          closeCart();
+        } catch (err) {
+          console.error("Error sending PayPal order to backend:", err);
+        }
+      }
+    }).render("#hidden-paypal"); // hidden div in HTML
+  } catch (e) {
+    console.error("PayPal Buttons initialization error:", e);
+  }
+}

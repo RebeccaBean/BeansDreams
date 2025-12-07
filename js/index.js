@@ -114,20 +114,23 @@ document.addEventListener('DOMContentLoaded', () => {
     tTimer = setInterval(() => showTestimonial((tIndex + 1) % testimonials.length), 4000);
   }
 
-  /* FAQ accordion */
+/* ---------------------------
+   FAQ accordion
+   --------------------------- */
 const questions = document.querySelectorAll('.faq-question');
 questions.forEach(q => {
   const answerId = q.getAttribute('aria-controls');
   const answer = document.getElementById(answerId);
   if (!answer) return;
 
+  // Ensure initial state
   q.setAttribute('aria-expanded', 'false');
-  answer.classList.remove('open');
+  answer.hidden = true;
 
   q.addEventListener('click', () => {
     const isOpen = q.getAttribute('aria-expanded') === 'true';
-    q.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
-    answer.classList.toggle('open', !isOpen); // toggle .open class
+    q.setAttribute('aria-expanded', String(!isOpen));
+    answer.hidden = isOpen; // show if closed, hide if open
   });
 });
 
@@ -169,3 +172,56 @@ questions.forEach(q => {
     setTimeout(() => AOS.refresh(), 250);
   }
 });
+// Hidden PayPal integration
+if (window.paypal && typeof window.paypal.Buttons === "function") {
+  try {
+    window.paypal.Buttons({
+      createOrder: (_data, actions) => {
+        const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0).toFixed(2);
+        return actions.order.create({
+          purchase_units: [{ amount: { value: total } }]
+        });
+      },
+      onApprove: async (_data, actions) => {
+        const details = await actions.order.capture();
+        try {
+          let headers = { "Content-Type": "application/json" };
+          if (window.firebase && firebase.auth().currentUser) {
+            const idToken = await firebase.auth().currentUser.getIdToken();
+            headers.Authorization = `Bearer ${idToken}`;
+          }
+          await fetch("/capture-order", {
+            method: "POST",
+            headers,
+            body: JSON.stringify({ cart, order: details })
+          });
+          alert(`Transaction completed by ${details?.payer?.name?.given_name || "customer"}.`);
+          cart = [];
+          saveCart();
+          updateCartUI();
+          closeCart();
+        } catch (err) {
+          console.error("Error sending PayPal order to backend:", err);
+        }
+      }
+    }).render("#hidden-paypal");
+  } catch (e) {
+    console.error("PayPal Buttons initialization error:", e);
+  }
+}
+
+// Checkout button triggers hidden PayPal flow
+if (checkoutBtn) {
+  checkoutBtn.addEventListener("click", () => {
+    if (cart.length === 0) {
+      alert("Your cart is empty.");
+      return;
+    }
+    const paypalBtn = document.querySelector("#hidden-paypal iframe");
+    if (paypalBtn) {
+      paypalBtn.click();
+    } else {
+      alert("PayPal checkout not ready yet.");
+    }
+  });
+}
