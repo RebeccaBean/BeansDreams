@@ -256,8 +256,9 @@
  <!-- PayPal SDK -->
   <script src="https://www.paypal.com/sdk/js?client-id=AVhdcxMFlhEnAaJN0_ju-Kjgxo5djvN3Q5VMCVtxrc2fZknJjXNTiLQzWmNel_qUZAjuSOhML2hiU9ct"></script>
 
-  <button id="close-cart" class="btn close-cart-btn" aria-label="Close cart">Close</button>
-</div>
+ <button id="checkout-btn" class="btn checkout-btn">Checkout</button>
+    <button id="close-cart" class="btn close-cart-btn" aria-label="Close cart">Close</button>
+  </div>
 
 <!-- Cart Toggle Button -->
 <button id="cart-toggle" class="btn cart-toggle-btn" aria-label="Toggle cart">
@@ -540,13 +541,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const answer = answerId ? document.getElementById(answerId) : null;
     if (answer) answer.hidden = true;
 
-    q.addEventListener('click', () => {
-      const answerEl = answerId ? document.getElementById(answerId) : null;
-      if (!answerEl) return;
-      const isOpen = q.getAttribute('aria-expanded') === 'true';
-      q.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
-      answerEl.hidden = isOpen;
-    });
+  q.addEventListener('click', () => {
+  const answerEl = document.getElementById(answerId);
+  if (!answerEl) return;
+  const isOpen = q.getAttribute('aria-expanded') === 'true';
+  q.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+  answerEl.classList.toggle('open', !isOpen);   // toggle .open class
+});
   });
 
   /* ---------------------------
