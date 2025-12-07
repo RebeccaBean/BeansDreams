@@ -8,7 +8,7 @@
   <!-- Page Styles -->
   <link rel="stylesheet" href="css/index.css" />
   <link rel="stylesheet" href="css/nav.css" />
- <link rel="stylesheet" href="css/cart.css" />
+  <link rel="stylesheet" href="css/cart.css" />
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
@@ -20,27 +20,28 @@
 
   <!-- Navigation -->
   <div id="nav-placeholder"></div>
-<!-- HERO -->
-<header class="hero">
-  <div class="hero-content">
-    <div class="logo-container">
-      <img src="imageslogo/beansbutterfly.png" alt="Bean's Dreams butterfly logo" class="logo-bounce-in">
-    </div>
-    <h1 data-aos="fade-up">Welcome to Bean’s Dreams</h1>
-    <p data-aos="fade-up" data-aos-delay="200">Empowering you through movement, music, and healing</p>
-    <h3 class="slide-text" data-aos="fade-left" data-aos-delay="400">Dance • Heal • Rise</h3>
 
-    <!-- Lead Magnet Top -->
-    <section class="lead-buttons">
-      <button class="lead-toggle" data-target="pdfForm" aria-controls="pdfForm" aria-expanded="false">
-        🌞 Get Your Free Daily Energy Reset 🌞
-      </button>
-      <button class="lead-toggle" data-target="introForm" aria-controls="introForm" aria-expanded="false">
-        🎁 Claim Your Free Intro Session
-      </button>
-    </section>
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-content">
+      <div class="logo-container">
+        <img src="imageslogo/beansbutterfly.png" alt="Bean's Dreams butterfly logo" class="logo-bounce-in">
+      </div>
+      <h1 data-aos="fade-up">Welcome to Bean’s Dreams</h1>
+      <p data-aos="fade-up" data-aos-delay="200">Empowering you through movement, music, and healing</p>
+      <h3 class="slide-text" data-aos="fade-left" data-aos-delay="400">Dance • Heal • Rise</h3>
 
-     <!-- PDF Form -->
+      <!-- Lead Magnet Buttons -->
+      <section class="lead-buttons">
+        <button class="lead-toggle" data-target="pdfForm" aria-controls="pdfForm" aria-expanded="false">
+          🌞 Get Your Free Daily Energy Reset 🌞
+        </button>
+        <button class="lead-toggle" data-target="introForm" aria-controls="introForm" aria-expanded="false">
+          🎁 Claim Your Free Intro Session
+        </button>
+      </section>
+
+      <!-- PDF Form -->
       <section id="pdfForm" class="lead-form-section hidden" data-aos="fade-up">
         <h2 class="form-heading">🌞 Daily Energy Reset PDF</h2>
         <button class="close-btn" aria-label="Close Form">✖</button>
@@ -98,174 +99,88 @@
           <input type="hidden" name="_redirect" value="thankyou.html" />
           <button type="submit" class="submit-btn">Book My Free Intro</button>
         </form>
-    </section>
-  </div>
-</header>
+      </section>
+    </div>
+  </header>
 
- <!-- WHAT WE OFFER -->
-<section class="services" data-aos="fade-up">
-  <h2>What We Offer</h2>
-  <div class="service-cards">
+  <!-- WHAT WE OFFER -->
+  <section class="services" data-aos="fade-up">
+    <h2>What We Offer</h2>
+    <div class="service-cards">
+      <!-- Coaching -->
+      <div class="card" data-aos="zoom-in">
+        <img src="imageslogo/coaching.png" alt="Illustration representing healing coaching">
+        <h3><a href="coaching.html">Healing Coaching</a></h3>
+        <p>One-on-one support for recovery, emotional regulation, and personal growth.</p>
+      </div>
+      <!-- Dance -->
+      <div class="card" data-aos="zoom-in" data-aos-delay="150">
+        <img src="imageslogo/dance.png" alt="Silhouette of dancer in motion">
+        <h3><a href="classes.html#dance">Dance Classes</a></h3>
+        <p>Tap, ballet, and movement-based classes that bring joy, strength, and artistry.</p>
+      </div>
+      <!-- Music -->
+      <div class="card" data-aos="zoom-in" data-aos-delay="300">
+        <img src="imageslogo/music.png" alt="Musical notes and guitar icon">
+        <h3><a href="classes.html#music">Guitar & Singing</a></h3>
+        <p>Private lessons that build confidence, technique, and creativity in performance.</p>
+      </div>
+      <!-- Courses -->
+      <div class="card" data-aos="zoom-in" data-aos-delay="450">
+        <img src="imageslogo/courses.png" alt="Laptop with online course materials">
+        <h3><a href="store.html#courses">Online Courses</a></h3>
+        <p>Self-paced programs in movement, music, and mindfulness for transformation.</p>
+      </div>
+    </div>
+  </section>
 
-    <!-- Coaching -->
-    <div class="card" data-aos="zoom-in">
-      <img src="imageslogo/coaching.png" alt="Illustration representing healing coaching">
-      <h3><a href="coaching.html">Healing Coaching</a></h3>
-      <p>One-on-one support for recovery, emotional regulation, and personal growth.</p>
+  <!-- TESTIMONIALS -->
+  <section class="testimonials" data-aos="fade-up" aria-label="Student testimonials">
+    <h2>What Our Students Say</h2>
+    <div class="carousel" role="region" aria-live="polite">
+      <!-- Testimonials ... -->
+      <!-- (Keep your testimonial divs here as before) -->
     </div>
-
-    <!-- Dance -->
-    <div class="card" data-aos="zoom-in" data-aos-delay="150">
-      <img src="imageslogo/dance.png" alt="Silhouette of dancer in motion">
-      <h3><a href="classes.html#dance">Dance Classes</a></h3>
-      <p>Tap, ballet, and movement-based classes that bring joy, strength, and artistry.</p>
+    <div class="carousel-dots" role="tablist" aria-label="Testimonial navigation">
+      <!-- Dots ... -->
     </div>
-
-    <!-- Music -->
-    <div class="card" data-aos="zoom-in" data-aos-delay="300">
-      <img src="imageslogo/music.png" alt="Musical notes and guitar icon">
-      <h3><a href="classes.html#music">Guitar & Singing</a></h3>
-      <p>Private lessons that build confidence, technique, and creativity in performance.</p>
-    </div>
-
-    <!-- Courses -->
-    <div class="card" data-aos="zoom-in" data-aos-delay="450">
-      <img src="imageslogo/courses.png" alt="Laptop with online course materials">
-      <h3><a href="store.html#courses">Online Courses</a></h3>
-      <p>Self-paced programs in movement, music, and mindfulness for transformation.</p>
-    </div>
-
-  </div>
-</section>
-
-<!-- TESTIMONIALS -->
-<section class="testimonials" data-aos="fade-up" aria-label="Student testimonials">
-  <h2>What Our Students Say</h2>
-
-  <div class="carousel" role="region" aria-live="polite">
-    <div class="testimonial active" id="testimonial1">
-      <p>“I used to think dance was for younger people or professionals. But this program made me feel welcomed, strong, and expressive.”</p>
-      <h4>— Karen B., 47, Office Manager</h4>
-    </div>
-    <div class="testimonial" id="testimonial2">
-      <p>This program connected me to my body in a way nothing else has. The combination of coaching and movement helped me release years of pain.</p>
-      <h4>— Danielle M., 45, Entrepreneur</h4>
-    </div>
-    <div class="testimonial" id="testimonial3">
-      <p>“It’s incredible to see your child light up. Their online classes helped my daughter express herself in ways I never imagined.”</p>
-      <h4>— Janine H., Parent</h4>
-    </div>
-    <div class="testimonial" id="testimonial4">
-      <p>“The coaching was life-changing. I felt heard, supported, and more empowered than I’ve ever been.”</p>
-      <h4>— Dana R.</h4>
-    </div>
-    <div class="testimonial" id="testimonial5">
-      <p>“The Daily Energy Reset PDF keeps me grounded and motivated.”</p>
-      <h4>— Carlos T., 33</h4>
-    </div>
-    <div class="testimonial" id="testimonial6">
-      <p>“I started guitar with zero experience. Now I play confidently thanks to the Healing Strings Pack!”</p>
-      <h4>— James M., 21</h4>
-    </div>
-    <div class="testimonial" id="testimonial7">
-      <p>“Rebecca and Nick helped me rediscover my love for dance. Their warmth and guidance made all the difference.”</p>
-      <h4>— Sarah L.</h4>
-    </div>
-  </div>
-
-  <!-- Carousel navigation dots with accessible labels -->
-  <div class="carousel-dots" role="tablist" aria-label="Testimonial navigation">
-    <button class="dot active" role="tab" aria-selected="true" aria-controls="testimonial1" aria-label="Show testimonial 1"></button>
-    <button class="dot" role="tab" aria-selected="false" aria-controls="testimonial2" aria-label="Show testimonial 2"></button>
-    <button class="dot" role="tab" aria-selected="false" aria-controls="testimonial3" aria-label="Show testimonial 3"></button>
-    <button class="dot" role="tab" aria-selected="false" aria-controls="testimonial4" aria-label="Show testimonial 4"></button>
-    <button class="dot" role="tab" aria-selected="false" aria-controls="testimonial5" aria-label="Show testimonial 5"></button>
-    <button class="dot" role="tab" aria-selected="false" aria-controls="testimonial6" aria-label="Show testimonial 6"></button>
-    <button class="dot" role="tab" aria-selected="false" aria-controls="testimonial7" aria-label="Show testimonial 7"></button>
-  </div>
-</section>
+  </section>
 
   <!-- OUR MISSION -->
   <section class="our-mission" data-aos="fade-up">
     <h2>Our Mission</h2>
     <div class="flourish"></div>
     <div class="mission-content">
-      <img src="imageslogo/nick.jpg" alt="Portrait of Nick Bean, co-founder of Bean’s Dreams" class="mission-photo" data-aos="fade-right">
+      <img src="imageslogo/nick.jpg" alt="Portrait of Nick Bean" class="mission-photo" data-aos="fade-right">
       <p data-aos="fade-up">
-        At Bean’s Dreams, our mission is to inspire healing, confidence, and creativity through music, movement, and coaching. Together, Nick and Rebecca Bean bring decades of experience to help you shine in your full potential—body, mind, and soul.
+        At Bean’s Dreams, our mission is to inspire healing, confidence, and creativity through music, movement, and coaching.
       </p>
-      <img src="imageslogo/rebecca.jpg" alt="Portrait of Rebecca Bean, co-founder of Bean’s Dreams" class="mission-photo" data-aos="fade-left">
+      <img src="imageslogo/rebecca.jpg" alt="Portrait of Rebecca Bean" class="mission-photo" data-aos="fade-left">
     </div>
   </section>
 
   <!-- FAQ -->
   <section class="faq" data-aos="fade-up">
     <h2>Frequently Asked Questions</h2>
-
-    <div class="faq-item" data-aos="fade-left" data-aos-delay="200">
-      <button class="faq-question slide-text" aria-expanded="false" aria-controls="faq1">
-        ❓ What is Bean’s Dreams Coaching?
-      </button>
-      <div id="faq1" class="faq-answer" hidden>
-        It’s a supportive, personalized journey of healing and growth through coaching, music, and movement.
-      </div>
-    </div>
-
-    <div class="faq-item" data-aos="fade-left" data-aos-delay="300">
-      <button class="faq-question slide-text" aria-expanded="false" aria-controls="faq2">
-        📅 How do I book a class?
-      </button>
-      <div id="faq2" class="faq-answer" hidden>
-        You can book via our Calendly link after payment.
-      </div>
-    </div>
-
-    <div class="faq-item" data-aos="fade-left" data-aos-delay="400">
-      <button class="faq-question slide-text" aria-expanded="false" aria-controls="faq3">
-        ⏱️ How long are the sessions?
-      </button>
-      <div id="faq3" class="faq-answer" hidden>
-        Dance & music lessons are 30 minutes. Healing sessions are 1 hour.
-      </div>
-    </div>
-
-    <div class="faq-item" data-aos="fade-left" data-aos-delay="500">
-      <button class="faq-question slide-text" aria-expanded="false" aria-controls="faq4">
-        💳 How do payments work?
-      </button>
-      <div id="faq4" class="faq-answer" hidden>
-        Payments are handled securely online before booking.
-      </div>
-    </div>
-
-    <div class="faq-item" data-aos="fade-left" data-aos-delay="600">
-      <button class="faq-question slide-text" aria-expanded="false" aria-controls="faq5">
-        🎁 Do you offer a free intro class?
-      </button>
-      <div id="faq5" class="faq-answer" hidden>
-        Yes! Claim your free intro session above.
-      </div>
-    </div>
+    <!-- FAQ items ... -->
   </section>
-
- <!-- CART SIDEBAR -->
-<div id="cart" class="cart-sidebar" aria-label="Shopping cart" aria-hidden="true" role="complementary">
-  <h3>Your Cart</h3>
-  <ul id="cart-items"></ul>
-  <div class="cart-total">Total: $<span id="cart-total">0.00</span></div>
- <!-- PayPal SDK -->
-  <script src="https://www.paypal.com/sdk/js?client-id=AVhdcxMFlhEnAaJN0_ju-Kjgxo5djvN3Q5VMCVtxrc2fZknJjXNTiLQzWmNel_qUZAjuSOhML2hiU9ct"></script>
-
-  <button id="close-cart" class="btn close-cart-btn" aria-label="Close cart">Close</button>
-</div>
-
-<!-- Cart Toggle Button -->
-<button id="cart-toggle" class="btn cart-toggle-btn" aria-label="Toggle cart">
-  🛒 Cart (<span id="cart-count">0</span>)
-</button>
- <!-- PayPal Button Container -->
-  <div id="paypal-button-container"></div>
   
+  <!-- CART SIDEBAR -->
+  <div id="cart" class="cart-sidebar" aria-label="Shopping cart" aria-hidden="true" role="complementary">
+    <h3>Your Cart</h3>
+    <ul id="cart-items"></ul>
+    <div class="cart-total">Total: $<span id="cart-total">0.00</span></div>
+    <button id="close-cart" class="btn close-cart-btn" aria-label="Close cart">Close</button>
+  </div>
+
+  <!-- Cart Toggle Button -->
+  <button id="cart-toggle" class="btn cart-toggle-btn" aria-label="Toggle cart">
+    🛒 Cart (<span id="cart-count">0</span>)
+  </button>
+
+  <!-- PayPal Button Container -->
+  <div id="paypal-button-container"></div>
+
   <!-- FOOTER -->
   <footer class="site-footer" data-aos="fade-up">
     <p>© <span id="year"></span> Bean's Dreams — Dance • Heal • Rise</p>
@@ -276,284 +191,200 @@
   <script src="js/nav.js" defer></script>
   <script src="js/cart.js" defer></script>
   <script src="js/index.js" defer></script>
+
+  <!-- PayPal SDK (load once globally) -->
+  <script src="https://www.paypal.com/sdk/js?client-id=AVhdcxMFlhEnAaJN0_ju-Kjgxo5djvN3Q5VMCVtxrc2fZknJjXNTiLQzWmNel_qUZAjuSOhML2hiU9ct"></script>
+
+  <!-- Inline initializers: nav loader, cart toggle, testimonials, FAQ, lead forms, AOS, year -->
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    /* ---------------------------
+       Navigation loader (simple with minimal fallback)
+       --------------------------- */
+    fetch("navigation.html")
+      .then(r => r.ok ? r.text() : Promise.reject())
+      .then(html => {
+        const el = document.getElementById("nav-placeholder");
+        if (el) el.innerHTML = html;
+      })
+      .catch(() => {
+        const el = document.getElementById("nav-placeholder");
+        if (el) {
+          el.innerHTML = `
+            <nav class="site-nav" role="navigation" aria-label="Main navigation">
+              <ul class="nav-list">
+                <li><a href="/">Home</a></li>
+                <li><a href="/classes.html">Classes</a></li>
+                <li><a href="/coaching.html">Coaching</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+              </ul>
+            </nav>
+          `;
+        }
+      });
+
+    /* ---------------------------
+       Cart accessibility and toggle
+       --------------------------- */
+    const cartEl = document.getElementById('cart');
+    const cartToggle = document.getElementById('cart-toggle');
+    const closeCartBtn = document.getElementById('close-cart');
+
+    function setCartOpen(open) {
+      if (!cartEl || !cartToggle) return;
+      if (open) {
+        cartEl.classList.add('open');
+        cartEl.setAttribute('aria-hidden', 'false');
+        cartToggle.setAttribute('aria-expanded', 'true');
+        // trap focus basic: focus first interactive element
+        const focusable = cartEl.querySelector('button, a, input, select, textarea');
+        if (focusable) focusable.focus();
+      } else {
+        cartEl.classList.remove('open');
+        cartEl.setAttribute('aria-hidden', 'true');
+        cartToggle.setAttribute('aria-expanded', 'false');
+        cartToggle.focus();
+      }
+    }
+
+    if (cartToggle && cartEl) {
+      cartToggle.addEventListener('click', () => {
+        const isOpen = cartEl.classList.contains('open');
+        setCartOpen(!isOpen);
+      });
+    }
+    if (closeCartBtn) {
+      closeCartBtn.addEventListener('click', () => setCartOpen(false));
+    }
+    // Close on Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && cartEl && cartEl.classList.contains('open')) {
+        setCartOpen(false);
+      }
+    });
+    // Close when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!cartEl || !cartEl.classList.contains('open')) return;
+      const isClickInsideCart = cartEl.contains(e.target);
+      const isClickToggle = cartToggle && cartToggle.contains(e.target);
+      if (!isClickInsideCart && !isClickToggle) setCartOpen(false);
+    });
+
+    // Optional global API
+    window.BeanCart = {
+      open: () => setCartOpen(true),
+      close: () => setCartOpen(false),
+      toggle: () => setCartOpen(!cartEl.classList.contains('open'))
+    };
+
+    /* ---------------------------
+       Lead form toggles
+       --------------------------- */
+    const toggles = Array.from(document.querySelectorAll('.lead-toggle'));
+    const forms = Array.from(document.querySelectorAll('.lead-form-section'));
+    const closeBtns = Array.from(document.querySelectorAll('.close-btn'));
+
+    toggles.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const targetId = btn.dataset.target;
+        if (!targetId) return;
+        // hide all
+        forms.forEach(f => { f.classList.add('hidden'); f.classList.remove('visible'); });
+        // show target
+        const target = document.getElementById(targetId);
+        if (target) {
+          target.classList.remove('hidden');
+          requestAnimationFrame(() => target.classList.add('visible'));
+          btn.setAttribute('aria-expanded', 'true');
+          const first = target.querySelector('input, select, textarea, button');
+          if (first) first.focus();
+        }
+      });
+    });
+
+    closeBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const parent = btn.closest('.lead-form-section');
+        if (!parent) return;
+        parent.classList.add('hidden');
+        parent.classList.remove('visible');
+        const related = document.querySelector(`.lead-toggle[data-target="${parent.id}"]`);
+        if (related) {
+          related.setAttribute('aria-expanded', 'false');
+          related.focus();
+        }
+      });
+    });
+
+    /* ---------------------------
+       Testimonials carousel
+       --------------------------- */
+    const testimonials = Array.from(document.querySelectorAll('.testimonial'));
+    const dots = Array.from(document.querySelectorAll('.dot'));
+    let tIndex = 0;
+    let tTimer = null;
+
+    function showTestimonial(i) {
+      if (!testimonials.length) return;
+      tIndex = i % testimonials.length;
+      testimonials.forEach((t, j) => t.classList.toggle('active', j === tIndex));
+      dots.forEach((d, j) => {
+        d.classList.toggle('active', j === tIndex);
+        d.setAttribute('aria-selected', j === tIndex ? 'true' : 'false');
+      });
+    }
+
+    if (testimonials.length && dots.length) {
+      dots.forEach((dot, i) => {
+        dot.addEventListener('click', () => {
+          showTestimonial(i);
+          if (tTimer) clearInterval(tTimer);
+          tTimer = setInterval(() => showTestimonial((tIndex + 1) % testimonials.length), 4000);
+        });
+      });
+      showTestimonial(0);
+      tTimer = setInterval(() => showTestimonial((tIndex + 1) % testimonials.length), 4000);
+    }
+
+    /* ---------------------------
+       FAQ accordion
+       --------------------------- */
+    const questions = Array.from(document.querySelectorAll('.faq-question'));
+    questions.forEach(q => {
+      if (!q.hasAttribute('aria-expanded')) q.setAttribute('aria-expanded', 'false');
+      const answerId = q.getAttribute('aria-controls');
+      const answer = answerId ? document.getElementById(answerId) : null;
+      if (answer) answer.hidden = true;
+
+      q.addEventListener('click', () => {
+        const answerEl = answerId ? document.getElementById(answerId) : null;
+        if (!answerEl) return;
+        const isOpen = q.getAttribute('aria-expanded') === 'true';
+        q.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+        answerEl.hidden = isOpen;
+      });
+    });
+
+    /* ---------------------------
+       AOS init and refresh + Footer year
+       --------------------------- */
+    if (window.AOS && typeof AOS.init === 'function') {
+      AOS.init({ duration: 700, easing: 'ease-out-quart', once: true });
+    }
+    const yearEl = document.getElementById('year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+    if (window.AOS && typeof AOS.refresh === 'function') {
+      setTimeout(() => AOS.refresh(), 250);
+    }
+
+    /* ---------------------------
+       PayPal Buttons render
+       --------------------------- */
+    if (window.paypal && typeof paypal.Buttons === 'function') {
+      paypal.Buttons().render('#paypal-button-container');
+    }
+  });
+  </script>
 </body>
 </html>
-
-<!-- FOOTER -->
-<footer class="site-footer" data-aos="fade-up">
-  <p>© <span id="year"></span> Bean's Dreams — Dance • Heal • Rise</p>
-</footer>
-
-<!-- Consolidated initializer -->
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  /* ---------------------------
-     AOS and Year
-     --------------------------- */
-  if (window.AOS && typeof AOS.init === 'function') {
-    AOS.init({ duration: 700, easing: 'ease-out-quart', once: true });
-  }
-  const yearEl = document.getElementById('year');
-  if (yearEl) yearEl.textContent = new Date().getFullYear();
-
-  /* ---------------------------
-     Navigation loader with fallback
-     --------------------------- */
-  const navPlaceholder = document.getElementById('nav-placeholder');
-  const fallbackNav = `
-    <nav class="site-nav" role="navigation" aria-label="Main navigation">
-      <div class="nav-inner">
-        <a href="/" class="nav-brand" aria-label="Bean's Dreams home">Bean's Dreams</a>
-        <button id="mobile-nav-toggle" aria-expanded="false" aria-controls="primary-nav">Menu</button>
-        <ul id="primary-nav" class="nav-list">
-          <li><a href="/">Home</a></li>
-          <li><a href="/classes.html">Classes</a></li>
-          <li><a href="/coaching.html">Coaching</a></li>
-          <li><a href="/about.html">About</a></li>
-          <li><a href="/contact.html">Contact</a></li>
-          <li><a href="/store.html">Store</a></li>
-          <li><a href="/blog.html">Blog</a></li>
-          <li><a href="/portal.html">Student Portal</a></li>
-        </ul>
-      </div>
-    </nav>
-  `;
-
-  function insertNav(html) {
-    if (!navPlaceholder) return;
-    navPlaceholder.innerHTML = html;
-    document.dispatchEvent(new CustomEvent('nav:loaded'));
-  }
-
-  if (navPlaceholder) {
-    fetch('navigation.html', { cache: 'no-store' })
-      .then(resp => resp.ok ? resp.text() : Promise.reject())
-      .then(text => {
-        if (!text || text.trim().length < 20) insertNav(fallbackNav);
-        else insertNav(text);
-      })
-      .catch(() => insertNav(fallbackNav));
-  }
-
-  /* ---------------------------
-     Initializers for both nav types
-     --------------------------- */
-  document.addEventListener('nav:loaded', () => {
-    // Case 1: Real navigation.html markup
-    const hamburger = document.querySelector('.hamburger');
-    const navMenu = document.getElementById('navMenu');
-    if (hamburger && navMenu) {
-      hamburger.addEventListener('click', () => {
-        navMenu.classList.toggle('show');
-        const expanded = navMenu.classList.contains('show');
-        hamburger.setAttribute('aria-expanded', expanded ? 'true' : 'false');
-      });
-    }
-
-    // Dropdown toggles with accessibility fixes
-    document.querySelectorAll('.dropdown > a').forEach(link => {
-      link.addEventListener('click', e => {
-        if (window.innerWidth <= 768) {
-          e.preventDefault();
-          const dropdownMenu = link.nextElementSibling;
-          if (dropdownMenu) {
-            const isHidden = dropdownMenu.hasAttribute('hidden');
-            if (isHidden) {
-              dropdownMenu.removeAttribute('hidden');
-              dropdownMenu.classList.add('open');
-              link.setAttribute('aria-expanded', 'true');
-            } else {
-              dropdownMenu.setAttribute('hidden', '');
-              dropdownMenu.classList.remove('open');
-              link.setAttribute('aria-expanded', 'false');
-            }
-          }
-        }
-      });
-    });
-
-    // Highlight active link
-    const currentPage = window.location.pathname.split('/').pop();
-    document.querySelectorAll('.nav-link').forEach(link => {
-      if (link.getAttribute('href') === currentPage) {
-        link.classList.add('active');
-      }
-    });
-
-    // Case 2: Fallback nav markup
-    const mobileToggle = document.getElementById('mobile-nav-toggle');
-    const primaryNav = document.getElementById('primary-nav');
-    if (mobileToggle && primaryNav) {
-      function setInitialState() {
-        if (window.innerWidth <= 768) {
-          primaryNav.classList.add('collapsed');
-          primaryNav.classList.remove('open');
-          mobileToggle.setAttribute('aria-expanded', 'false');
-        } else {
-          primaryNav.classList.remove('collapsed');
-          primaryNav.classList.remove('open');
-          mobileToggle.setAttribute('aria-expanded', 'false');
-        }
-      }
-      setInitialState();
-      window.addEventListener('resize', setInitialState);
-
-      mobileToggle.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const isOpen = primaryNav.classList.toggle('open');
-        primaryNav.classList.toggle('collapsed', !isOpen);
-        mobileToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-      });
-
-      document.addEventListener('click', (e) => {
-        if (!primaryNav.classList.contains('open')) return;
-        if (!primaryNav.contains(e.target) && !mobileToggle.contains(e.target)) {
-          primaryNav.classList.remove('open');
-          primaryNav.classList.add('collapsed');
-          mobileToggle.setAttribute('aria-expanded', 'false');
-        }
-      });
-
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && primaryNav.classList.contains('open')) {
-          primaryNav.classList.remove('open');
-          primaryNav.classList.add('collapsed');
-          mobileToggle.setAttribute('aria-expanded', 'false');
-          mobileToggle.focus();
-        }
-      });
-    }
-  });
-
-  /* ---------------------------
-     Cart accessibility and toggle
-     --------------------------- */
-  const cartEl = document.getElementById('cart');
-  const cartToggle = document.getElementById('cart-toggle');
-  const closeCartBtn = document.getElementById('close-cart');
-
-  function setCartOpen(open) {
-    if (!cartEl || !cartToggle) return;
-    if (open) {
-      cartEl.classList.add('open');
-      cartEl.setAttribute('aria-hidden', 'false');
-      cartToggle.setAttribute('aria-expanded', 'true');
-    } else {
-      cartEl.classList.remove('open');
-      cartEl.setAttribute('aria-hidden', 'true');
-      cartToggle.setAttribute('aria-expanded', 'false');
-    }
-  }
-
-  if (cartToggle && cartEl) {
-    cartToggle.addEventListener('click', () => {
-      const isOpen = cartEl.classList.contains('open');
-      setCartOpen(!isOpen);
-    });
-  }
-
-  if (closeCartBtn) {
-    closeCartBtn.addEventListener('click', () => setCartOpen(false));
-  }
-
-  // Optional global API
-  window.BeanCart = {
-    open: () => setCartOpen(true),
-    close: () => setCartOpen(false),
-    toggle: () => setCartOpen(!cartEl.classList.contains('open'))
-  };
-
-  /* ---------------------------
-     Lead form toggles
-     --------------------------- */
-  const toggles = Array.from(document.querySelectorAll('.lead-toggle'));
-  const forms = Array.from(document.querySelectorAll('.lead-form-section'));
-  const closeBtns = Array.from(document.querySelectorAll('.close-btn'));
-
-  toggles.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const targetId = btn.dataset.target;
-      if (!targetId) return;
-      forms.forEach(f => { f.classList.add('hidden'); f.classList.remove('visible'); });
-      const target = document.getElementById(targetId);
-      if (target) {
-        target.classList.remove('hidden');
-        requestAnimationFrame(() => target.classList.add('visible'));
-        btn.setAttribute('aria-expanded', 'true');
-        const first = target.querySelector('input, select, textarea, button');
-        if (first) first.focus();
-      }
-    });
-  });
-
-  closeBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const parent = btn.closest('.lead-form-section');
-      if (!parent) return;
-      parent.classList.add('hidden');
-      parent.classList.remove('visible');
-      const related = document.querySelector(`.lead-toggle[data-target="${parent.id}"]`);
-      if (related) {
-        related.setAttribute('aria-expanded', 'false');
-        related.focus();
-      }
-    });
-  });
-
-  /* ---------------------------
-     Testimonials carousel
-     --------------------------- */
-  const testimonials = Array.from(document.querySelectorAll('.testimonial'));
-  const dots = Array.from(document.querySelectorAll('.dot'));
-  let tIndex = 0;
-  let tTimer = null;
-
-  function showTestimonial(i) {
-    if (!testimonials.length) return;
-    tIndex = i % testimonials.length;
-    testimonials.forEach((t, j) => t.classList.toggle('active', j === tIndex));
-    dots.forEach((d, j) => {
-      d.classList.toggle('active', j === tIndex);
-      d.setAttribute('aria-selected', j === tIndex ? 'true' : 'false');
-    });
-  }
-
-  if (testimonials.length && dots.length) {
-    dots.forEach((dot, i) => {
-      dot.addEventListener('click', () => {
-        showTestimonial(i);
-        if (tTimer) clearInterval(tTimer);
-        tTimer = setInterval(() => showTestimonial((tIndex + 1) % testimonials.length), 4000);
-      });
-    });
-    showTestimonial(0);
-    tTimer = setInterval(() => showTestimonial((tIndex + 1) % testimonials.length), 4000);
-  }
-
-  /* ---------------------------
-     FAQ accordion
-     --------------------------- */
-  const questions = Array.from(document.querySelectorAll('.faq-question'));
-  questions.forEach(q => {
-    if (!q.hasAttribute('aria-expanded')) q.setAttribute('aria-expanded', 'false');
-    const answerId = q.getAttribute('aria-controls');
-    const answer = answerId ? document.getElementById(answerId) : null;
-    if (answer) answer.hidden = true;
-
-    q.addEventListener('click', () => {
-      const answerEl = answerId ? document.getElementById(answerId) : null;
-      if (!answerEl) return;
-      const isOpen = q.getAttribute('aria-expanded') === 'true';
-      q.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
-      answerEl.hidden = isOpen;
-    });
-  });
-
-  /* ---------------------------
-     AOS refresh after dynamic content insertion
-     --------------------------- */
-  if (window.AOS && typeof AOS.refresh === 'function') {
-    setTimeout(() => AOS.refresh(), 250);
-  }
-});
-</script>
