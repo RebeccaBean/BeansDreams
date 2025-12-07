@@ -80,7 +80,7 @@
     <ul id="cart-items"></ul>
     <div class="cart-total">Total: $<span id="cart-total">0.00</span></div>
     <!-- PayPal SDK -->
-  <script src="https://www.paypal.com/sdk/js?client-id=ASZdz2ZDv89Gl4Y2CjfbrbCkhEtuhG2JxHweQk1Q3xLk90b6yO-HvHQ5XvklGpB4nXbYU5APdK5qoNUP"></script>
+  <script src="https://www.paypal.com/sdk/js?client-id=AVhdcxMFlhEnAaJN0_ju-Kjgxo5djvN3Q5VMCVtxrc2fZknJjXNTiLQzWmNel_qUZAjuSOhML2hiU9ct"></script>
   
   <button id="checkout-btn" class="btn checkout-btn">Checkout</button>
     <button id="close-cart" class="btn close-cart-btn" aria-label="Close cart">Close</button>
@@ -94,56 +94,61 @@
   <!-- PayPal Button Container -->
   <div id="paypal-button-container"></div>
 
-  <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-  <script src="js/nav.js" defer></script>
-  <script src="js/cart.js" defer></script>
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      // AOS animations
-      AOS.init({ duration: 700, easing: 'ease-out-quart', once: true });
+ <!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script src="js/nav.js" defer></script>
+<script src="js/cart.js" defer></script>
 
-      // Year in footer
-      const yearEl = document.getElementById('year');
-      if (yearEl) yearEl.textContent = new Date().getFullYear();
+<!-- Init + Navigation -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // AOS animations
+    AOS.init({ duration: 700, easing: 'ease-out-quart', once: true });
 
-      // Load navigation from partial
-      fetch("navigation.html")
-        .then(r => r.text())
-        .then(html => {
-          const el = document.getElementById("nav-placeholder");
-          if (el) el.innerHTML = html;
-        })
-        .catch(() => {});
-    });
-  </script>
+    // Year in footer
+    const yearEl = document.getElementById('year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-    const cart = JSON.parse(localStorage.getItem("beansDreamsCart")) || [];
+    // Load navigation from partial
+    fetch("navigation.html")
+      .then(r => r.text())
+      .then(html => {
+        const el = document.getElementById("nav-placeholder");
+        if (el) el.innerHTML = html;
+      })
+      .catch(() => {});
+  });
+</script>
 
-    function calculateCartTotal() {
-      return cart.reduce((total, item) => total + item.price * item.quantity, 0).toFixed(2);
+<!-- Cart + PayPal -->
+<script>
+  const cart = JSON.parse(localStorage.getItem("beansDreamsCart")) || [];
+
+  function calculateCartTotal() {
+    return cart.reduce((total, item) => total + item.price * item.quantity, 0).toFixed(2);
+  }
+
+  paypal.Buttons({
+    createOrder: (data, actions) => {
+      return actions.order.create({
+        purchase_units: [{
+          amount: { value: calculateCartTotal() }
+        }]
+      });
+    },
+    onApprove: async (data, actions) => {
+      const order = await actions.order.capture();
+      await fetch("/api/save-order", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ cart, paypalOrder: order })
+      });
+      alert("Thank you! Your order has been received.");
+      localStorage.removeItem("beansDreamsCart");
+      window.location.href = "/thank-you.html";
     }
+  }).render("#paypal-button-container");
+</script>
 
-    paypal.Buttons({
-      createOrder: (data, actions) => {
-        return actions.order.create({
-          purchase_units: [{
-            amount: { value: calculateCartTotal() }
-          }]
-        });
-      },
-      onApprove: async (data, actions) => {
-        const order = await actions.order.capture();
-        await fetch("/api/save-order", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ cart, paypalOrder: order })
-        });
-        alert("Thank you! Your order has been received.");
-        localStorage.removeItem("beansDreamsCart");
-        window.location.href = "/thank-you.html";
-      }
-    }).render("#paypal-button-container");
-  </script>
 </body>
 </html>
