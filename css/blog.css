@@ -53,7 +53,7 @@ a:hover {
 .blog-header {
   text-align: center;
   padding: 3rem 1rem;
-  background-color: #004AAA;
+  background-color: linear-gradient(to right, #004AAA, #FFF5EA);
   color: black;
 }
 
@@ -124,7 +124,7 @@ section h2 i {
 
 /* Footer */
 footer {
-  background-color: #004AAA;
+  background-color: linear-gradient(to right, #004AAA, #FFF5EA);
   color: white;
   text-align: center;
   padding: 1rem;

@@ -902,21 +902,25 @@
   </footer>
 
   <!-- CART SIDEBAR -->
-  <div id="cart" class="cart-sidebar" aria-label="Shopping cart" aria-hidden="true">
+  <div id="cart" class="cart-sidebar" aria-label="Shopping cart" aria-hidden="true" role="complementary">
     <h3>Your Cart</h3>
     <ul id="cart-items"></ul>
     <div class="cart-total">Total: $<span id="cart-total">0.00</span></div>
-    <button id="checkout-btn" class="btn checkout-btn">Checkout</button>
-    <button id="close-cart" class="btn close-cart-btn">Close</button>
+    <!-- PayPal SDK -->
+  <script src="https://www.paypal.com/sdk/js?client-id=ASZdz2ZDv89Gl4Y2CjfbrbCkhEtuhG2JxHweQk1Q3xLk90b6yO-HvHQ5XvklGpB4nXbYU5APdK5qoNUP"></script>
+  
+  <button id="checkout-btn" class="btn checkout-btn">Checkout</button>
+    <button id="close-cart" class="btn close-cart-btn" aria-label="Close cart">Close</button>
   </div>
 
-  <!-- Floating Cart Button -->
-  <button id="cart-toggle" class="btn cart-toggle-btn">
+  <!-- Cart Toggle Button -->
+  <button id="cart-toggle" class="btn cart-toggle-btn" aria-label="Toggle cart">
     🛒 Cart (<span id="cart-count">0</span>)
   </button>
 
-  <!-- PayPal Buttons -->
+  <!-- PayPal Button Container -->
   <div id="paypal-button-container"></div>
+
 
   <!-- Scripts -->
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
