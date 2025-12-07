@@ -907,6 +907,9 @@
     <!-- PayPal SDK -->
   <script src="https://www.paypal.com/sdk/js?client-id=AVhdcxMFlhEnAaJN0_ju-Kjgxo5djvN3Q5VMCVtxrc2fZknJjXNTiLQzWmNel_qUZAjuSOhML2hiU9ct"></script>
   
+  <!-- PayPal Button Container -->
+  <div id="paypal-button-container"></div>
+  
   <button id="checkout-btn" class="btn checkout-btn">Checkout</button>
     <button id="close-cart" class="btn close-cart-btn" aria-label="Close cart">Close</button>
   </div>
@@ -916,16 +919,13 @@
     🛒 Cart (<span id="cart-count">0</span>)
   </button>
 
-  <!-- PayPal Button Container -->
-  <div id="paypal-button-container"></div>
-
-
   <!-- Scripts -->
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script src="js/nav.js" defer></script>
 <script src="js/cart.js" defer></script>
 <script src="js/classes.js" defer></script>
 <script>
+  
   document.addEventListener("DOMContentLoaded", () => {
     // Initialize AOS
     AOS.init({ duration: 700, easing: 'ease-out-quart', once: true });

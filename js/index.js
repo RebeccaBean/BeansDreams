@@ -114,24 +114,22 @@ document.addEventListener('DOMContentLoaded', () => {
     tTimer = setInterval(() => showTestimonial((tIndex + 1) % testimonials.length), 4000);
   }
 
-  /* ---------------------------
-     FAQ accordion (fixed)
-     --------------------------- */
-  const questions = Array.from(document.querySelectorAll('.faq-question'));
-  questions.forEach(q => {
-    const answerId = q.getAttribute('aria-controls');
-    const answer = answerId ? document.getElementById(answerId) : null;
-    if (!answer) return;
+  /* FAQ accordion */
+const questions = document.querySelectorAll('.faq-question');
+questions.forEach(q => {
+  const answerId = q.getAttribute('aria-controls');
+  const answer = document.getElementById(answerId);
+  if (!answer) return;
 
-    q.setAttribute('aria-expanded', 'false');
-    answer.classList.remove('open');
+  q.setAttribute('aria-expanded', 'false');
+  answer.classList.remove('open');
 
-    q.addEventListener('click', () => {
-      const isOpen = q.getAttribute('aria-expanded') === 'true';
-      q.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
-      answer.classList.toggle('open', !isOpen);
-    });
+  q.addEventListener('click', () => {
+    const isOpen = q.getAttribute('aria-expanded') === 'true';
+    q.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+    answer.classList.toggle('open', !isOpen); // toggle .open class
   });
+});
 
   /* ---------------------------
      Formspree AJAX Submission with Redirect
