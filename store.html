@@ -1004,106 +1004,67 @@
     </div>
   </section>
 
-  <!-- Lead Generator -->
-  <section class="lead-banner" data-aos="fade-up">
-    <h2>✨ Join the Dream Circle ✨</h2>
-    <p>Get exclusive discounts, free resources, and early access to new products.</p>
-   <form action="https://formspree.io/f/mgvzboqw" method="POST" class="lead-form">
-  <input type="text" name="name" placeholder="Your Name" required>
-  <input type="email" name="email" placeholder="Your Email" required>
-  <button type="submit" class="join-btn">Join the Dream Circle</button>
-<input type="hidden" name="_redirect" value="https://yourwebsite.com/thankyou.html">
-</form>
-  </section>
+ <!-- Lead Generator -->
+<section class="lead-banner" data-aos="fade-up">
+  <h2>✨ Join the Dream Circle ✨</h2>
+  <p>Get exclusive discounts, free resources, and early access to new products.</p>
+  <form action="https://formspree.io/f/mgvzboqw" method="POST" class="lead-form">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <button type="submit" class="join-btn">Join the Dream Circle</button>
+    <input type="hidden" name="_redirect" value="https://yourwebsite.com/thankyou.html">
+  </form>
+</section>
 
-  <!-- Footer -->
-  <footer class="site-footer" data-aos="fade-up">
-    <p>© Bean's Dreams — Dance • Heal • Rise</p>
-    <p>&copy; <span id="year"></span></p>
-  </footer>
+<!-- CART SIDEBAR -->
+<div id="cart" class="cart-sidebar" aria-label="Shopping cart" aria-hidden="true" role="complementary">
+  <h3>Your Cart</h3>
+  <ul id="cart-items"></ul>
+  <div class="cart-total">Total: $<span id="cart-total">0.00</span></div>
+  <!-- Hidden PayPal mount point -->
+  <div id="hidden-paypal" style="display:none;"></div>
+  <button id="checkout-btn" class="btn checkout-btn">Checkout</button>
+  <button id="close-cart" class="btn close-cart-btn" aria-label="Close cart">Close</button>
+</div>
 
-  <!-- CART SIDEBAR -->
-  <div id="cart" class="cart-sidebar" aria-label="Shopping cart" aria-hidden="true" role="complementary">
-    <h3>Your Cart</h3>
-    <ul id="cart-items"></ul>
-    <div class="cart-total">Total: $<span id="cart-total">0.00</span></div>
-    <button id="checkout-btn" class="btn checkout-btn">Checkout</button>
-    <button id="close-cart" class="btn close-cart-btn" aria-label="Close cart">Close</button>
-  </div>
+<!-- Cart Toggle Button -->
+<button id="cart-toggle" class="btn cart-toggle-btn" aria-label="Toggle cart">
+  🛒 Cart (<span id="cart-count">0</span>)
+</button>
 
-  <!-- Cart Toggle Button -->
-  <button id="cart-toggle" class="btn cart-toggle-btn" aria-label="Toggle cart">
-    🛒 Cart (<span id="cart-count">0</span>)
-  </button>
+<!-- Footer -->
+<footer class="site-footer" data-aos="fade-up">
+  <p>© Bean's Dreams — Dance • Heal • Rise</p>
+  <p>&copy; <span id="year"></span></p>
+</footer>
 
-  <!-- PayPal Button Container -->
-  <div id="paypal-button-container" style="display:none;"></div>
-
-
-  <!-- Scripts -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script src="js/nav.js" defer></script>
-  <!-- Cart logic -->
+<!-- Scripts -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="js/nav.js" defer></script>
 <script src="js/cart.js" defer></script>
-
-<!-- Classes page logic -->
 <script src="js/classes.js" defer></script>
 
 <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      // AOS animations
-      AOS.init({ duration: 700, easing: 'ease-out-quart', once: true });
+  document.addEventListener("DOMContentLoaded", () => {
+    // AOS animations
+    AOS.init({ duration: 700, easing: 'ease-out-quart', once: true });
 
-      // Year in footer
-      document.getElementById('year').textContent = new Date().getFullYear();
+    // Year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-      // Load navigation from partial
-      fetch("navigation.html")
-        .then(r => r.text())
-        .then(html => {
-          const el = document.getElementById("nav-placeholder");
-          if (el) el.innerHTML = html;
-        })
-        .catch(() => { /* silently fail if not present */ });
-    });
-  </script>
+    // Load navigation from partial
+    fetch("navigation.html")
+      .then(r => r.text())
+      .then(html => {
+        const el = document.getElementById("nav-placeholder");
+        if (el) el.innerHTML = html;
+      })
+      .catch(() => { /* silently fail if not present */ });
+  });
+</script>
 
- <!-- PayPal SDK -->
+<!-- PayPal SDK -->
 <script src="https://www.paypal.com/sdk/js?client-id=AVhdcxMFlhEnAaJN0_ju-Kjgxo5djvN3Q5VMCVtxrc2fZknJjXNTiLQzWmNel_qUZAjuSOhML2hiU9ct"></script>
-   <script>
-    // Example cart stored in localStorage
-    const cart = JSON.parse(localStorage.getItem("beansDreamsCart")) || [];
-
-    function calculateCartTotal() {
-      return cart.reduce((total, item) => total + item.price * item.quantity, 0).toFixed(2);
-    }
-
-    paypal.Buttons({
-      createOrder: (data, actions) => {
-        return actions.order.create({
-          purchase_units: [{
-            amount: {
-              value: calculateCartTotal()
-            }
-          }]
-        });
-      },
-
-      onApprove: async (data, actions) => {
-        const order = await actions.order.capture();
-
-        // Send cart + PayPal order to your backend
-        await fetch("/api/save-order", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ cart, paypalOrder: order })
-        });
-
-        alert("Thank you! Your order has been received.");
-        localStorage.removeItem("beansDreamsCart");
-        window.location.href = "/thank-you.html"; // Optional redirect
-      }
-    }).render("#paypal-button-container");
-  </script>
+<script src="js/paypal.js" defer></script>
 </body>
 </html>

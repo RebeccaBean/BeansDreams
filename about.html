@@ -74,28 +74,25 @@
     <p>&copy; <span id="year"></span></p>
   </footer>
 
-  <!-- CART SIDEBAR -->
-  <div id="cart" class="cart-sidebar" aria-label="Shopping cart" aria-hidden="true" role="complementary">
-    <h3>Your Cart</h3>
-    <ul id="cart-items"></ul>
-    <div class="cart-total">Total: $<span id="cart-total">0.00</span></div>
-    <!-- PayPal SDK -->
-  <script src="https://www.paypal.com/sdk/js?client-id=AVhdcxMFlhEnAaJN0_ju-Kjgxo5djvN3Q5VMCVtxrc2fZknJjXNTiLQzWmNel_qUZAjuSOhML2hiU9ct"></script>
-  
-  <!-- PayPal Button Container -->
-  <div id="paypal-button-container"></div>
-  
+ <!-- CART SIDEBAR -->
+<div id="cart" class="cart-sidebar" aria-label="Shopping cart" aria-hidden="true" role="complementary">
+  <h3>Your Cart</h3>
+  <ul id="cart-items"></ul>
+  <div class="cart-total">Total: $<span id="cart-total">0.00</span></div>
+
+  <!-- Hidden PayPal mount point -->
+  <div id="hidden-paypal" style="display:none;"></div>
+
   <button id="checkout-btn" class="btn checkout-btn">Checkout</button>
-    <button id="close-cart" class="btn close-cart-btn" aria-label="Close cart">Close</button>
-  </div>
+  <button id="close-cart" class="btn close-cart-btn" aria-label="Close cart">Close</button>
+</div>
 
-  <!-- Cart Toggle Button -->
-  <button id="cart-toggle" class="btn cart-toggle-btn" aria-label="Toggle cart">
-    🛒 Cart (<span id="cart-count">0</span>)
-  </button>
+<!-- Cart Toggle Button -->
+<button id="cart-toggle" class="btn cart-toggle-btn" aria-label="Toggle cart">
+  🛒 Cart (<span id="cart-count">0</span>)
+</button>
 
-
- <!-- Scripts -->
+<!-- Scripts -->
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 <script src="js/nav.js" defer></script>
 <script src="js/cart.js" defer></script>
@@ -121,35 +118,8 @@
   });
 </script>
 
-<!-- Cart + PayPal -->
-<script>
-  const cart = JSON.parse(localStorage.getItem("beansDreamsCart")) || [];
-
-  function calculateCartTotal() {
-    return cart.reduce((total, item) => total + item.price * item.quantity, 0).toFixed(2);
-  }
-
-  paypal.Buttons({
-    createOrder: (data, actions) => {
-      return actions.order.create({
-        purchase_units: [{
-          amount: { value: calculateCartTotal() }
-        }]
-      });
-    },
-    onApprove: async (data, actions) => {
-      const order = await actions.order.capture();
-      await fetch("/api/save-order", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ cart, paypalOrder: order })
-      });
-      alert("Thank you! Your order has been received.");
-      localStorage.removeItem("beansDreamsCart");
-      window.location.href = "/thank-you.html";
-    }
-  }).render("#paypal-button-container");
-</script>
-
+<!-- PayPal SDK + Shared Logic -->
+<script src="https://www.paypal.com/sdk/js?client-id=YOUR_CLIENT_ID"></script>
+<script src="js/paypal.js" defer></script>
 </body>
 </html>

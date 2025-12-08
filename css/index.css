@@ -312,7 +312,7 @@ h1, h3 {
 }
 
 .faq-answer.open {
-  max-height: 300px;          /* adjust to fit longest answer */
+  max-height: 1000px;          /* adjust to fit longest answer */
   padding: 0.8rem 1rem;       /* expanded padding */
 }
 
