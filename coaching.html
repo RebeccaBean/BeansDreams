@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -48,22 +48,40 @@
 
   <!-- NAV placeholder -->
   <div id="nav-placeholder"></div>
-
-  <!-- Lead Magnet Modal -->
-  <div class="lead-modal" id="leadModal" aria-hidden="true">
-    <div class="lead-card" data-aos="zoom-in">
-      <button class="lead-close" id="leadClose" aria-label="Close">&times;</button>
-      <h4>✨ Claim Your Free Intro Session </h4>
-      <p>Enter your email and we'll send a free 20-minute intro session and our welcome guide.</p>
-
-      <form id="leadForm" class="lead-form" action="https://formspree.io/f/mkgzebjn" method="POST">
-        <input type="text" id="name" name="name" placeholder="Full Name" required>
-        <input type="email" name="email" placeholder="your@email.com" required>
-        <input type="hidden" name="_redirect" value="thankyou.html">
-        <button class="btn btn-primary lead-submit-btn" type="submit">Claim Your Free Intro</button>
-      </form>
+<!-- Lead Magnet Modal -->
+<!-- Lead Magnet Modal -->
+<div class="lead-modal" id="leadModal" aria-hidden="true">
+  <div class="lead-card" data-aos="zoom-in">
+    <!-- Close Button -->
+    <button class="lead-close" id="leadClose" aria-label="Close">&times;</button>
+    
+    <!-- Butterfly SVG decoration -->
+    <div class="modal-butterfly">
+      <svg width="80" height="80" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <path d="M32 32 C12 12, 8 52, 32 32" fill="#FF940E"/>
+        <path d="M32 32 C52 12, 56 52, 32 32" fill="#FF940E"/>
+        <rect x="30" y="24" width="4" height="16" fill="#b50202" rx="2"/>
+      </svg>
     </div>
+
+    <!-- Content -->
+    <h4>✨ Claim Your Free Intro Session </h4>
+    <p>Enter your email and we'll send a free 20-minute intro session and our welcome guide.</p>
+
+    <!-- Form -->
+    <form id="leadForm" class="lead-form" action="https://formspree.io/f/mkgzebjn" method="POST">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" placeholder="Full Name" required>
+      
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="your@email.com" required>
+      
+      <input type="hidden" name="_redirect" value="thankyou.html">
+      <button class="btn btn-primary lead-submit-btn" type="submit">Claim Your Free Intro</button>
+    </form>
   </div>
+</div>
+
 
   <!-- ABOUT -->
   <section class="about" aria-labelledby="about-heading">
