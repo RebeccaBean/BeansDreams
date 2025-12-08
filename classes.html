@@ -899,33 +899,31 @@
     <p>&copy; <span id="year"></span></p>
   </footer>
 
-  <!-- CART SIDEBAR -->
-  <div id="cart" class="cart-sidebar" aria-label="Shopping cart" aria-hidden="true" role="complementary">
-    <h3>Your Cart</h3>
-    <ul id="cart-items"></ul>
-    <div class="cart-total">Total: $<span id="cart-total">0.00</span></div>
-    <!-- PayPal SDK -->
-  <script src="https://www.paypal.com/sdk/js?client-id=AVhdcxMFlhEnAaJN0_ju-Kjgxo5djvN3Q5VMCVtxrc2fZknJjXNTiLQzWmNel_qUZAjuSOhML2hiU9ct"></script>
-  
-  <!-- PayPal Button Container -->
-  <div id="paypal-button-container"></div>
-  
+ <!-- CART SIDEBAR -->
+<div id="cart" class="cart-sidebar" aria-label="Shopping cart" aria-hidden="true" role="complementary">
+  <h3>Your Cart</h3>
+  <ul id="cart-items"></ul>
+  <div class="cart-total">Total: $<span id="cart-total">0.00</span></div>
+
+  <!-- Hidden PayPal mount point -->
+  <div id="hidden-paypal" style="display:none;"></div>
+
   <button id="checkout-btn" class="btn checkout-btn">Checkout</button>
-    <button id="close-cart" class="btn close-cart-btn" aria-label="Close cart">Close</button>
-  </div>
+  <button id="close-cart" class="btn close-cart-btn" aria-label="Close cart">Close</button>
+</div>
 
-  <!-- Cart Toggle Button -->
-  <button id="cart-toggle" class="btn cart-toggle-btn" aria-label="Toggle cart">
-    🛒 Cart (<span id="cart-count">0</span>)
-  </button>
+<!-- Cart Toggle Button -->
+<button id="cart-toggle" class="btn cart-toggle-btn" aria-label="Toggle cart">
+  🛒 Cart (<span id="cart-count">0</span>)
+</button>
 
-  <!-- Scripts -->
+<!-- Scripts -->
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script src="js/nav.js" defer></script>
 <script src="js/cart.js" defer></script>
 <script src="js/classes.js" defer></script>
+
 <script>
-  
   document.addEventListener("DOMContentLoaded", () => {
     // Initialize AOS
     AOS.init({ duration: 700, easing: 'ease-out-quart', once: true });
@@ -962,5 +960,9 @@
     });
   });
 </script>
+
+<!-- PayPal SDK + Shared Logic -->
+<script src="https://www.paypal.com/sdk/js?client-id=YOUR_CLIENT_ID"></script>
+<script src="js/paypal.js" defer></script>
 </body>
 </html>

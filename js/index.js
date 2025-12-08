@@ -114,23 +114,27 @@ document.addEventListener('DOMContentLoaded', () => {
     tTimer = setInterval(() => showTestimonial((tIndex + 1) % testimonials.length), 4000);
   }
 
-/* ---------------------------
-   FAQ accordion
-   --------------------------- */
-const questions = document.querySelectorAll('.faq-question');
-questions.forEach(q => {
+// FAQ accordion
+document.querySelectorAll('.faq-question').forEach(q => {
   const answerId = q.getAttribute('aria-controls');
   const answer = document.getElementById(answerId);
-  if (!answer) return;
 
-  // Ensure initial state
-  q.setAttribute('aria-expanded', 'false');
-  answer.hidden = true;
+  if (!answer) return;
 
   q.addEventListener('click', () => {
     const isOpen = q.getAttribute('aria-expanded') === 'true';
+
+    // Toggle aria-expanded
     q.setAttribute('aria-expanded', String(!isOpen));
-    answer.hidden = isOpen; // show if closed, hide if open
+
+    // Toggle hidden + open class
+    if (isOpen) {
+      answer.hidden = true;
+      answer.classList.remove('open');
+    } else {
+      answer.hidden = false;
+      answer.classList.add('open');
+    }
   });
 });
 

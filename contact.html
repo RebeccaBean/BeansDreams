@@ -15,8 +15,8 @@
 </head>
 <body>
 
-<!-- CONTACT HEADER -->
-  <section class="contact-header" data-aos="fade-down">
+  <!-- CONTACT HEADER -->
+  <header class="contact-header" data-aos="fade-down">
     <div class="logo-container">
       <img src="imageslogo/beansbutterfly.png" alt="Beans Butterfly" class="logo-bounce-in">
     </div>
@@ -25,12 +25,12 @@
     <p class="about-subtitle" data-aos="fade-right" data-aos-delay="300" style="color:#FEB803;">
       <strong>Dance • Heal • Rise</strong>
     </p>
-  </section>
-
-  <!-- Navigation placeholder -->
-  <header class="navbar" data-aos="fade-right">
-    <div id="nav-placeholder"></div>
   </header>
+
+  <!-- Navigation (now below the header) -->
+  <nav class="navbar" data-aos="fade-right">
+    <div id="nav-placeholder"></div>
+  </nav>
 
   <main>
     <!-- Hero Section -->
@@ -83,34 +83,35 @@
     <p>© Bean's Dreams — Dance • Heal • Rise</p>
     <p>&copy; <span id="year"></span></p>
   </footer>
-<!-- Scripts -->
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<script src="js/nav.js" defer></script>
-<script src="js/cart.js" defer></script>
 
-<!-- PayPal SDK -->
-<script src="https://www.paypal.com/sdk/js?client-id=AVhdcxMFlhEnAaJN0_ju-Kjgxo5djvN3Q5VMCVtxrc2fZknJjXNTiLQzWmNel_qUZAjuSOhML2hiU9ct"></script>
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="js/nav.js" defer></script>
+  <script src="js/cart.js" defer></script>
 
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    // Initialize AOS
-    if (window.AOS) {
-      AOS.init({ duration: 700, easing: 'ease-out-quart', once: true });
-    }
+  <!-- PayPal SDK -->
+  <script src="https://www.paypal.com/sdk/js?client-id=AVhdcxMFlhEnAaJN0_ju-Kjgxo5djvN3Q5VMCVtxrc2fZknJjXNTiLQzWmNel_qUZAjuSOhML2hiU9ct"></script>
 
-    // Footer year
-    const yearEl = document.getElementById('year');
-    if (yearEl) yearEl.textContent = new Date().getFullYear();
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Initialize AOS
+      if (window.AOS) {
+        AOS.init({ duration: 700, easing: 'ease-out-quart', once: true });
+      }
 
-    // Load navigation from partial
-    fetch("navigation.html")
-      .then(r => r.text())
-      .then(html => {
-        const el = document.getElementById("nav-placeholder");
-        if (el) el.innerHTML = html;
-      })
-      .catch(() => {});
-  });
-</script>
+      // Footer year
+      const yearEl = document.getElementById('year');
+      if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+      // Load navigation from partial
+      fetch("navigation.html")
+        .then(r => r.text())
+        .then(html => {
+          const el = document.getElementById("nav-placeholder");
+          if (el) el.innerHTML = html;
+        })
+        .catch(() => {});
+    });
+  </script>
 </body>
 </html>
