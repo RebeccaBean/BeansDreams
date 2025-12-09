@@ -4,8 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Student Portal | Bean's Dreams</title>
-<div class="portal-header">Bean's Dreams Student Portal</div>
-
 
   <!-- Page Styles -->
   <link rel="stylesheet" href="portal.css" />
@@ -18,6 +16,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
+  <!-- Portal Header (moved out of <head>) -->
+  <div class="portal-header">Bean's Dreams Student Portal</div>
+
   <!-- NAV placeholder -->
   <div id="nav-placeholder"></div>
 
@@ -50,7 +51,6 @@
       // Auto redirect after 8 seconds
       setTimeout(() => {
         window.location.href = "https://studio-1285160814-4d0a2.firebaseio.com"; 
-        // replace with your Firebase hosting URL
       }, 8000);
     });
   </script>

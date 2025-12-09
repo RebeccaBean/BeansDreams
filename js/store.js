@@ -41,26 +41,23 @@
     apiBase: "", // e.g., "" for same origin, or "https://api.beansdreams.org"
   };
 
-  /* ---------- AOS ---------- */
-  if (typeof AOS !== "undefined" && isFunction(AOS.init)) {
-    try { AOS.init(); } catch (e) { /* ignore */ }
-  }
+// AOS
+if (typeof AOS !== "undefined" && typeof AOS.init === "function") {
+  try { AOS.init(); } catch (e) {}
+}
 
-  /* ---------- Tabs ---------- */
+// Tabs
 document.querySelectorAll(".tab-btn").forEach(btn => {
   btn.addEventListener("click", () => {
-    // Activate tab button
     document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
     btn.classList.add("active");
 
     const target = btn.dataset.target;
 
-    // Show only the matching store section
     document.querySelectorAll(".store-section").forEach(sec => {
       sec.classList.toggle("active", sec.id === target);
     });
 
-    // Show only the matching subcategory menu
     document.querySelectorAll(".subcategories").forEach(menu => {
       menu.classList.toggle("hidden", !menu.id.startsWith(target));
     });
@@ -82,43 +79,43 @@ document.querySelectorAll(".subcategory-select").forEach(select => {
   });
 });
 
-  /* ---------- Product Carousel ---------- */
-  $$(".product-carousel").forEach(carousel => {
-    const track = $(".product-carousel-track", carousel);
-    const dotsContainer = $(".product-carousel-dots", carousel);
-    if (!track || !dotsContainer) return;
+// Product Carousel
+$$(".product-carousel").forEach(carousel => {
+  const track = $(".product-carousel-track", carousel);
+  const dotsContainer = $(".product-carousel-dots", carousel);
+  if (!track || !dotsContainer) return;
 
-    const slides = Array.from(track.children);
-    if (!slides.length) return;
+  const slides = Array.from(track.children);
+  if (!slides.length) return;
 
-    let currentIndex = 0;
-    let timer;
+  let currentIndex = 0;
+  let timer;
 
-    slides.forEach((_, i) => {
-      const dot = document.createElement("span");
-      dot.classList.add("product-dot");
-      if (i === 0) dot.classList.add("active");
-      dot.addEventListener("click", () => {
-        currentIndex = i;
-        updateCarousel();
-        restartTimer();
-      });
-      dotsContainer.appendChild(dot);
+  slides.forEach((_, i) => {
+    const dot = document.createElement("span");
+    dot.classList.add("product-dot");
+    if (i === 0) dot.classList.add("active");
+    dot.addEventListener("click", () => {
+      currentIndex = i;
+      updateCarousel();
+      restartTimer();
     });
-
-    function updateCarousel() {
-      track.style.transform = `translateX(-${currentIndex * 100}%)`;
-      $$(".product-dot", dotsContainer).forEach((dot, i) => {
-        dot.classList.toggle("active", i === currentIndex);
-      });
-    }
-    function nextSlide() { currentIndex = (currentIndex + 1) % slides.length; updateCarousel(); }
-    function startTimer() { timer = setInterval(nextSlide, 4000); }
-    function restartTimer() { clearInterval(timer); startTimer(); }
-
-    updateCarousel();
-    startTimer();
+    dotsContainer.appendChild(dot);
   });
+
+  function updateCarousel() {
+    track.style.transform = `translateX(-${currentIndex * 100}%)`;
+    $$(".product-dot", dotsContainer).forEach((dot, i) => {
+      dot.classList.toggle("active", i === currentIndex);
+    });
+  }
+  function nextSlide() { currentIndex = (currentIndex + 1) % slides.length; updateCarousel(); }
+  function startTimer() { timer = setInterval(nextSlide, 4000); }
+  function restartTimer() { clearInterval(timer); startTimer(); }
+
+  updateCarousel();
+  startTimer();
+});
 
   /* ---------- Quote Carousel ---------- */
   (function initQuoteCarousel() {

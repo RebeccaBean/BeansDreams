@@ -70,7 +70,41 @@ a {
   margin: 0 auto;
 }
 
-/* Contact Form Section */
+.logo-container {
+  text-align: left;
+  margin: 1rem 0 0 2rem; /* top/right/bottom/left spacing */
+}
+
+.logo-bounce-in {
+  width: 200px; /* Adjust as needed */
+  animation: slideDownBounce 1s ease-out forwards, bounce 2s ease-in-out infinite;
+  animation-delay: 0s, 1s; /* Bounce starts after slide finishes */
+  opacity: 0;
+}
+
+/* Slide from top */
+@keyframes slideDownBounce {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Gentle bounce loop */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+ }
+ 
+ /* Contact Form Section */
 .contact-section {
   display: flex;
   flex-wrap: wrap;
