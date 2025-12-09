@@ -16,7 +16,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- Portal Header (moved out of <head>) -->
+  <!-- Portal Header -->
   <div class="portal-header">Bean's Dreams Student Portal</div>
 
   <!-- NAV placeholder -->
@@ -29,7 +29,14 @@
     </div>
     <h1 class="alex-brush">Bean's Dreams</h1>
     <p class="tagline">Guiding your journey to healing, creativity, and growth.</p>
-    <p class="redirect-text">Redirecting to your student portal...</p>
+
+    <!-- Redirect message with countdown -->
+    <div class="redirect-options">
+      <p class="redirect-text">
+        Redirecting to your student portal in <span id="countdown">8</span> seconds…
+      </p>
+      <button id="redirect-now" class="btn">Redirect Now</button>
+    </div>
   </section>
 
   <!-- Scripts -->
@@ -38,7 +45,7 @@
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       AOS.init({ duration: 700, easing: 'ease-out-quart', once: true });
-     
+
       // Load navigation from partial
       fetch("navigation.html")
         .then(r => r.text())
@@ -48,11 +55,29 @@
         })
         .catch(() => { /* silently fail if not present */ });
 
-      // Auto redirect after 8 seconds
-      setTimeout(() => {
-        window.location.href = "https://studio-1285160814-4d0a2.firebaseio.com"; 
-      }, 8000);
+      // Redirect logic
+      const redirectUrl = "https://studio-1285160814-4d0a2.firebaseio.com"; 
+      let countdown = 8; // seconds
+      const countdownEl = document.getElementById("countdown");
+      const btn = document.getElementById("redirect-now");
+
+      const timer = setInterval(() => {
+        countdown--;
+        if (countdownEl) countdownEl.textContent = countdown;
+        if (countdown <= 0) {
+          clearInterval(timer);
+          window.location.href = redirectUrl;
+        }
+      }, 1000);
+
+      if (btn) {
+        btn.addEventListener("click", () => {
+          clearInterval(timer);
+          window.location.href = redirectUrl;
+        });
+      }
     });
   </script>
 </body>
 </html>
+
