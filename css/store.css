@@ -45,18 +45,20 @@ body {
     transform: translateY(-8px);
   }
 }
+
 .store-header h1 {
   font-family: 'Alex Brush', cursive;
   font-size: 3rem;
   margin-bottom: 0.5rem;
 }
+
 .store-tabs {
   text-align: center;
   margin-bottom: 15px;
 }
 
 .tab-btn {
-  background: #007BFF;
+  background: var(--navy);
   color: white;
   padding: 10px 18px;
   margin: 0 5px;
@@ -67,66 +69,41 @@ body {
 }
 
 .tab-btn:hover {
-  background: #FF3B3B;
+  background: var(--orange);
 }
 
 .tab-btn.active {
-  background: #0056b3;
+  background: var(--gold);
 }
 
+/* ---------- Subcategories dropdown styling ---------- */
 .subcategories {
   text-align: center;
   margin-bottom: 20px;
-  
 }
+
 .subcategory-select {
-  background-color: #FFF5EA; /* Light cream background */
-  color: #333; /* Dark text for contrast */
+  background-color: #B3C9F5;
+  color: #333;
   padding: 10px 18px;
-  border: none;
-  border-radius: 5px; /* Rounded edges */
+  border: 1px solid #ccc;
+  border-radius: 5px;
   font-size: 1rem;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .subcategory-select:hover {
-  background-color: #B3C9F5; /* Light coral hover color */
-  color: #fff; /* White text on hover */
-}
-.subcategory-select {
-  padding: 8px 12px;
-  font-size: 1rem;
-  border: 1px solid #ccc;
+  background-color: var(--navy);
+  color: #b50202;
 }
 
-
+/* Utility class for hiding elements */
 .hidden {
   display: none;
 }
 
-.product-section {
-  display: none;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 15px;
-}
-
-.product-section.active {
-  display: grid;
-}
-
-.product-card {
-  background: #f5f5f5;
-  padding: 20px;
-  text-align: center;
-  border-radius: 8px;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.product-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-}
+/* ---------- Store tabs ---------- */
 .store-tabs {
   display: flex;
   justify-content: center;
@@ -151,30 +128,48 @@ body {
   color: #004AAA;
 }
 
+/* ---------- Store sections ---------- */
 .store-section {
-  display: none;
+  display: none;        /* hidden by default */
   padding: 2rem;
 }
 
 .store-section.active {
-  display: block;
+  display: block;       /* shown when active */
 }
 
-.product-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
+.store-section.active .product-grid {
+  display: grid;        /* grid layout for products */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
   justify-content: center;
+  margin-top: 20px;
 }
 
+/* ---------- Product cards ---------- */
 .product-card {
-  background-color: white;
+  background-color: #f5f5f5;
   border-radius: 10px;
   padding: 1.5rem;
-  width: 280px;
   text-align: center;
   box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-  transition: transform 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-sizing: border-box;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+.product-card img {
+  width: 100%;
+  height: auto;
+  max-height: 250px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  display: block;
 }
 
 .product-card:hover {
