@@ -25,14 +25,24 @@ a {
   text-decoration: none;
   color: var(--navy);
 }
+/* CONTACT HEADER (top section with logo/text) */
+.contact-header {
+  background: linear-gradient(to right, #FFF5EA, #FF940E); /* gradient background */
+  text-align: center;
+  padding: 2rem;
+  color: var(--navy);
+}
 
-header{
-    background: linear-gradient(to right, #FFF5EA, #FF940E);
+/* Navigation bar placeholder */
+.navbar {
+  background-color: #fff; /* plain white background */
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 5rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08); /* optional subtle shadow */
 }
+
 
 .logo {
   font-family: var(--font-accent);

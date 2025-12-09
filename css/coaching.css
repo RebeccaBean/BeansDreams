@@ -334,7 +334,7 @@ body {
 .modal-butterfly {
   position: absolute;
   top: 10px;                  /* inside card, not negative */
-  right: 10px;
+  left: 10px;
   z-index: 1;                 /* below close button */
   pointer-events: none;       /* decorative only */
 }

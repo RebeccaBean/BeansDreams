@@ -17,6 +17,16 @@ body {
   text-align: center;
   overflow: hidden;
 }
+.portal-header {
+  width: 100%;
+  background: var(--navy);
+  color: white;
+  padding: 0.8rem;
+  font-family: var(--font-main);
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 0.05em;
+}
 
 .portal-container {
   background: white;

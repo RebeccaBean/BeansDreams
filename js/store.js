@@ -47,38 +47,40 @@
   }
 
   /* ---------- Tabs ---------- */
-  const tabButtons = $$(".tab-btn");
-  const storeSections = $$(".store-section");
-  const productSections = $$(".product-section");
-  const subcategoryMenus = $$(".subcategories");
-  const selects = $$(".subcategory-select");
+document.querySelectorAll(".tab-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    // Activate tab button
+    document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
 
-  tabButtons.forEach(btn => {
-    btn.addEventListener("click", () => {
-      tabButtons.forEach(b => b.classList.remove("active"));
-      btn.classList.add("active");
-      const target = btn.dataset.target;
+    const target = btn.dataset.target;
 
-      storeSections.forEach(sec => sec.classList.toggle("active", sec.id === target));
-      productSections.forEach(sec => sec.classList.toggle("active", sec.id === target));
-      subcategoryMenus.forEach(menu => {
-        menu.classList.toggle("hidden", !(menu.id || "").startsWith(target));
-      });
+    // Show only the matching store section
+    document.querySelectorAll(".store-section").forEach(sec => {
+      sec.classList.toggle("active", sec.id === target);
+    });
+
+    // Show only the matching subcategory menu
+    document.querySelectorAll(".subcategories").forEach(menu => {
+      menu.classList.toggle("hidden", !menu.id.startsWith(target));
     });
   });
+});
 
-  // Subcategory filtering
-  selects.forEach(select => {
-    select.addEventListener("change", () => {
-      const sectionId = select.dataset.section;
-      const selectedCategory = select.value;
-      const products = $$(cfg.productCardSel, document.getElementById(sectionId) || document);
-      products.forEach(card => {
-        const cat = card.dataset.category || card.getAttribute("data-type") || "any";
-        card.style.display = (selectedCategory === "all" || cat === selectedCategory) ? "block" : "none";
-      });
+// Subcategory filtering
+document.querySelectorAll(".subcategory-select").forEach(select => {
+  select.addEventListener("change", () => {
+    const sectionId = select.dataset.section;
+    const selectedCategory = select.value;
+    const section = document.getElementById(sectionId);
+    if (!section) return;
+
+    section.querySelectorAll(".product-card").forEach(card => {
+      const cat = card.dataset.category || card.getAttribute("data-type") || "any";
+      card.style.display = (selectedCategory === "all" || cat === selectedCategory) ? "" : "none";
     });
   });
+});
 
   /* ---------- Product Carousel ---------- */
   $$(".product-carousel").forEach(carousel => {
