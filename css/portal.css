@@ -6,18 +6,19 @@
   --font-main: 'Open Sans', sans-serif;
 }
 
+/* Base body styling */
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Open Sans', sans-serif;
+  font-family: var(--font-main);
   background: linear-gradient(135deg, var(--peach), var(--orange));
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
   text-align: center;
-  overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column; /* stack header/nav and portal container vertically */
 }
+
+/* Navigation/header bar */
 .portal-header {
   width: 100%;
   background: var(--navy);
@@ -29,6 +30,7 @@ body {
   letter-spacing: 0.05em;
 }
 
+/* Portal container centered below nav */
 .portal-container {
   background: white;
   border-radius: 20px;
@@ -36,6 +38,7 @@ body {
   padding: 2rem;
   width: 90%;
   max-width: 400px;
+  margin: 2rem auto; /* centers horizontally and adds spacing below nav */
   animation: fadeIn 1.5s ease-in-out;
 }
 
@@ -79,16 +82,34 @@ body {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Mobile adjustments */
-@media (max-width: 600px) {
+/* ---------- Responsive adjustments ---------- */
+@media (max-width: 1024px) {
   .portal-container {
+    max-width: 600px;
+  }
+}
+
+@media (max-width: 768px) {
+  .portal-container {
+    max-width: 90%;
     padding: 1.5rem;
   }
-
   .alex-brush {
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
+  .butterfly {
+    width: 80px;
+  }
+}
 
+@media (max-width: 480px) {
+  .portal-container {
+    padding: 1rem;
+    margin: 1rem auto;
+  }
+  .alex-brush {
+    font-size: 1.8rem;
+  }
   .butterfly {
     width: 70px;
   }
