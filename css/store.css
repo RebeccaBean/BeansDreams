@@ -82,7 +82,7 @@ body {
 }
 
 .subcategory-select {
-  background-color: var(--peach);
+  background-color: #B3C9F5;
   color: #333;
   padding: 10px 18px;
   border: 1px solid #ccc;
@@ -94,7 +94,7 @@ body {
 
 .subcategory-select:hover {
   background-color: var(--navy);
-  color: #fff;
+  color: #b50202;
 }
 
 .hidden {
