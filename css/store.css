@@ -155,6 +155,9 @@ body {
   box-shadow: 0 5px 10px rgba(0,0,0,0.1);
   transition: transform 0.3s, box-shadow 0.3s;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .product-card:hover {
@@ -166,10 +169,11 @@ body {
   width: 100%;
   height: auto;
   max-height: 250px;
-  object-fit: cover;
+  object-fit: contain;
   border-radius: 6px;
   margin-bottom: 15px;
   display: block;
+  align-self: center;
 }
 
 .product-card:hover {
