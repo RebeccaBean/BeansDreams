@@ -209,24 +209,28 @@ body {
 
 .price{ font-weight:800; color: #004AAD ; }
 
+/* Carousel container */
 .product-carousel {
   position: relative;
-  width: 100%;
   overflow: hidden;
-  border-radius: 12px;
-  margin-bottom: 1rem;
+  width: 100%;
+  max-width: 300px; /* adjust to your card width */
+  margin: 0 auto;
 }
 
+/* Carousel track */
 .product-carousel-track {
   display: flex;
-  transition: transform 0.5s ease-in-out;
-  width: 400%; /* 4 slides */
+  transition: transform 0.5s ease;
+  width: 100%;
 }
 
+/* Each slide */
 .product-slide {
-  width: 100%;
   flex: 0 0 100%;
-  object-fit: cover;
+  max-height: 250px;       /* ✅ fixes collapsing */
+  object-fit: contain;     /* show full image */
+  display: block;
 }
 
 .product-carousel-dots {
