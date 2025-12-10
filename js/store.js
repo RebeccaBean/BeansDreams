@@ -178,3 +178,11 @@ document.addEventListener("DOMContentLoaded", () => {
     startCarousel();
   })();
 });
+// ---------- Handle navigation hash ----------
+const hash = window.location.hash.replace("#", "");
+if (hash) {
+  const targetBtn = document.querySelector(`.tab-btn[data-target="${hash}"]`);
+  if (targetBtn) {
+    targetBtn.click(); // simulate click to activate section + subcategories
+  }
+}
